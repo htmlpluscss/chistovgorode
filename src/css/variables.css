@@ -1,50 +1,33 @@
 :root {
 
-	--color: #0b233a;
-	--colorRGB: 11, 35, 58;
-	--text: #355073; /* old #9b9bb8 */
-	--blue: #2b8cff;
-	--blueRGB: 43, 140, 255;
-	--blue_dark: #1f6cdb;
-	--grey: #8f8fae;
-	--red: #cf405a;
-	--error: #f44336;
-	--errorRGB: 244, 67, 54;
-	--bg: #f9fafd;
-	--warning: #f38b01;
+	--Primary: #ffe431;
+/* 	--Secondary: #f7f6ff; Пока не используется */
+	--BnW: #afaec6;
+	--Notice: #ee555e;
+	--Success: #49d88b;
+	--Indigo: #548eff;
+	--Indigo_dark: #1665ff;
+	--Violet: #9F54ff;
+	--Pink: #ff549c;
 
-	--box-shadow: 0 4px 4px rgba(155, 155, 184, 0.13);
+
+	--color: #42424a;  /* BnW200 */
+	--text: #0f0b38;   /* Text_main */
+	--grey: #828090;   /* BnW400 */
+	--yellow: var(--Primary);
+	--green: var(--Success);
+	--violet: var(--Violet);
+	--blue: var(--Indigo);
+	--pink: var(--Pink);
+	--error: #f00;
+	--bg: #fff;
+	--border: #eeeef1; /* BnW800 */
+
+	--box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.23);
 
 	--transitionDefault: 0s;
 
-	--headerHeight: 70px;
-	--footerHeight: 106px;
-
-	--indent: 34px;
-
-/*
-
-
---green: #36b37e;
-
---red: #f44336;
---black_dark: #0b233a;
---silver: #efeff6;
---silver-dark: #e2e2f1;
---text_status: #42526e;
-
---snow: #e3f0ff;
---snow_dark: #99c8ff;
-
-
---border: #efeff6;
-
-
-
---box-shadow-dark: 0 0 4px color(var(--text) a(13%)), var(--box-shadow);
-
---mdIndent: 32px;
---smIndent: 16px; */
+	--indent: 23px;
 
 }
 

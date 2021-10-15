@@ -47,18 +47,6 @@ https://github.com/htmlpluscss/
 
 		document.documentElement.style.setProperty('--transitionDefault', '.3s');
 
-		if(document.querySelector('.header')) {
-
-			document.documentElement.style.setProperty('--headerHeight', document.querySelector('.header').clientHeight + 'px');
-
-		}
-
-		if(document.querySelector('.footer')) {
-
-			document.documentElement.style.setProperty('--footerHeight', document.querySelector('.footer').clientHeight + 'px');
-
-		}
-
 	});
 
 	// обработчик анимаций
