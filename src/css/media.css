@@ -1,0 +1,76 @@
+.visible-md,
+.visible-sm {
+
+	display: none;
+
+}
+
+.center {
+
+	width: 1440px;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 var(--indent);
+
+}
+
+html[lang="ru"] .hidden-lang-ru,
+html[lang="en"] .hidden-lang-en {
+
+	display: none !important;
+
+}
+
+@media ($desktop) {
+
+
+}
+
+@media ($mdWidth) {
+
+	.hidden-md {
+
+		display: none !important;
+
+	}
+
+	.visible-md {
+
+		display: block;
+
+	}
+
+	.center {
+
+
+
+	}
+
+}
+
+@media ($smWidth) {
+
+	.hidden-sm {
+
+		display: none !important;
+
+	}
+
+	.visible-sm {
+
+		display: block;
+
+	}
+
+	.center {
+
+
+
+	}
+
+}
+
+@media ($xsWidth) {
+
+}

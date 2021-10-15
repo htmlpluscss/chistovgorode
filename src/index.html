@@ -1,0 +1,552 @@
+{% set title = site %}
+
+{% set dev = true %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+<div class="center">
+
+	<h1>
+		Страницы
+	</h1>
+
+	<ul class="h3">
+		<li><a href="https://inti-lk.wndrbase.com/">ЛК</a></li>
+		<li><a href="https://inti.wndrbase.com/">ver 1</a></li>
+		<li><a href="https://inti-v2.wndrbase.com/">ver 2</a></li>
+		<li>
+			<a href="/error/403/">403</a>,
+			<a href="/error/404/">404</a>,
+			<a href="/error/503/">503</a>,
+			<a href="/error/500/">500</a>
+		</li>
+		<li><a href="/main/">Главная</a></li>
+		<li><a href="/docs/">INTI.docs</a></li>
+		<li><a href="/docs/catalog/">INTI.docs каталог</a></li>
+		<li><a href="/docs/catalog/login/">INTI.docs каталог (авторизирован)</a></li>
+		<li><a href="/docs/catalog/empty/">INTI.docs каталог (ничего не найдено)</a></li>
+		<li><a href="/docs/standart/">INTI.docs Карточка стандарта</a></li>
+		<li><a href="/docs/analytic/">INTI.docs Карточка аналитического обзора</a></li>
+		<li><a href="/docs/analytic/login/">INTI.docs Карточка аналитического обзора (авторизирован)</a></li>
+		<li><a href="/insights/">INTI.insights</a></li>
+	</ul>
+
+	<h2>
+		Регистрация пользователей
+	</h2>
+
+	<ul class="h3">
+		<li><a href="/account/login/">Вход</a></li>
+		<li><a href="/account/signup/">Регистрация</a></li>
+		<li><a href="/account/recovery/">Забыли пароль?</a></li>
+	</ul>
+
+	<hr>
+
+	<h2>
+		Формы
+	</h2>
+
+	<div class="flex flex--wrap">
+
+		<div class="item w100p">
+
+			<input class="input" placeholder=".input">
+
+		</div>
+
+		<div class="item">
+
+			<label class="input-box">
+
+				<span class="input-box__label">
+					label:
+				</span>
+
+				<input class="input" placeholder="placeholder">
+
+			</label>
+
+		</div>
+
+		<div class="item">
+
+			<div class="input-box">
+
+				<span class="input-box__label">
+					label:
+				</span>
+
+				<div class="select">
+
+					<select>
+						<option value="none">Выбрать</option>
+						<option value="1">Рассмотрение заявки</option>
+						<option value="2">Заявка согласована</option>
+						<option value="3">Заявка отклонена</option>
+						<option value="4">Заключение договора</option>
+						<option value="5">Договор заключен</option>
+						<option value="6">Договор отклонен</option>
+						<option value="7">Проведенеие сертификации</option>
+						<option value="8">Выдан сертификат</option>
+						<option value="9">Сертификация не пройдена</option>
+					</select>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<h3>
+		Кнопки
+	</h3>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<button class="btn btn--toggle">
+				toggle
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--toggle">
+				toggle + arrow
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M8.3 10.3a1 1 0 000 1.41l2.93 2.97c.22.21.5.32.78.32s.56-.1.77-.32l2.93-2.96a1.01 1.01 0 00-.32-1.63.99.99 0 00-1.09.21L12 12.62l-2.3-2.33a.99.99 0 00-1.4 0z"/>
+				</svg>
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--sort">
+				sort
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M8.01 18a1 1 0 000-2H3.99A1 1 0 003 17a1 1 0 00.99 1h4.02zM3 7a1 1 0 001 1h16a1 1 0 001-1 1 1 0 00-1-1H4a1 1 0 00-1 1zm11 6a1 1 0 100-2H4a1 1 0 100 2h10z"/>
+				</svg>
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--add">
+				add
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--silver">
+				silver
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue">
+				blue
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue" disabled="disabled">
+				blue [disabled]
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--disabled">
+				disabled
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--light">
+				light
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--white">
+				white
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--white" disabled="disabled">
+				white disabled
+			</button>
+
+		</div>
+
+		<h4 class="w100p">
+			Кнопки скачать
+		</h4>
+
+		<div class="item">
+
+			<a class="btn btn--download" href="/favicon.png" download="Аудит от 29.03.2020.pdf" title="Скачать отчет">
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M10.69 17.3A.98.98 0 009 18c0 .26.1.51.29.7l1.96 1.98a1.08 1.08 0 001.54 0l1.92-1.93a1 1 0 00-.7-1.7.98.98 0 00-.7.29l-1.29 1.3-1.33-1.35z"/>
+					<path d="M13 20V10a1 1 0 00-1-1 1 1 0 00-1 1v10a1 1 0 001 1 1 1 0 001-1z"/>
+					<path d="M7.94 5.48A5.1 5.1 0 002 10.5C2 13.4 4.38 16 7.1 16h2.88v-2H7.1c-1.66 0-3.11-1.66-3.11-3.5a3.1 3.1 0 013.1-3.09h.01c.39 0 .69.05.97.15l.17.07c.6.24.88-.25.88-.25l.15-.27A4.25 4.25 0 0112.98 5a4.14 4.14 0 014.07 3.65l.05.34s.07.52.66.52h.28c1.14 0 1.98.97 1.98 2.16 0 1.21-1 2.35-2.07 2.35h-3.97V16h3.96C20.1 16 22 13.96 22 11.66c0-2-1.31-3.66-3.14-4.07A6.08 6.08 0 0012.98 3c-1.98.02-3.9.9-5.04 2.48z"/>
+				</svg>
+			</a>
+
+		</div>
+
+
+		<div class="item">
+
+			<a class="btn btn-download" href="/favicon.png" download="Камеральная эксп_1234.doc" title="Скачать Камеральная эксп_1234">
+				<span class="btn-download__inner">
+					<span class="btn-download__text">
+						btn-download
+					</span>
+				</span>
+			</a>
+
+		</div>
+
+		<div class="item" style="max-width: 320px">
+
+			<a class="btn btn-download" href="/favicon.png" download="Камеральная эксп_1234.doc" title="Скачать Камеральная эксп_1234">
+				<span class="btn-download__inner">
+					<span class="btn-download__text">
+						Камеральная эксп_1234567890
+					</span>
+				</span>
+			</a>
+
+		</div>
+
+	</div>
+
+	<h3>
+		Select
+	</h3>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<div class="select">
+
+				<select>
+					<option value="none">Выбрать</option>
+					<option value="1">Рассмотрение заявки</option>
+					<option value="2">Заявка согласована</option>
+					<option value="3">Заявка отклонена</option>
+					<option value="4">Заключение договора</option>
+					<option value="5">Договор заключен</option>
+					<option value="6">Договор отклонен</option>
+					<option value="7">Проведенеие сертификации</option>
+					<option value="8">Выдан сертификат</option>
+					<option value="9">Сертификация не пройдена</option>
+					<option value="0">Все статусы</option>
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="item">
+
+			<div class="select">
+
+				<select>
+					<option value="">Выбрать</option>
+					<option value="2">Заявка согласована</option>
+					<option value="3">Заявка отклонена</option>
+					<option value="4">Заключение договора</option>
+					<option value="5">Договор заключен</option>
+					<option value="6">Договор отклонен</option>
+					<option value="7">Проведенеие сертификации</option>
+					<option value="8">Выдан сертификат</option>
+					<option value="9">Сертификация не пройдена</option>
+					<option value="0">Все статусы</option>
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="item">
+
+			<div class="select">
+
+				<select>
+					<option value="">Выбрать</option>
+					<option value="2">Заявка согласована</option>
+					<option value="3">Заявка отклонена</option>
+					<option value="4">Заключение договора</option>
+					<option value="5">Договор заключен</option>
+					<option value="6">Договор отклонен</option>
+					<option value="7">Проведенеие сертификации</option>
+					<option value="8">Выдан сертификат</option>
+					<option value="9">Сертификация не пройдена</option>
+					<option value="0" selected="selected">Все статусы</option>
+				</select>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<h3>
+		Checkbox
+	</h3>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<div class="checkbox">
+
+				<label class="checkbox__control">
+
+					<input type="checkbox" class="checkbox__input">
+
+					<span class="checkbox__label">
+						Рекомендовано с комментариями
+					</span>
+
+				</label>
+
+			</div>
+
+		</div>
+
+		<div class="item">
+
+			<div class="checkbox-dropdown">
+
+				<button class="checkbox-dropdown__btn button" type="button" data-declension="параметр,параметра,параметров">
+					Выберите параметры
+				</button>
+
+				<div class="checkbox-dropdown__list">
+
+					<div class="checkbox">
+
+						<label class="checkbox__control">
+
+							<input type="radio" name="checkbox-radio" class="checkbox__input checkbox-dropdown__input">
+
+							<span class="checkbox__label">
+								Рекомендовано
+							</span>
+
+						</label>
+
+					</div>
+
+					<div class="checkbox">
+
+						<label class="checkbox__control">
+
+							<input type="radio" name="checkbox-radio" class="checkbox__input checkbox-dropdown__input">
+
+							<span class="checkbox__label">
+								Рекомендовано с комментариями
+							</span>
+
+						</label>
+
+					</div>
+
+					<div class="checkbox">
+
+						<label class="checkbox__control">
+
+							<input type="radio" name="checkbox-radio" class="checkbox__input checkbox-dropdown__input">
+
+							<span class="checkbox__label">
+								Не рекомендовано
+							</span>
+
+						</label>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<h2>
+		Статусы
+	</h2>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<span class="status status--green">
+				green
+			</span>
+
+		</div>
+
+		<div class="item">
+
+			<span class="status status--red">
+				red
+			</span>
+
+		</div>
+
+		<div class="item">
+
+			<span class="status status--yellow">
+				yellow
+			</span>
+
+		</div>
+
+	</div>
+
+	<h3>
+		С иконками
+	</h3>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<span class="status-ico status-ico--red">
+				red
+			</span>
+
+		</div>
+
+		<div class="item">
+
+			<span class="status-ico status-ico--grey">
+				grey
+			</span>
+
+		</div>
+
+		<div class="item">
+
+			<span class="status-ico status-ico--green">
+				green
+			</span>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<h2>
+		Модалки
+	</h2>
+
+	<div class="flex flex--wrap">
+
+		<div class="item w100p">
+
+			<p>
+				модальное окно можно вызвать и js:
+			</p>
+
+			<code>
+
+		const eventModalShow = new CustomEvent("modalShow", {
+			detail: {
+				selector: "login"
+			}
+		});
+
+		window.modal.dispatchEvent(eventModalShow);
+
+			</code>
+
+			<p>
+				где `login` модификатор модального окна
+			</p>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue" type="button" data-modal="get-price">
+				Оформите запрос
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue" type="button" data-modal="add-docs">
+				Предложить стандарт
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue" type="button" onclick="notification('Ваша запрос принят','мы оповестим вас в личном кабинете и по e-mail в течении 2 дней')">
+				Уведомление с заголовком
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--blue" type="button" onclick="notification(false,'Ваша запрос принят, мы оповестим вас <br>в личном кабинете и по e-mail в течении 2 дней',10)">
+				Уведомление с таймером 10 сек
+			</button>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<h3>
+		Пагинация если 8 и менее страниц
+	</h3>
+
+{% include "docs/catalog/pagin.html" %}
+
+	<h3>
+		Пагинация если более 8 страниц
+	</h3>
+
+{% include "template/pagin.html" %}
+
+</div>
+
+{% endblock %}
