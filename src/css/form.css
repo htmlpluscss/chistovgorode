@@ -241,10 +241,10 @@ legend {
 	}
 
 	&::placeholder {
-/*
+
 		opacity: 1;
-		font-size: 14px;
-		color: rgba(0, 0, 0, 0.12); */
+		font-size: 15px;
+		color: #bcbbc7;
 
 	}
 
@@ -402,6 +402,27 @@ legend {
 		font-size: 12px;
 		line-height: 18px;
 		color: var(--grey);
+
+	}
+
+}
+
+.search {
+
+	position: relative;
+
+	&__input {
+
+		border-color: var(--yellow);
+		padding-right: 88px;
+
+	}
+
+	&__submit {
+
+		position: absolute;
+		top: 6px;
+		right: 6px;
 
 	}
 

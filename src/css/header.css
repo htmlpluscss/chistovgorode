@@ -13,43 +13,10 @@
 
 		display: flex;
 		align-items: center;
-		padding: 14px 0;
 
-	}
+		& + & {
 
-	&__right {
-
-		display: flex;
-		align-items: center;
-		column-gap: 24px;
-		min-height: 46px;
-
-	}
-
-	&__search {
-
-		--blue: var(--color);
-		opacity: .4;
-
-		@media ($desktop) {
-
-			&:hover {
-
-				opacity: 1;
-
-			}
-
-		}
-
-	}
-
-	&__menu {
-
-		flex-grow: 1;
-
-		@media ($mdWidth) {
-
-			display: none;
+			margin-top: 24px;
 
 		}
 
@@ -57,283 +24,61 @@
 
 	&__logo {
 
-		width: 200px;
-
-	}
-/*
-	&__cart {
-
-		@media ($mdWidth) {
-
-			position: absolute;
-			top: 8px;
-			right: 60px;
-
-		}
-
-		a {
-
-			display: block;
-			position: relative;
-
-			&[data-count=""] {
-
-				display: none;
-
-			}
-
-			&[data-count]::after {
-
-				background-color: var(--color);
-				position: absolute;
-				color: #fff;
-				top: 10px;
-				font-size: 10px;
-				width: 14px;
-				border-radius: 50px;
-				right: -4px;
-				top: -4px;
-				content: attr(data-count);
-				text-align: center;
-				line-height: 14px;
-
-			}
-
-		}
-
-		svg {
-
-			fill: var(--blue);
-
-		}
-
-	}
- */
-	&__login {
-
+		width: 154px;
 
 	}
 
-	&__lang {
+	&__btn-catalog {
 
-		display: flex;
-		position: relative;
-		column-gap: 12px;
+		margin: 0 12px;
 
-		&::after {
+	}
 
-			position: absolute;
-			width: 1px;
-			height: 16px;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			content: '';
-			margin: auto;
-			background-color: var(--color);
-			opacity: .12;
+	&__search {
 
-		}
-
-		&-btn {
-
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 20px;
-			letter-spacing: 0.1px;
-			text-transform: uppercase;
-			color: rgba(var(--colorRGB), .12);
-
-			&.is-current {
-
-				color: var(--blue_dark);
-
-			}
-
-			@media ($desktop) {
-
-				&:hover {
-
-					color: var(--blue_dark);
-
-				}
-
-			}
-
-		}
+		flex-grow: 1;
 
 	}
 
 	&__account {
 
-		display: flex;
-		align-items: center;
-		column-gap: 24px;
+		display: grid;
+		grid-template-columns: repeat(3, 60px);
+		grid-gap: 24px;
+		margin-left: 32px;
 
-	}
+		&-item {
 
-	&__favourites {
-
-		position: relative;
-
-		@media ($desktop) {
-
-			&:hover svg {
-
-				opacity: 1;
-
-			}
-
-		}
-
-		svg {
-
-			fill: var(--color);
-			opacity: .4;
-
-		}
-
-	}
-
-	&__notification {
-
-		position: relative;
-
-		@media ($desktop) {
-
-			&:hover svg {
-
-				opacity: 1;
-
-			}
-
-		}
-
-		svg {
-
-			fill: var(--color);
-			opacity: .4;
-
-		}
-
-		&.as-unread::after {
-
-			position: absolute;
-			width: 6px;
-			height: 6px;
-			top: 4px;
-			right: 4px;
-			content: '';
-			border-radius: 50%;
-			background-color: var(--red);
-
-		}
-
-	}
-
-	&__user {
-
-		position: relative;
-
-		&-btn {
-
-			display: flex;
-			align-items: center;
-			column-gap: 4px;
-			padding: 5px 6px;
-			background-color: rgba(0, 66, 105, 0.03);
-			border-radius: 50px;
-
-			svg {
-
-				fill: var(--color);
-				opacity: .8;
-
-			}
-
-		}
-
-		&-avatar {
-
-			overflow: hidden;
-			width: 36px;
-			height: 36px;
-			color: #fff;
-			text-align: center;
-			line-height: 36px;
-			font-size: 12px;
-			text-transform: uppercase;
-			font-weight: 500;
-			border-radius: 50%;
-
-			img {
-
-				border-radius: 50%;
-
-			}
-
-			&.is-company {
-
-				background-color: #0b71dd;
-
-			}
-
-		}
-
-		&-menu {
-
-			position: absolute;
-			top: 100%;
-			right: -6px;
-			padding: 6px;
-			z-index: 1;
-			pointer-events: none;
-			opacity: 0;
-			transition: var(--transitionDefault);
-
-		}
-
-		&.is-open &-menu {
-
-			opacity: 1;
-			pointer-events: auto;
-
-		}
-
-		&-list {
-
-			width: 176px;
-			background-color: #fff;
-			box-shadow: 0px 4px 4px rgba(0, 32, 51, 0.02), 0px 8px 24px rgba(0, 32, 51, 0.12);
-			border-radius: 4px;
-			padding: 12px 0;
-
-		}
-
-		&-link {
-
-			font-size: 14px;
-			font-weight: 300;
-			line-height: 20px;
-			letter-spacing: 0.1px;
-			display: block;
 			color: var(--color);
-			padding: 12px 16px;
-			width: 100%;
-			text-align: left;
+			text-align: center;
+			font-size: 12px;
+			line-height: 20px;
+			transition: var(--transitionDefault);
 
 			@media ($desktop) {
 
 				&:hover {
 
-					color: var(--blue);
+					--color: var(--text);
 
 				}
 
 			}
 
+			svg {
+
+				margin: auto;
+				fill: var(--color);
+
+			}
+
 		}
+
+	}
+
+	&__menu-service {
+
+		flex-grow: 1;
 
 	}
 
