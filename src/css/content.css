@@ -27,21 +27,15 @@ hr {
 
 }
 
-/*
+
 .h1 {
 
-	font-weight: bold;
-	font-size: 40px;
-	line-height: 1.175;
-
-	@media ($smWidth) {
-
-		font-size: 24px;
-
-	}
+	font-weight: 500;
+	font-size: 27px;
+	line-height: 33px;
 
 }
-
+/*
 .h2 {
 
 	font-weight: bold;

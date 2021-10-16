@@ -6,7 +6,6 @@
 	z-index: 9;
 	background-color: var(--bg);
 	box-shadow: var(--box-shadow);
-	transition: var(--transitionDefault);
 	padding: 24px 0;
 
 	&__flex {
@@ -88,7 +87,7 @@
 .btn-menu-toggle {
 
 	display: none;
-
+/*
 	@media ($mdWidth) {
 
 		display: block;
@@ -165,61 +164,13 @@
 		}
 
 	}
-
+ */
 }
 
 @media ($mdWidth) {
 
 	.menu-show {
 
-		background-color: var(--color);
-
-		.main,
-		.footer {
-
-			display: none;
-
-		}
-
-		.header {
-
-			background-color: transparent;
-			box-shadow: none;
-
-			&::before {
-
-				position: absolute;
-				height: 100px;
-				top: 0;
-				left: 0;
-				right: 0;
-				content: '';
-				background-color: #fff;
-
-			}
-
-			&__flex {
-
-				flex-direction: column;
-				flex-grow: 1;
-				align-items: stretch;
-
-			}
-
-			&__menu {
-
-				display: block;
-				order: 5;
-
-			}
-
-			&__phone {
-
-				display: flex;
-
-			}
-
-		}
 
 	}
 

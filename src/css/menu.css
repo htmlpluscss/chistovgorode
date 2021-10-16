@@ -1,4 +1,178 @@
-.menu {
+
+.menu-catalog-show {
+
+	.header {
+
+		box-shadow: none;
+
+	}
+
+	.btn-toggle-menu-catalog {
+
+		svg {
+
+			path,
+			circle {
+
+				opacity: 0;
+
+				&[opacity] {
+
+					opacity: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.main,
+	.footer,
+	.header__flex + .header__flex {
+
+		display: none;
+
+	}
+
+	.menu-catalog {
+
+		display: block;
+
+	}
+
+}
+
+.menu-catalog {
+
+	flex-shrink: 0;
+	display: none;
+
+	&__flex {
+
+		display: flex;
+
+	}
+
+	&__nav {
+
+		width: 298px;
+		flex-shrink: 0;
+		position: relative;
+		padding: 34px 20px 34px 0;
+
+		&-sticky {
+
+			position: sticky;
+			top: 0;
+
+		}
+
+		&-btn {
+
+			display: flex;
+			align-items: center;
+			line-height: 36px;
+			font-size: 15px;
+			padding: 0 6px;
+			color: var(--text);
+			border-radius: 3px;
+			width: 100%;
+			margin-bottom: 9px;
+			background-repeat: no-repeat;
+			background-position: right;
+
+			svg {
+
+				margin: 6px;
+				fill: #f5c400;
+
+			}
+
+			&.is-current {
+
+				background-color: #fff4ad;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23BCBBC7' d='M10.3 15.7a1 1 0 0 0 1.41 0l2.97-2.93c.21-.22.32-.5.32-.78s-.1-.56-.32-.77L11.72 8.3a1.01 1.01 0 0 0-1.63.32.99.99 0 0 0 .21 1.09l2.32 2.3-2.33 2.3a1 1 0 0 0 0 1.4Z'/%3E%3C/svg%3E");
+
+			}
+
+			@media ($desktop) {
+
+				&:not(.is-current):hover {
+
+					color: #f5c400;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__body {
+
+		padding: 43px 10px 80px 32px;
+		border-left: 1px solid var(--border);
+
+	}
+
+	&__head {
+
+		margin-bottom: 24px;
+		color: var(--text);
+
+	}
+
+	&__column {
+
+		column-gap: 43px;
+		column-count: 3;
+
+	}
+
+	&__list {
+
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+		display: inline-block;
+		width: 100%;
+		padding-bottom: 15px;
+
+	}
+
+	&__item {
+
+		padding-bottom: 9px;
+
+		&:first-child {
+
+			font-weight: 500;
+
+		}
+
+		a {
+
+			font-size: 15px;
+			line-height: 21px;
+			color: var(--text);
+			transition: var(--transitionDefault);
+
+			@media ($desktop) {
+
+				&:hover {
+
+					color: #f5c400;
+
+				}
+
+			}
+
+		}
+
+	}
 
 }
 
