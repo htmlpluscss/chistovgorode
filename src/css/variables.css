@@ -11,7 +11,7 @@
 	--Pink: #ff549c;
 
 
-	--color: #42424a;  /* BnW200 */
+	--dark: #42424a;  /* BnW200 */
 	--text: #0f0b38;   /* Text_main */
 	--grey: #828090;   /* BnW400 */
 	--yellow: var(--Primary);
@@ -24,6 +24,7 @@
 	--border: #eeeef1; /* BnW800 */
 
 	--box-shadow: 0 4px 10px 2px rgba(175, 174, 198, 0.23);
+	--card-shadow: 0 4px 8px 2px rgba(175, 174, 198, 0.14);
 
 	--transitionDefault: 0s;
 

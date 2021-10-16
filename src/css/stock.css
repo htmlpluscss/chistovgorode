@@ -1,0 +1,95 @@
+.stock {
+
+	margin: 33px 0;
+
+	&__list {
+
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 24px;
+
+	}
+
+	&__item {
+
+		position: relative;
+		display: flex;
+		border-radius: 3px;
+
+		@media ($desktop) {
+
+			&:hover {
+
+				box-shadow: var(--box-shadow);
+
+			}
+
+		}
+
+		&--green {
+
+			background-color: #fffceb;
+
+		}
+
+		&--violet {
+
+			background-color: #fbfafb;
+
+		}
+
+		&--blue {
+
+			background-color: #f6fdfa;
+
+		}
+
+	}
+
+	&__photo {
+
+		width: 180px;
+		flex-shrink: 0;
+
+		img {
+
+			mix-blend-mode: multiply;
+
+		}
+
+	}
+
+	&__form {
+
+		display: flex;
+		flex-direction: column;
+		padding: 30px 0 30px 33px;
+
+	}
+
+	&__label {
+
+		display: flex;
+		margin-bottom: 15px;
+
+	}
+
+	&__price {
+
+		margin-bottom: 12px;
+
+	}
+
+	&__name {
+
+		margin-bottom: 15px;
+
+	}
+
+	&__btn {
+
+		margin-top: auto;
+
+	}
+
+}

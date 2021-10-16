@@ -1,0 +1,65 @@
+.article-list {
+
+	margin: 84px 0 33px;
+
+	&__title {
+
+		margin-bottom: 33px;
+
+	}
+
+	&__column {
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+
+	}
+
+	&__item {
+
+		position: relative;
+
+		@media ($desktop) {
+
+			&:hover {
+
+
+
+			}
+
+		}
+
+	}
+
+	&__photo {
+
+		height: 256px;
+		margin-bottom: 27px;
+		display: block;
+
+		img {
+
+			border-radius: 3px;
+			max-width: 100%;
+			object-fit: cover;
+
+		}
+
+	}
+
+	&__name {
+
+		margin-bottom: 18px;
+
+	}
+
+	&__text {
+
+		font-size: 15px;
+		line-height: 21px;
+		color: var(--grey);
+
+	}
+
+}

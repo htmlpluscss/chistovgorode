@@ -1,17 +1,17 @@
 {% set title = site %}
 
-{% set description = "Мы объединям нефтегазовые, нефтехимические и инжиниринговые компании, производителей оборудования для совместной работы над отраслевыми стандартами и создания системы добровольной сертификации" %}
-
-{% set headerUser = true %}
-
-{% set footerSocial = true %}
-
-{% set pageClass = "main-page" %}
+{% set description = "магазин техники Karcher - Чистовгороде.рф - гарантия лучшей цены!" %}
 
 {% extends "template/base.html" %}
 
 {% block content %}
 
-{% include "main/body.html" %}
+{% include "main/billboard.html" %}
+{% include "main/stock.html" %}
+{% include "main/catalog-list.html" %}
+{% include "main/article-list.html" %}
+{% include "main/brands-list.html" %}
+{% include "main/news-list.html" %}
+{% include "main/content-block.html" %}
 
 {% endblock %}

@@ -1,0 +1,68 @@
+.news-list {
+
+	margin: 84px 0 33px;
+	overflow: hidden;
+
+	.swiper-container {
+
+		overflow: visible;
+
+	}
+
+	&__title {
+
+		margin-bottom: 33px;
+
+	}
+
+	&__column {
+
+		display: flex;
+
+	}
+
+	&__item {
+
+		width: 336px !important;
+		flex-shrink: 0;
+		position: relative;
+
+		@media ($desktop) {
+
+			&:hover {
+
+			}
+
+		}
+
+		& + & {
+
+			margin-left: 33px;
+
+		}
+
+	}
+
+	&__photo {
+
+		height: 216px;
+		margin-bottom: 30px;
+		display: block;
+
+	}
+
+	&__name {
+
+	}
+
+	&__date {
+
+		margin-bottom: 12px;
+		font-size: 15px;
+		display: block;
+		line-height: 21px;
+		color: var(--grey);
+
+	}
+
+}

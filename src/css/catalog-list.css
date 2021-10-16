@@ -1,0 +1,81 @@
+.catalog-list {
+
+	margin: 84px 0 33px;
+
+	&__title {
+
+		margin-bottom: 33px;
+
+	}
+
+	&__column {
+
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 33px 22px;
+
+	}
+
+	&__item {
+
+		position: relative;
+		display: flex;
+		border-radius: 3px;
+		box-shadow: var(--card-shadow);
+		flex-direction: column;
+		padding: 15px 21px 30px;
+
+		@media ($desktop) {
+
+			&:hover {
+
+				box-shadow: var(--box-shadow);
+
+			}
+
+		}
+
+	}
+
+	&__photo {
+
+		height: 240px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+
+			mix-blend-mode: multiply;
+
+		}
+
+	}
+
+	&__label {
+
+		position: absolute;
+		top: 15px;
+		right: 15px;
+
+	}
+
+	&__price {
+
+		margin-bottom: 12px;
+
+	}
+
+	&__name {
+
+		margin-bottom: 24px;
+
+	}
+
+	&__form {
+
+		margin-top: auto;
+
+	}
+
+}

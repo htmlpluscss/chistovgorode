@@ -77,12 +77,6 @@ legend {
 	gap: 6px;
 	background-color: var(--yellow);
 
-	svg {
-
-		fill: var(--text);
-
-	}
-
 	&:disabled {
 
 		background-color: #fff4ad;
@@ -102,7 +96,7 @@ legend {
 	&--dark {
 
 		color: #fff;
-		background-color: var(--color);
+		background-color: var(--dark);
 
 		svg {
 
@@ -181,6 +175,19 @@ legend {
 			}
 
 		}
+
+	}
+
+	&--toggle {
+
+		height: 24px;
+		line-height: 24px;
+		background-color: transparent !important;
+		gap: 6px;
+		padding: 0;
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 21px;
 
 	}
 
@@ -294,7 +301,7 @@ legend {
 
 	to {
 
-		color: var(--color);
+		color: var(--text);
 		background-color: #fff;
 
 	}
@@ -310,7 +317,6 @@ legend {
 		position: relative;
 		font-size: 15px;
 		line-height: 24px;
-		color: var(--text);
 
 	}
 

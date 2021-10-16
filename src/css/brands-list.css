@@ -1,0 +1,27 @@
+.brands-list {
+
+	margin: 84px 0;
+	background-color: #fbfafb;
+
+	&__list {
+
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+
+	}
+
+	&__item {
+
+		position: relative;
+
+		img {
+
+			object-fit: contain;
+			max-width: 100%;
+			mix-blend-mode: multiply;
+
+		}
+
+	}
+
+}
