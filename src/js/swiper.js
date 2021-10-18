@@ -96,8 +96,6 @@
 
 				toggleSwipe = false;
 
-//				swipe.parentNode.appendChild(swipeControls);
-
 				swipePrev.classList.add('swiper-button-disabled');
 
 				swipe.parentNode.classList.add('swiper-container-style');
@@ -106,7 +104,6 @@
 
 				new Swiper(swipe, {
 
-	//				loop: true,
 					slidesPerView: "auto",
 					navigation: {
 						nextEl: swipeNext,

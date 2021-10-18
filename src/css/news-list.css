@@ -1,13 +1,6 @@
 .news-list {
 
 	margin: 84px 0 33px;
-	overflow: hidden;
-
-	.swiper-container {
-
-		overflow: visible;
-
-	}
 
 	&__title {
 
@@ -18,6 +11,7 @@
 	&__column {
 
 		display: flex;
+		overflow: hidden;
 
 	}
 

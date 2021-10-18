@@ -1,6 +1,28 @@
 .catalog-list {
 
 	margin: 84px 0 33px;
+	position: relative;
+
+	&__all {
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 12px;
+		line-height: 21px;
+		color: var(--grey);
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: #f5c400;
+
+			}
+
+		}
+
+	}
 
 	&__title {
 

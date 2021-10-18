@@ -6,7 +6,19 @@
 
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		gap: 24px;
+		gap: 21px 24px;
+
+	}
+
+	&--1-2 &__list {
+
+		grid-template-columns: 1fr 1fr;
+
+	}
+
+	&--1-2 &__item:first-child {
+
+		outline:1px solid red;
 
 	}
 
