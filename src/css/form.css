@@ -122,6 +122,28 @@ legend {
 
 	}
 
+	&--white {
+
+		background-color: #fff;
+
+		&:disabled {
+
+			background-color: #d9d8df;
+
+		}
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: var(--border);
+
+			}
+
+		}
+
+	}
+
 	&--medium {
 
 		padding: 0 18px;
@@ -408,6 +430,30 @@ legend {
 		font-size: 12px;
 		line-height: 18px;
 		color: var(--grey);
+
+	}
+
+	&--wrap {
+
+		position: relative;
+
+	}
+
+	&__ico-right {
+
+		position: absolute;
+		top: 0;
+		right: 15px;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		--text: #afaec6;
+
+		&:hover {
+
+			--text: var(--dark);
+
+		}
 
 	}
 

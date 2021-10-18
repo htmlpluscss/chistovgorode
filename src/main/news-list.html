@@ -19,6 +19,7 @@
 
 				<div class="news-list__column swiper-wrapper">
 
+{% for i in [1,2] %}
 {% for name in news %}
 
 					<article class="news-list__item swiper-slide">
@@ -50,6 +51,7 @@
 
 					</article>
 
+{% endfor %}
 {% endfor %}
 
 				</div>

@@ -1,25 +1,9 @@
-	<div class="modal__item modal__item--red">
+	<div class="modal__item modal__item--reg">
 
-		<form action="/" class="modal-login form">
+		<form action="/" class="modal-login form visible-toggle-password">
 
-			<h3 class="modal-login__head">
-				Пройдите регистрацию
-			</h3>
-
-			<div class="modal-login__btn-next-reg">
-
-				<button class="btn btn--blue" type="button" data-modal="reg">
-					Перейти
-				</button>
-
-			</div>
-
-			<div class="modal-login__or">
-				или
-			</div>
-
-			<h3 class="modal-login__head">
-				Авторизацию
+			<h3 class="modal-login__head h2">
+				Регистрация
 			</h3>
 
 			<div class="modal-login__fieldset">
@@ -27,37 +11,106 @@
 				<div class="inputbox">
 
 					<label for="modal-reg-name" class="inputbox__label">
-						Ваше ФИО
+						ФИО
 					</label>
 
-					<input class="input" required="required" name="name" id="modal-reg-name">
+					<input class="input" placeholder="Введите ФИО" name="name" id="modal-reg-name">
 
 				</div>
 
 				<div class="inputbox">
 
 					<label for="modal-reg-email" class="inputbox__label">
-						Рабочий email
+						*Email
 					</label>
 
-					<input class="input" required="required" name="email" type="email" id="modal-reg-email">
+					<input class="input" placeholder="Введите еmail" required="required" name="email" type="email" id="modal-reg-email">
+
+				</div>
+
+				<div class="inputbox">
+
+					<label for="modal-reg-phone" class="inputbox__label">
+						Номер телефона
+					</label>
+
+					<input class="input" placeholder="Введите телефон" name="phone" type="tel" id="modal-reg-phone">
+
+				</div>
+
+				<div class="inputbox">
+
+					<label for="modal-reg-pass" class="inputbox__label">
+						*Пароль
+					</label>
+
+					<div class="inputbox__input-wrap">
+
+						<input id="modal-reg-pass" placeholder="Введите пароль" type="password" name="password" class="input visible-toggle-password__input" required="required">
+
+						<div class="inputbox__ico-right">
+
+							<button class="visible-toggle-password__btn button" type="button" aria-label="показать пароль">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+								</svg>
+								<svg class="hide" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="inputbox">
+
+					<label for="modal-reg-pass-repeat" class="inputbox__label">
+						*Повторите пароль
+					</label>
+
+					<div class="inputbox__input-wrap">
+
+						<input id="modal-reg-pass-repeat" placeholder="Введите пароль" type="password" name="password" class="input visible-toggle-password__input" required="required">
+
+						<div class="inputbox__ico-right">
+
+							<button class="visible-toggle-password__btn button" type="button" aria-label="показать пароль">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+								</svg>
+								<svg class="hide" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M11.98 15.98a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 4C6.48 4 2 8.84 2 12c0 3.09 4.58 8 10 8s10-4.91 10-8c0-3.16-4.48-8-10-8Z"/>
+									<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
 
 				</div>
 
 			</div>
 
-			<div class="modal-login__foot">
+			<button class="btn btn--medium modal-login__submit form__submit">
+				Зарегистрироваться
+			</button>
 
-				<p class="modal-login__rule">
-					Нажимая кнопку, вы соглашаетесь <br>
-					с <a href="/" class="link" target="_blank">Политикой конфиденциальности</a>
-				</p>
+			<p class="modal-login__foot">
 
-				<button class="btn btn--blue form__submit">
-					Отправить
+				Уже есть аккаунт?
+
+				<button class="button link" type="button" data-modal="login">
+					Войти
 				</button>
 
-			</div>
+			</p>
 
 		</form>
 
