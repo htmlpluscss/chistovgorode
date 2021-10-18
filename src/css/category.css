@@ -1,0 +1,19 @@
+.category {
+
+	display: flex;
+
+	&__head {
+
+		width: 370px;
+		flex-shrink: 0;
+		padding-right: 33px;
+
+	}
+
+	&__body {
+
+		flex-grow: 1;
+
+	}
+
+}
