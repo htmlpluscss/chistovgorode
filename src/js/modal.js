@@ -8,8 +8,7 @@
 
 	const items = modal.querySelectorAll('.modal__item'),
 		  btns = document.querySelectorAll('[data-modal]'),
-		  wrapper = document.querySelector('.wrapper'),
-		  header = document.querySelector('.header');
+		  wrapper = document.querySelector('.wrapper');
 
 	let activeModal = null,
 		windowScroll = window.pageYOffset;
@@ -18,7 +17,6 @@
 
 		document.body.classList.remove('modal-show');
 		wrapper.style.top = 0;
-		header.style.top = 0;
 		window.scrollTo(0,windowScroll);
 		activeModal = false;
 
@@ -42,14 +40,11 @@
 
 		}
 
-		document.body.classList.toggle('search-open', selector === 'search');
-
 		activeModal = modal.querySelector('.modal__item--' + selector);
 
 		Array.from(items, el => el.classList.toggle('visuallyhidden', el !== activeModal));
 
 		wrapper.style.top = -windowScroll + 'px';
-		header.style.top = windowScroll + 'px';
 		document.body.classList.add('modal-show');
 		window.scrollTo(0,0);
 
@@ -61,7 +56,7 @@
 
 	modal.addEventListener('click', event => {
 
-		if( (event.target.classList.contains('modal') && document.body.classList.contains('search-open') === false) || event.target.closest('.modal__close')){
+		if( event.target.classList.contains('modal') || event.target.closest('.modal__close')){
 
 			modal.dispatchEvent(new CustomEvent("hide"));
 
