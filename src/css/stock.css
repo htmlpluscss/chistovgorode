@@ -19,6 +19,7 @@
 	&--1-2 &__item:first-child {
 
 		outline:1px solid red;
+		grid-column: span 2;
 
 	}
 
