@@ -7,7 +7,7 @@
 
 ] %}
 
-	<section class="news-list">
+	<section class="news-list swiper-container-style">
 
 		<div class="center">
 
@@ -15,44 +15,52 @@
 				Наши новости
 			</h2>
 
-			<div class="swiper-container swiper-container--card-auto">
+			<div class="swiper-wrap">
 
-				<div class="news-list__column swiper-wrapper">
+				<div class="swiper-inner">
+
+					<div class="swiper-container swiper-container--card-auto">
+
+						<div class="news-list__column swiper-wrapper">
 
 {% for i in [1,2] %}
 {% for name in news %}
 
-					<article class="news-list__item swiper-slide">
+							<article class="news-list__item swiper-slide">
 
-						<a href="/" class="news-list__photo">
+								<a href="/" class="news-list__photo">
 
-							<picture>
+									<picture>
 
-								<source srcset="/img/news/preview/{{ loop.index }}--336x216.webp 1x, /img/news/preview/{{ loop.index }}--672x432.webp 2x" type="image/webp">
-								<source srcset="/img/news/preview/{{ loop.index }}--336x216.jpg 1x, /img/news/preview/{{ loop.index }}--672x432.jpg 2x">
+										<source srcset="/img/news/preview/{{ loop.index }}--336x216.webp 1x, /img/news/preview/{{ loop.index }}--672x432.webp 2x" type="image/webp">
+										<source srcset="/img/news/preview/{{ loop.index }}--336x216.jpg 1x, /img/news/preview/{{ loop.index }}--672x432.jpg 2x">
 
-								<img src="/img/news/preview/{{ loop.index }}--336x216.jpg" alt="{{ name }}" loading="lazy" width="336" height="216">
+										<img src="/img/news/preview/{{ loop.index }}--336x216.jpg" alt="{{ name }}" loading="lazy" width="336" height="216">
 
-							</picture>
+									</picture>
 
-						</a>
+								</a>
 
-						<time datetime="2021-12-05" class="news-list__date">
-							5 декабря 2021
-						</time>
+								<time datetime="2021-12-05" class="news-list__date">
+									5 декабря 2021
+								</time>
 
-						<div class="news-list__name h4">
+								<div class="news-list__name h4">
 
-							<a href="/">
-								{{ name }}
-							</a>
+									<a href="/">
+										{{ name }}
+									</a>
+
+								</div>
+
+							</article>
+
+{% endfor %}
+{% endfor %}
 
 						</div>
 
-					</article>
-
-{% endfor %}
-{% endfor %}
+					</div>
 
 				</div>
 

@@ -1,32 +1,11 @@
 .catalog-list {
 
-	margin: 84px 0 33px;
+	margin: var(--space) 0;
 	position: relative;
-
-	&__all {
-
-		position: absolute;
-		top: 0;
-		right: 0;
-		font-size: 12px;
-		line-height: 21px;
-		color: var(--grey);
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: #f5c400;
-
-			}
-
-		}
-
-	}
 
 	&__title {
 
-		margin-bottom: 33px;
+		margin-bottom: var(--gap);
 
 	}
 
@@ -34,7 +13,7 @@
 
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 33px 22px;
+		gap: var(--gap) 22px;
 
 	}
 

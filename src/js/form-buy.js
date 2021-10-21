@@ -8,12 +8,12 @@
 
 	Array.from(forms, form => {
 
-		const btn = form.querySelector('.form__submit');
+		const btn = form.querySelector('.form-buy__submit');
 
 		form.addEventListener('submit', event => {
 
 			event.preventDefault();
-
+alert('положили в корзину')
 			form.classList.add('is-loading');
 			btn.disabled = true;
 

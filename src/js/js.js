@@ -49,42 +49,6 @@ https://github.com/htmlpluscss/
 
 	});
 
-	const headerBottom = document.querySelector('.header__bottom'),
-		  headerBottomInner = headerBottom.querySelector('.header__flex');
-
-	window.addEventListener("scroll", () => {
-
-		window.requestAnimationFrame( () => {
-
-			const max = headerBottomInner.clientHeight;
-
-			let h = max - window.pageYOffset,
-				o = ( max / 2 - window.pageYOffset ) / ( max / 2 );
-
-			if ( h < 0 ) {
-
-				h = 0;
-
-			}
-
-			if ( o < 0 ) {
-
-				o = 0;
-				headerBottomInner.classList.add('is-off');
-
-			} else {
-
-				headerBottomInner.classList.remove('is-off');
-
-			}
-
-			headerBottom.style.height = h + 'px';
-			headerBottom.style.opacity = o;
-
-		});
-
-	});
-
 	// обработчик анимаций
 	window.cssAnimation = a=>{let b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
 

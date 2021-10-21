@@ -90,17 +90,15 @@
 
 		if (cardAuto) {
 
-			toggleSwipe = () => {
+			swipeNav.classList.add('hide');
 
-				resetSwipe();
+			toggleSwipe = () => {
 
 				toggleSwipe = false;
 
-				swipePrev.classList.add('swiper-button-disabled');
+				swipe.parentNode.parentNode.appendChild(swipeControls);
 
-				swipe.parentNode.classList.add('swiper-container-style');
-				swipeBtns.classList.remove('hide');
-				swipeControls.classList.remove('hide');
+				swipePrev.classList.add('swiper-button-disabled');
 
 				new Swiper(swipe, {
 

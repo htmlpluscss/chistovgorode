@@ -1,17 +1,23 @@
 .news-list {
 
-	margin: 84px 0 33px;
+	margin: var(--space) 0;
+
+	.swiper-inner {
+
+		padding: 0;
+		margin: 0;
+
+	}
 
 	&__title {
 
-		margin-bottom: 33px;
+		margin-bottom: var(--gap);
 
 	}
 
 	&__column {
 
 		display: flex;
-		overflow: hidden;
 
 	}
 
@@ -20,6 +26,7 @@
 		width: 336px !important;
 		flex-shrink: 0;
 		position: relative;
+		margin-right: var(--gap);
 
 		@media ($desktop) {
 
@@ -29,9 +36,9 @@
 
 		}
 
-		& + & {
+		&:last-child {
 
-			margin-left: 33px;
+			margin-right: 0;
 
 		}
 

@@ -39,6 +39,14 @@ hr {
 
 }
 
+.h1 {
+
+	font-weight: 500;
+	font-size: 39px;
+	line-height: 45px;
+
+}
+
 .h2 {
 
 	font-weight: 500;
@@ -168,7 +176,7 @@ table {
 
 		font-size: 18px;
 		color: var(--grey);
-		margin-left: 15px;
+		margin-left: 18px;
 		font-weight: 400;
 		text-decoration-color: var(--Notice);
 
@@ -179,5 +187,8 @@ table {
 .page-title {
 
 	margin: 45px 0 15px;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 42px;
 
 }

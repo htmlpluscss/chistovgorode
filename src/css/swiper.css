@@ -10,6 +10,34 @@
  * Released on: October 4, 2021
  */
 
+
+.swiper-wrap {
+
+	position: relative;
+
+	.swiper-inner {
+
+		padding: 12px;
+		margin: -12px;
+		overflow: hidden;
+
+		.swiper-container {
+
+			overflow: visible;
+
+		}
+
+	}
+
+	.swiper-inner + .swiper-controls {
+
+		left: -30px;
+		right: -30px;
+
+	}
+
+}
+
 .swiper-container-style {
 
 	position: relative;

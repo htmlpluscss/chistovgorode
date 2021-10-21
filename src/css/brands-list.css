@@ -1,6 +1,6 @@
 .brands-list {
 
-	margin: 84px 0;
+	margin: var(--space) 0;
 	background-color: #fbfafb;
 
 	&__list {

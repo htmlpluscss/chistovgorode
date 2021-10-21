@@ -110,7 +110,7 @@
 
 	.inputbox + .inputbox {
 
-		margin-top: 33px;
+		margin-top: var(--gap);
 
 	}
 

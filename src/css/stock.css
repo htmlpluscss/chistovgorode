@@ -1,6 +1,16 @@
 .stock {
 
-	margin: 33px 0;
+	&--home {
+
+		margin: var(--gap) 0;
+
+	}
+
+	&--category {
+
+		margin-bottom: 42px;
+
+	}
 
 	&__list {
 
@@ -18,8 +28,40 @@
 
 	&--1-2 &__item:first-child {
 
-		outline:1px solid red;
 		grid-column: span 2;
+
+	}
+
+	&__big-link {
+
+		display: flex;
+
+		&-left {
+
+			padding: 54px 72px;
+
+			.stock__name {
+
+				display: block;
+				margin: 18px 0 0;
+
+			}
+
+		}
+
+		&-photo {
+
+			padding: 0 72px;
+			display: flex;
+			justify-content: center;
+
+			img {
+
+				mix-blend-mode: multiply;
+
+			}
+
+		}
 
 	}
 
