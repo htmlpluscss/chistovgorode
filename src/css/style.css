@@ -9,6 +9,7 @@
 @import url(footer.css);
 @import url(menu.css);
 @import url(modal.css);
+@import url(breadcrumbs.css);
 
 @import url(swiper.css);
 @import url(billboard.css);
@@ -21,3 +22,4 @@
 @import url(content-block.css);
 
 @import url(category.css);
+@import url(catalog.css);

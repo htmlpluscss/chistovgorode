@@ -1,0 +1,170 @@
+{% set catalog = [
+
+	{
+		name   : "Пылесос Soteco Panda 515/26 XP Inox",
+		photo  : "Soteco_Panda_515-26_XP_Inox",
+		price  : "13 300"
+	},
+
+	{
+		name   : "Минимойка Karcher K 3",
+		photo  : "Karcher_K_3",
+		price  : "7 900",
+		priceOld   : "8 900",
+		label      : "Распродажа",
+		labelColor : "pink"
+	},
+
+	{
+		name   : "Минимойка GRASS C22P-1508",
+		photo  : "GRASS_C22P-1508",
+		price  : "13 300"
+	},
+
+	{
+		name   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
+		photo  : "Karcher_CNS_18-30_Battery",
+		price  : "19 490"
+	},
+
+	{
+		name   : "Минимойка GRASS C22P-1508",
+		photo  : "GRASS_C22P-1508",
+		price  : "13 300"
+	},
+
+	{
+		name   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
+		photo  : "Karcher_CNS_18-30_Battery",
+		price  : "19 490"
+	},
+
+	{
+		name   : "Пылесос Soteco Panda 515/26 XP Inox",
+		photo  : "Soteco_Panda_515-26_XP_Inox",
+		price  : "13 300"
+	},
+
+	{
+		name   : "Минимойка Karcher K 3",
+		photo  : "Karcher_K_3",
+		price  : "7 900",
+		priceOld   : "8 900",
+		label      : "Распродажа",
+		labelColor : "pink"
+	}
+
+] %}
+
+	<div class="catalog-swiper-group">
+
+{% for title in ["Минимойки","Пенные насадки для минимоек","Пароочистители"] %}
+
+		<section class="catalog-swiper swiper-container-style">
+
+			<h2 class="catalog-swiper__title h2">
+				{{ title }}
+			</h2>
+
+			<div class="swiper-wrap">
+
+				<div class="swiper-inner">
+
+					<div class="swiper-container swiper-container--card-auto">
+
+						<div class="catalog-swiper__row swiper-wrapper">
+
+{% for item in catalog %}
+
+							<article class="catalog-swiper__item swiper-slide">
+
+								<a href="/" class="catalog-swiper__photo">
+
+									<picture>
+
+										<source srcset="/img/preview/catalog/{{ item.photo }}--135x177.webp 1x, /img/preview/catalog/{{ item.photo }}--270x354.webp 2x" type="image/webp">
+										<source srcset="/img/preview/catalog/{{ item.photo }}--135x177.png 1x, /img/preview/catalog/{{ item.photo }}--270x354.png 2x">
+
+										<img src="/img/preview/catalog/{{ item.photo }}--135x177.png" alt="{{ item.name }}" loading="lazy" width="135" height="177">
+
+									</picture>
+
+								</a>
+
+								<div class="catalog-swiper__price">
+
+									<div class="price">
+
+{% if item.priceOld %}
+										<b class="price__sale">
+											{{ item.price }} ₽
+										</b>
+
+										<s class="price__old">
+											{{ item.priceOld }} ₽
+										</s>
+{% else %}
+										{{ item.price }} ₽
+{% endif %}
+
+									</div>
+
+								</div>
+
+								<div class="catalog-swiper__name">
+
+									<a href="/">
+										{{ item.name }}
+									</a>
+
+								</div>
+
+								<form action="/" class="catalog-swiper__form form-buy">
+
+{% if item.label %}
+
+									<div class="catalog-swiper__label">
+
+										<div class="label label--{{ item.labelColor }}">
+
+											<div class="label__text">
+												{{ item.label }}
+											</div>
+
+										</div>
+
+									</div>
+
+{% endif %}
+
+									<div class="catalog-swiper__btn">
+
+										<button class="btn btn--buy form-buy__submit">
+											В корзину
+										</button>
+
+									</div>
+
+								</form>
+
+							</article>
+
+{% endfor %}
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<a href="/" class="catalog-swiper__all">
+				Смотреть всё
+			</a>
+
+		</section>
+
+{% endfor %}
+
+	</div>
