@@ -74,3 +74,61 @@
 	}
 
 })(document.querySelector('.filter'));
+
+
+
+// filter-sort-trigger
+
+( form => {
+
+	if(form.length) {
+
+		Array.from(form, form => {
+
+			const filter = document.querySelector('#' + form.getAttribute('data-id')),
+				  btnsRadio = form.querySelectorAll('.sort__item'),
+				  direction = form.elements.direction;
+
+			Array.from( btnsRadio, btn => {
+
+				btn.addEventListener("click", () => {
+
+					if( btn.classList.contains('is-active') ) {
+
+						if( btn.classList.contains('is-revert') ) {
+
+							btn.classList.remove('is-revert');
+							filter.elements.direction.value = direction.value;
+
+						} else {
+
+							btn.classList.add('is-revert');
+							filter.elements.direction.value = direction.getAttribute('data-alt');
+
+						}
+
+					} else {
+
+						btn.insertAdjacentElement("beforeend", form.querySelector('.sort__item svg'));
+
+						Array.from( btnsRadio, _btn => {
+
+							_btn.classList.toggle('is-active', btn === _btn);
+
+						});
+
+						filter.elements.sort.value = btn.getAttribute('data-value');
+
+					}
+
+					filter.dispatchEvent(new CustomEvent("change"));
+
+				});
+
+			});
+
+		})
+
+	}
+
+})(document.querySelectorAll('.filter-sort-trigger'));
