@@ -185,14 +185,26 @@ legend {
 
 		border-radius: 18px;
 
+		&-form,
 		&:disabled {
 
 			background-color: var(--border);
 			color: var(--grey);
+			border-radius: 18px;
 
 			svg {
 
 				fill: var(--grey);
+
+			}
+
+			@media ($desktop) {
+
+				&:hover {
+
+					--grey: var(--text);
+
+				}
 
 			}
 

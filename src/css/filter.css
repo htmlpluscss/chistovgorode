@@ -25,6 +25,12 @@
 		margin: 6px 0 12px;
 		position: relative;
 
+		.input.is-side {
+
+			color: var(--grey);
+
+		}
+
 	}
 
 }

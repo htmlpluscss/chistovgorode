@@ -3,7 +3,12 @@
 
 	if(form) {
 
-		const fieldsets = form.querySelectorAll('.filter__fieldset');
+		const resultBox = document.querySelector('.catalog__result'),
+			  fieldsets = form.querySelectorAll('.filter__fieldset'),
+			  loadingLayer = document.createElement('div');
+
+		loadingLayer.className = 'catalog__loading hide';
+		resultBox.insertAdjacentElement('afterbegin', loadingLayer)
 
 		// change
 
@@ -46,8 +51,8 @@
 
 			history.pushState(undefined, '', '?' + queryString);
 
-//			searchResult.classList.add('is-loading');
-
+			loadingLayer.classList.remove('hide');
+/*
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
 				body: formData
@@ -55,17 +60,29 @@
 			.then(response => response.text())
 			.then(html => {
 
-//				searchResult.classList.remove('is-loading');
+				loadingLayer.classList.add('hide');
 
 			});
 
-		});
+*/		});
 
 		// submit
 
 		form.addEventListener('submit', event => {
 
 			event.preventDefault();
+
+			form.dispatchEvent(new CustomEvent("change"));
+
+		});
+
+		// default reset
+
+		form.addEventListener('default', () => {
+
+			Array.from(form.querySelectorAll('.checkbox__input:checked:not(:disabled)'), checkbox => checkbox.checked = false);
+
+			Array.from(form.querySelectorAll('.nouislider'), nouislider => nouislider.dispatchEvent(new CustomEvent("reset")));
 
 			form.dispatchEvent(new CustomEvent("change"));
 
@@ -132,3 +149,75 @@
 	}
 
 })(document.querySelectorAll('.filter-sort-trigger'));
+
+
+// filter-tags-trigger
+
+( form => {
+
+	if(form.length) {
+
+		Array.from(form, form => {
+
+			const filter = document.querySelector('#' + form.getAttribute('data-id')),
+				  btns = form.querySelectorAll('.filter-tags-trigger__tag');
+
+			Array.from( btns, btn => {
+
+				btn.addEventListener("click", () => {
+
+					if( btn.classList.contains('filter-tags-trigger__tag--reset') ) {
+
+						form.classList.add('is-remove');
+
+						setTimeout( ()=> {
+
+							Array.from( btns, _btn => {
+
+								if ( btn !== _btn ) {
+
+									_btn.remove();
+									form.classList.add('hide');
+
+								}
+
+							});
+
+						}, 500);
+
+						filter.dispatchEvent(new CustomEvent("default"));
+
+					} else {
+
+						const name = btn.getAttribute('data-name'),
+							  value = btn.getAttribute('data-value');
+
+						console.log(name,value);
+
+						if ( name === "nouislider" ) {
+
+							filter.querySelector('.nouislider--' + value).dispatchEvent(new CustomEvent("reset"));
+
+						} else {
+
+							filter.querySelector(`[name="${name}"][value="${value}"]`).checked = false;
+
+						}
+
+						btn.classList.add('is-remove');
+
+						setTimeout( ()=> btn.remove(), 500);
+
+						filter.dispatchEvent(new CustomEvent("change"));
+
+					}
+
+				});
+
+			});
+
+		})
+
+	}
+
+})(document.querySelectorAll('.filter-tags-trigger'));

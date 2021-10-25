@@ -51,11 +51,27 @@
 
 			track.noUiSlider.on('end', values => {
 
+				minInput.classList.toggle('is-side', min === values[0]);
+				maxInput.classList.toggle('is-side', max === values[1]);
+
 				form.dispatchEvent(new CustomEvent("change"));
 
 			});
 
+			track.noUiSlider.on('update', values => {
+
+				minInput.classList.toggle('is-side', min === values[0]);
+				maxInput.classList.toggle('is-side', max === values[1]);
+
+			});
+
 			form.addEventListener("reset", () => {
+
+				track.noUiSlider.set([min,max]);
+
+			});
+
+			slider.addEventListener("reset", () => {
 
 				track.noUiSlider.set([min,max]);
 
@@ -103,6 +119,26 @@
 				if( suf ) {
 
 					maxInput.value = window.sepNumber(track.noUiSlider.get()[1]) + ' ' + suf;
+
+				}
+
+			});
+
+			minInput.addEventListener('keyup', event => {
+
+				if(event.key === "Enter") {
+
+					minInput.blur();
+
+				}
+
+			});
+
+			maxInput.addEventListener('keyup', event => {
+
+				if(event.key === "Enter") {
+
+					maxInput.blur();
 
 				}
 
