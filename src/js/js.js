@@ -59,16 +59,14 @@ https://github.com/htmlpluscss/
 	}
 
 	// отделяем тысячи
-	window.sepNumber = function(str){
+	window.sepNumber = str => {
 		str = str.toString();
 		str = str.replace(/\s+/g,'');
 		return str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	}
 
 	// склеиваем тысячи
-	window.strToNumber = function(n){
-		return parseInt(n.replace(/\s+/g,''), 10);
-	}
+	window.strToNumber = n => parseInt(n.replace(/\s+/g,''), 10);
 
 // склонение
 	window.declension = (num, expressions) => {

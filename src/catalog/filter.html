@@ -1,61 +1,294 @@
-{% set catalog = [
+	<form action="/" class="filter">
 
-	["Минимойки"],
-	["Пенные насадки для минимоек","Пенные насадки","Запчасти для пенных насадок"],
-	["Пылесосы","Пылесосы с аквафильтром","Моющие пылесосы","Пылесосы сухой уборки","Хозяйственные пылесосы","Паропылесосы"],
-	["Пароочистители","Гладильная система Karcher","Пароочистители Karcher"],
-	["Стеклоочистители"],
-	["Электровеники"],
-	["Насосы и станции водоснабжения","Насосы погружные для чистой воды","Насосы погружные для грязной воды","Насосы садовые","Насосы бочечные","Домовые станции водоснабжения","Скваженные насосы","Насосы погружные для чистой воды","Насосы погружные для грязной воды","Насосы садовые","Насосы бочечные","Домовые станции водоснабжения","Скваженные насосы"],
-	["Робот-пылесос"],
-	["Полотер"],
-	["Подметальные машины для дома и сада"],
-	["Снегоуборочная техника"],
-	["Оборудование и инструмент для полива","Система капельного полива Karcher Rain System","Садовые шланги и тележки для шлангов Karcher","Дождеватели и разбрызгиватели Karcher","Автоматическое управление поливом Karcher","Соединители и коннекторы для систем полива Karcher"],
-	["Аксессуары бытовые","Для минимоек Karcher","Запчасти для моек Karcher","Для насосов Karcher","Для паропылесосов, пароочистителей, полотера и стеклоочистителей Karcher","Для пылесосов, электровеников Karcher"]
+		<fieldset class="filter__fieldset">
 
-] %}
+			<legend class="filter__legend h6">
+				Тип
+			</legend>
 
-	<nav class="menu-category">
+			<div class="filter__item">
 
-{% for list in catalog %}
+				<div class="checkbox">
 
-		<div class="menu-category__section">
+					<label class="checkbox__control">
 
-			<div class="menu-category__wrap">
+						<input type="checkbox" class="checkbox__input filter__checkbox-all" checked="checked" name="param-1[]">
 
-				<ul class="menu-category__list">
+						<span class="checkbox__label">
+							Все
+						</span>
 
-	{% for item in list %}
+					</label>
 
-					<li class="menu-category__item">
-
-						<a class="menu-category__link" href="/">
-							{{ item }}
-						</a>
-
-					</li>
-
-	{% endfor %}
-
-				</ul>
+				</div>
 
 			</div>
 
-	{% if list.length > 9 %}
+			<div class="filter__item">
 
-			<button class="menu-category__toggle btn btn--toggle" type="button" aria-label="Ещё" data-alt="Свернуть">
+				<div class="checkbox">
 
-				<svg width="24" height="24" viewBox="0 0 24 24">
-					<path d="M8.3 10.3a1 1 0 0 0 0 1.41l2.93 2.97c.22.21.5.32.78.32s.56-.1.77-.32l2.93-2.96a1.01 1.01 0 0 0-.32-1.63.99.99 0 0 0-1.09.21L12 12.62l-2.3-2.33a.99.99 0 0 0-1.4 0Z"/>
-				</svg>
+					<label class="checkbox__control">
 
-			</button>
+						<input type="checkbox" class="checkbox__input" name="param-1[]" value="1">
 
-	{% endif %}
+						<span class="checkbox__label">
+							Пылесосы с аквафильтром
+						</span>
 
-		</div>
+					</label>
 
-{% endfor %}
+				</div>
 
-	</nav>
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-1[]" value="2">
+
+						<span class="checkbox__label">
+							Моющие пылесосы
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-1[]" value="3">
+
+						<span class="checkbox__label">
+							Пылесосы сухой уборки
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-1[]" value="4">
+
+						<span class="checkbox__label">
+							Хозяйственные пылесосы
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-1[]" value="5">
+
+						<span class="checkbox__label">
+							Паропылесосы
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				Цена
+			</legend>
+
+			<div class="filter__nouislider">
+
+				<div class="nouislider" data-min="8345" data-max="150953" data-step="1" data-suf="₽">
+
+					<div class="nouislider__inputbox">
+
+						<input type="tel" class="input nouislider__min" name="price-min" value="8 345 ₽">
+						<input type="tel" class="input nouislider__max" name="price-max" value="150 953 ₽">
+
+					</div>
+
+					<div class="nouislider__track"></div>
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				Производитель
+			</legend>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" checked="checked" name="param-3[]" value="1" disabled="disabled">
+
+						<span class="checkbox__label">
+							Karcher
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				Материал помпы
+			</legend>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input filter__checkbox-all" checked="checked" name="param-4[]">
+
+						<span class="checkbox__label">
+							Все
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-4[]" value="1">
+
+						<span class="checkbox__label">
+							Композит (N-cor)
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-4[]" value="2">
+
+						<span class="checkbox__label">
+							Силлумин
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="checkbox" class="checkbox__input" name="param-4[]" value="3">
+
+						<span class="checkbox__label">
+							Латунь
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="filter__fieldset">
+
+			<legend class="filter__legend h6">
+				Забор воды из емкости
+			</legend>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" checked="checked" name="param-5" value="yes">
+
+						<span class="checkbox__label">
+							Есть
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+			<div class="filter__item">
+
+				<div class="checkbox">
+
+					<label class="checkbox__control">
+
+						<input type="radio" class="checkbox__input" name="param-5" value="no">
+
+						<span class="checkbox__label">
+							Нет
+						</span>
+
+					</label>
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+	</form>

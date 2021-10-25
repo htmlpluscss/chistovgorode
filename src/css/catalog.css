@@ -6,13 +6,13 @@
 
 		width: 370px;
 		flex-shrink: 0;
-		padding-right: var(--gap);
+		margin-right: 105px;
 
 	}
 
 	&__body {
 
-		width: calc( 100% - 370px);
+		width: calc( 100% - 370px );
 
 	}
 
