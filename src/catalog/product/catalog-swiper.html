@@ -58,12 +58,10 @@
 
 	<div class="catalog-swiper-group">
 
-{% for title in ["Минимойки","Пенные насадки для минимоек","Пароочистители"] %}
-
-		<section class="catalog-swiper swiper-container-style">
+		<section class="catalog-swiper catalog-swiper--col-4 swiper-container-style">
 
 			<h2 class="catalog-swiper__title h2">
-				{{ title }}
+				{{ swiperTitle }}
 			</h2>
 
 			<div class="swiper-wrap">
@@ -82,10 +80,10 @@
 
 									<picture>
 
-										<source srcset="/img/preview/catalog/{{ item.photo }}--135x177.webp 1x, /img/preview/catalog/{{ item.photo }}--270x354.webp 2x" type="image/webp">
-										<source srcset="/img/preview/catalog/{{ item.photo }}--135x177.png 1x, /img/preview/catalog/{{ item.photo }}--270x354.png 2x">
+										<source srcset="/img/preview/catalog/{{ item.photo }}--180x240.webp 1x, /img/preview/catalog/{{ item.photo }}--360x480.webp 2x" type="image/webp">
+										<source srcset="/img/preview/catalog/{{ item.photo }}--180x240.png 1x, /img/preview/catalog/{{ item.photo }}--360x480.png 2x">
 
-										<img src="/img/preview/catalog/{{ item.photo }}--135x177.png" alt="{{ item.name }}" loading="lazy" width="135" height="177">
+										<img src="/img/preview/catalog/{{ item.photo }}--180x240.png" alt="{{ item.name }}" loading="lazy" width="180" height="240">
 
 									</picture>
 
@@ -93,7 +91,7 @@
 
 								<div class="catalog-swiper__price">
 
-									<div class="price h6">
+									<div class="price">
 
 {% if item.priceOld %}
 										<b class="price__sale">
@@ -113,7 +111,7 @@
 
 								<div class="catalog-swiper__name">
 
-									<a href="/">
+									<a href="/" class="h6">
 										{{ item.name }}
 									</a>
 
@@ -159,12 +157,6 @@
 
 			</div>
 
-			<a href="/" class="catalog-swiper__all">
-				Смотреть всё
-			</a>
-
 		</section>
-
-{% endfor %}
 
 	</div>

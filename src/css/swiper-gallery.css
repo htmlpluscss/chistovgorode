@@ -1,0 +1,157 @@
+.swiper-gallery-preview {
+
+	display: flex;
+
+	img {
+
+		border-radius: 3px;
+
+	}
+
+	.swiper-container {
+
+		height: 570px;
+		overflow: hidden;
+
+		@media ($smWidth) {
+
+			/* height: 208px; */
+
+		}
+
+	}
+
+	&__preview {
+
+		width: 102px;
+		flex-shrink: 0;
+		position: relative;
+		margin-right: 24px;
+
+		@media ($smWidth) {
+
+			/* width: 64px; */
+			/* margin-right: 16px; */
+
+		}
+
+		.swiper-controls {
+
+			height: 570px;
+
+			@media ($smWidth) {
+
+				/* height: 208px; */
+
+			}
+
+		}
+
+		.swiper-navigation {
+
+			flex-direction: column;
+			top: -36px;
+			bottom: -36px;
+
+			@media ($smWidth) {
+
+		/* 		top: -24px;
+		bottom: -24px;
+		 */
+			}
+
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+
+			width: 24px;
+			height: 24px;
+			border-radius: 0;
+			box-shadow: none !important;
+			--blue: #F5C400;
+
+		}
+
+	}
+
+	&__item {
+
+		margin-bottom: 15px;
+		position: relative;
+
+		&.is-video::before {
+
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 1;
+			content: '';
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath fill='%23FFE431' d='M15 23.75a8.75 8.75 0 1 0 0-17.5 8.75 8.75 0 0 0 0 17.5Zm0 2.5a11.25 11.25 0 1 1 0-22.5 11.25 11.25 0 0 1 0 22.5Z'/%3E%3Cpath fill='%23FFE431' d='M13.76 18.9c-.74.43-1.35.08-1.35-.78v-6.24c0-.86.6-1.2 1.35-.77l5.73 3.37c.5.29.5.75 0 1.04l-5.73 3.37Z'/%3E%3C/svg%3E");
+
+		}
+
+		&.is-current {
+
+			&::after {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				content: '';
+				border: 2px solid #F5C400;
+				border-radius: 3px;
+
+			}
+
+		}
+
+		@media ($smWidth) {
+/*
+			margin-bottom: 8px;
+
+			img {
+
+				width: 64px;
+				height: 64px;
+				object-fit: contain;
+
+			}
+ */
+		}
+
+	}
+
+	&__big {
+
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img,
+		video {
+
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+
+			@media ($smWidth) {
+
+/* 				height: 208px;
+width: 100%;
+ */
+			}
+
+		}
+
+	}
+
+}
