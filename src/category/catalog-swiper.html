@@ -1,60 +1,3 @@
-{% set catalog = [
-
-	{
-		name   : "Пылесос Soteco Panda 515/26 XP Inox",
-		photo  : "Soteco_Panda_515-26_XP_Inox",
-		price  : "13 300"
-	},
-
-	{
-		name   : "Минимойка Karcher K 3",
-		photo  : "Karcher_K_3",
-		price  : "7 900",
-		priceOld   : "8 900",
-		label      : "Распродажа",
-		labelColor : "pink"
-	},
-
-	{
-		name   : "Минимойка GRASS C22P-1508",
-		photo  : "GRASS_C22P-1508",
-		price  : "13 300"
-	},
-
-	{
-		name   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
-		photo  : "Karcher_CNS_18-30_Battery",
-		price  : "19 490"
-	},
-
-	{
-		name   : "Минимойка GRASS C22P-1508",
-		photo  : "GRASS_C22P-1508",
-		price  : "13 300"
-	},
-
-	{
-		name   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
-		photo  : "Karcher_CNS_18-30_Battery",
-		price  : "19 490"
-	},
-
-	{
-		name   : "Пылесос Soteco Panda 515/26 XP Inox",
-		photo  : "Soteco_Panda_515-26_XP_Inox",
-		price  : "13 300"
-	},
-
-	{
-		name   : "Минимойка Karcher K 3",
-		photo  : "Karcher_K_3",
-		price  : "7 900",
-		priceOld   : "8 900",
-		label      : "Распродажа",
-		labelColor : "pink"
-	}
-
-] %}
 
 	<div class="catalog-swiper-group">
 
@@ -95,17 +38,7 @@
 
 									<div class="price price--fz18">
 
-{% if item.priceOld %}
-										<b class="price__sale">
-											{{ item.price }} ₽
-										</b>
-
-										<s class="price__old">
-											{{ item.priceOld }} ₽
-										</s>
-{% else %}
-										{{ item.price }} ₽
-{% endif %}
+{% include "_include/price.html" %}
 
 									</div>
 
@@ -119,35 +52,7 @@
 
 								</div>
 
-								<form action="/" class="catalog-swiper__form form-buy">
-
-									<input type="hidden" name="id" value="123">
-
-{% if item.label %}
-
-									<div class="catalog-swiper__label">
-
-										<div class="label label--{{ item.labelColor }}">
-
-											<div class="label__text">
-												{{ item.label }}
-											</div>
-
-										</div>
-
-									</div>
-
-{% endif %}
-
-									<div class="catalog-swiper__btn">
-
-										<button class="btn btn--buy form-buy__submit">
-											В корзину
-										</button>
-
-									</div>
-
-								</form>
+{% include "_include/catalog-swiper__form.html" %}
 
 							</article>
 

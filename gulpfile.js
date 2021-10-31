@@ -45,6 +45,7 @@ let config             = null;
 
 const site             = 'Чисто в городе';
 const domain           = 'chistovgorode.wndrbase.com';
+const catalog         = require('./catalog.json');
 
 try {
 
@@ -67,7 +68,8 @@ const html = (files, since = {}, folder = '') => {
 		.pipe(nunjucksRender({
 			data: {
 				url: 'https://' + domain,
-				site: site
+				site: site,
+				catalog: catalog
 			},
 			path: 'src/'
 		}))

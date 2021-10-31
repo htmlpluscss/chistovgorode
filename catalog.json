@@ -1,0 +1,86 @@
+[
+
+	{
+		"name"   : "Пылесос Soteco Panda 515/26 XP Inox",
+		"photo"  : "Soteco_Panda_515-26_XP_Inox",
+		"price"  : "13 300",
+		"label"      : "Распродажа",
+		"labelColor" : "pink"
+	},
+
+	{
+		"name"   : "Минимойка Karcher K 3",
+		"photo"  : "Karcher_K_3",
+		"price"  : "7 900",
+		"priceOld"   : "8 900",
+		"label"      : "Товар месяца",
+		"labelColor" : "violet"
+	},
+
+	{
+		"name"   : "Минимойка GRASS C22P-1508",
+		"photo"  : "GRASS_C22P-1508",
+		"price"  : "13 300"
+	},
+
+	{
+		"name"   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
+		"photo"  : "Karcher_CNS_18-30_Battery",
+		"price"  : "19 490"
+	},
+
+	{
+		"name"   : "Минимойка GRASS C22P-1508",
+		"photo"  : "GRASS_C22P-1508",
+		"price"  : "13 300"
+	},
+
+	{
+		"name"   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
+		"photo"  : "Karcher_CNS_18-30_Battery",
+		"price"  : "19 490"
+	},
+
+	{
+		"name"   : "Пылесос Soteco Panda 515/26 XP Inox",
+		"photo"  : "Soteco_Panda_515-26_XP_Inox",
+		"price"  : "13 300"
+	},
+
+	{
+		"name"   : "Минимойка Karcher K 3",
+		"photo"  : "Karcher_K_3",
+		"price"  : "7 900",
+		"priceOld"   : "8 900",
+		"label"      : "Хит",
+		"labelColor" : "blue"
+	},
+
+	{
+		"name"   : "Минимойка GRASS C22P-1508",
+		"photo"  : "GRASS_C22P-1508",
+		"price"  : "13 300"
+	},
+
+	{
+		"name"   : "Аккумуляторная цепная пила Karcher CNS 18-30 Battery",
+		"photo"  : "Karcher_CNS_18-30_Battery",
+		"price"  : "19 490"
+	},
+
+	{
+		"name"   : "Минимойка GRASS C22P-1508",
+		"photo"  : "GRASS_C22P-1508",
+		"price"  : "13 300"
+	},
+
+	{
+		"name"   : "Минимойка Karcher K 3",
+		"photo"  : "Karcher_K_3",
+		"price"  : "7 900",
+		"priceOld"   : "8 900",
+		"label"      : "Выгодно",
+		"labelColor" : "green"
+	}
+
+]
