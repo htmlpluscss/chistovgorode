@@ -9,72 +9,15 @@
 
 			<div class="catalog-list__column">
 
+{% set settings = [180,240,24,6] %}
+
 {% for item in catalog %}
 
-				<article class="catalog-list__item">
+	{% if loop.index <= 8 %}
 
-					<a href="/catalog/product/" class="catalog-list__photo">
+{% include "_include/catalog-preview.html" %}
 
-						<picture>
-
-							<source srcset="/img/preview/catalog/{{ item.photo }}--180x240.webp 1x, /img/preview/catalog/{{ item.photo }}--360x480.webp 2x" type="image/webp">
-							<source srcset="/img/preview/catalog/{{ item.photo }}--180x240.png 1x, /img/preview/catalog/{{ item.photo }}--360x480.png 2x">
-
-							<img src="/img/preview/catalog/{{ item.photo }}--180x240.png" alt="{{ item.name }}" loading="lazy" width="180" height="240">
-
-						</picture>
-
-					</a>
-
-					<div class="catalog-list__price">
-
-						<div class="price">
-
-{% include "_include/price.html" %}
-
-						</div>
-
-					</div>
-
-					<div class="catalog-list__name h6">
-
-						<a href="/catalog/product/">
-							{{ item.name }}
-						</a>
-
-					</div>
-
-					<form action="/" class="catalog-list__form form-buy">
-
-						<input type="hidden" name="id" value="123">
-
-{% if item.label %}
-
-						<div class="catalog-list__label">
-
-							<div class="label label--{{ item.labelColor }}">
-
-								<div class="label__text">
-									{{ item.label }}
-								</div>
-
-							</div>
-
-						</div>
-
-{% endif %}
-
-						<div class="catalog-list__btn">
-
-							<button class="btn btn--buy form-buy__submit">
-								В корзину
-							</button>
-
-						</div>
-
-					</form>
-
-				</article>
+	{% endif %}
 
 {% endfor %}
 

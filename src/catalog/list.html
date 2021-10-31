@@ -1,44 +1,11 @@
 
 	<div class="catalog__list">
 
+{% set settings = [171,225,21,6,"medium"] %}
+
 {% for item in catalog %}
 
-		<article class="catalog-item">
-
-			<a href="/catalog/product/" class="catalog-item__photo">
-
-				<picture>
-
-					<source srcset="/img/preview/catalog/{{ item.photo }}--171x225.webp 1x, /img/preview/catalog/{{ item.photo }}--342x450.webp 2x" type="image/webp">
-					<source srcset="/img/preview/catalog/{{ item.photo }}--171x225.png 1x, /img/preview/catalog/{{ item.photo }}--342x450.png 2x">
-
-					<img src="/img/preview/catalog/{{ item.photo }}--171x225.png" alt="{{ item.name }}" loading="lazy" width="171" height="225">
-
-				</picture>
-
-			</a>
-
-			<div class="catalog-item__price">
-
-				<div class="price price--fz21">
-
-{% include "_include/price.html" %}
-
-				</div>
-
-			</div>
-
-			<div class="catalog-item__name">
-
-				<a href="/catalog/product/">
-					{{ item.name }}
-				</a>
-
-			</div>
-
-{% include "_include/catalog-item__form.html" %}
-
-		</article>
+{% include "_include/catalog-preview.html" %}
 
 {% endfor %}
 

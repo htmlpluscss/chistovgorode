@@ -76,8 +76,8 @@
 			bottom: 0;
 			content: '';
 			z-index: 9;
-			opacity: .2;
-			background-color: var(--dark);
+			opacity: .7;
+			background-color: #000;
 
 		}
 

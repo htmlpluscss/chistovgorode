@@ -1,27 +1,24 @@
-( forms => {
+( () => {
 
-	if(!forms.length) {
+	document.addEventListener('submit', event => {
 
-		return;
+		let form = event.target.closest('.form-buy');
 
-	}
-
-	Array.from(forms, form => {
-
-		const btn = form.querySelector('.form-buy__submit');
-
-		form.addEventListener('submit', event => {
+		if (form) {
 
 			event.preventDefault();
-alert('положили в корзину')
-			form.classList.add('is-loading');
+
+			const btn = form.querySelector('.form__submit');
+
 			btn.disabled = true;
+
+			form.classList.add('is-loading');
 
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
 				body: new FormData(form)
 			})
-			.then(response => response.json())
+//			.then(response => response.json())
 			.then(result => {
 
 				console.log(result);
@@ -31,8 +28,8 @@ alert('положили в корзину')
 
 			});
 
-		});
+		}
 
 	});
 
-})(document.querySelectorAll('.form-buy'));
+})();
