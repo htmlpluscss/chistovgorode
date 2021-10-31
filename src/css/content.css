@@ -173,6 +173,32 @@ table {
 	font-size: 24px;
 	line-height: 30px;
 
+	&--fz18 {
+
+		font-size: 18px;
+
+	}
+
+	&--fz18 &__old {
+
+		margin-left: 12px;
+
+	}
+
+	&--fz21 {
+
+		font-size: 21px;
+		line-height: 27px;
+
+	}
+
+	&--fz21 &__old {
+
+		margin-left: 15px;
+		font-size: 21px;
+
+	}
+
 	&__sale {
 
 		color: var(--Notice);

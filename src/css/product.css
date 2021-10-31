@@ -284,6 +284,18 @@
 	display: flex;
 	align-items: center;
 
+	&.is-not {
+
+		color: #afaec6;
+
+		&::before {
+
+			background-color: #afaec6;
+
+		}
+
+	}
+
 	&::before {
 
 		width: 6px;
