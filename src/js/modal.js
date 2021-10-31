@@ -20,6 +20,8 @@
 		window.scrollTo(0,windowScroll);
 		activeModal = false;
 
+		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'));
+
 	});
 
 	modal.addEventListener('keyup', event => {
@@ -44,13 +46,19 @@
 
 		Array.from(items, el => el.classList.toggle('visuallyhidden', el !== activeModal));
 
-		wrapper.style.top = -windowScroll + 'px';
-		document.body.classList.add('modal-show');
-		window.scrollTo(0,0);
+		document.documentElement.classList.add('scroll-behavior-off');
 
-		activeModal.focus();
+		setTimeout( () => {
 
-		PubSub.publish('open-' + selector);
+			wrapper.style.top = -windowScroll + 'px';
+			document.body.classList.add('modal-show');
+			window.scrollTo(0,0);
+
+			activeModal.focus();
+
+			PubSub.publish('open-' + selector);
+
+		});
 
 	};
 

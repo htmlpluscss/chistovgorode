@@ -70,7 +70,6 @@
 
 	&__gallery {
 
-		outline:1px solid red;
 		grid-row: span 2;
 
 	}
@@ -112,23 +111,6 @@
 			&__old {
 
 				font-size: 24px;
-				text-decoration: none;
-				position: relative;
-
-				&::after {
-
-					position: absolute;
-					height: 2px;
-					top: 0;
-					left: -2px;
-					right: -2px;
-					bottom: 2px;
-					margin: auto;
-					content: '';
-					background-color: var(--Notice);
-					transform: rotate(-5deg);
-
-				}
 
 			}
 
@@ -243,6 +225,7 @@
 		line-height: 30px;
 		max-width: 960px;
 		margin: var(--space) 0;
+		scroll-margin: calc( var(--space) + var(--heightHeader) );
 
 		.h2 {
 

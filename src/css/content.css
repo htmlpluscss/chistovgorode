@@ -186,7 +186,23 @@ table {
 		color: var(--grey);
 		margin-left: 18px;
 		font-weight: 400;
-		text-decoration-color: var(--Notice);
+		text-decoration: none;
+		position: relative;
+
+		&::after {
+
+			position: absolute;
+			height: 2px;
+			top: 0;
+			left: -2px;
+			right: -2px;
+			bottom: 2px;
+			margin: auto;
+			content: '';
+			background-color: var(--Notice);
+			transform: rotate(-5deg);
+
+		}
 
 	}
 

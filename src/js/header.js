@@ -2,6 +2,8 @@
 
 	if(header) {
 
+		document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+
 		const headerBottom = header.querySelector('.header__bottom'),
 			  headerBottomInner = headerBottom.querySelector('.header__flex');
 
@@ -33,6 +35,8 @@
 
 				headerBottom.style.height = h + 'px';
 				headerBottom.style.opacity = o;
+
+				document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
 
 			});
 

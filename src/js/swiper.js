@@ -128,6 +128,12 @@
 
 			toggleSwipe = () => {
 
+				if ( count <= 5 ) {
+
+					return;
+
+				}
+
 				let initialSlide = 0,
 					slidesPerView = 5,
 					spaceBetween = 15;

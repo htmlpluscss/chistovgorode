@@ -56,7 +56,7 @@
 
 {% for img in [1,2,3,4] %}
 
-							<div class="swiper-gallery-preview__big-item{% if loop.first %} is-current{% endif %}">
+							<div class="swiper-gallery-preview__big-item{% if loop.first == false %} hide{% endif %}">
 
 								<picture>
 
