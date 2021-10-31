@@ -25,6 +25,12 @@
 		border-radius: 3px;
 		width: 550px;
 
+		&--cart {
+
+			width: 836px;
+
+		}
+
 	}
 
 	&__close-btn {
@@ -166,6 +172,114 @@
 			font-size: 15px;
 			line-height: 24px;
 			color: #f5c400;
+
+		}
+
+	}
+
+}
+
+.modal-cart {
+
+	&__title {
+
+		margin: var(--gap) 0 27px;
+
+	}
+
+	&__item {
+
+		display: flex;
+		align-items: center;
+
+	}
+
+	&__img {
+
+		width: 81px;
+		height: 81px;
+		margin-right: 6px;
+		flex-shrink: 0;
+
+	}
+
+	&__head {
+
+		flex-grow: 1;
+
+	}
+
+	&__name {
+
+		font-weight: 400;
+
+	}
+
+	&__intro {
+
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
+		color: #F5C400;
+		margin-top: 6px;
+
+	}
+
+	&__price {
+
+		flex-shrink: 0;
+		margin: 0 27px;
+
+		.price {
+
+			display: flex;
+			align-items: baseline;
+			flex-direction: row-reverse;
+
+		}
+
+		.price__old {
+
+			margin-left: 0;
+			margin-right: 12px;
+
+		}
+
+	}
+
+	&__quantity {
+
+		width: 117px;
+		flex-shrink: 0;
+
+	}
+
+	&__foot {
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 24px;
+		border-top: 1px solid #f7f7f9;
+		margin-top: 24px;
+
+	}
+
+	&__total-text {
+
+		font-size: 15px;
+		line-height: 24px;
+		color: var(--grey);
+
+	}
+
+	&__btns {
+
+		display: flex;
+
+		.btn {
+
+			margin-left: 6px;
 
 		}
 

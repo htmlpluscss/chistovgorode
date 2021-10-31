@@ -492,3 +492,17 @@ legend {
 	}
 
 }
+
+.form-buy {
+
+	&.is-loading {
+
+		&.modal-cart {
+
+			opacity: .8;
+
+		}
+
+	}
+
+}

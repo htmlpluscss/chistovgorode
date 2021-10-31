@@ -8,6 +8,21 @@
 
 <div class="center">
 
+<script>
+
+setTimeout( ()=> {
+
+	const eventModalShow = new CustomEvent("modalShow", {
+		detail: {
+			selector: "cart"
+		}
+	});
+
+//	window.modal.dispatchEvent(eventModalShow);
+})
+
+</script>
+
 	<h1>
 		Страницы
 	</h1>
@@ -485,6 +500,20 @@
 			</button>
 
 		</div>
+
+	</div>
+
+	<div class="flex flex--wrap">
+
+		<form class="item form-buy">
+
+			<input type="hidden" name="id" value="123">
+
+			<button class="btn form-buy__submit">
+				Товар добавлен в корзину
+			</button>
+
+		</form>
 
 	</div>
 

@@ -109,7 +109,7 @@
 
 	}
 
-	&.is-open &__toggle .btn{
+	&.is-open &__toggle .btn {
 
 		&::before {
 

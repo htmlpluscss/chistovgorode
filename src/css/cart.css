@@ -1,0 +1,62 @@
+.cart {
+
+
+
+}
+
+.quantity {
+
+	position: relative;
+	user-select: none;
+
+	&__input {
+
+		font-weight: bold;
+		font-size: 18px !important;
+		text-align: center;
+		color: var(--text);
+		height: 40px;
+		border-width: 2px;
+		line-height: 20px;
+		padding: 10px;
+
+	}
+
+	&__btn {
+
+		position: absolute;
+		width: 28px;
+		height: 40px;
+		top: 0;
+		left: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+
+		&--down {
+
+			svg {
+
+				fill: #D9D8DF;
+
+			}
+
+		}
+
+		&--up {
+
+			left: auto;
+			right: 12px;
+
+			svg {
+
+				fill: var(--grey);
+
+			}
+
+		}
+
+	}
+
+}
