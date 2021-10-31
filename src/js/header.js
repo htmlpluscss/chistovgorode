@@ -7,6 +7,15 @@
 		const headerBottom = header.querySelector('.header__bottom'),
 			  headerBottomInner = headerBottom.querySelector('.header__flex');
 
+		const productScroll = document.querySelector('.product-scroll'),
+			  productForm = document.querySelector('.product__form-buy');
+
+		if ( productScroll ) {
+
+			header.insertAdjacentElement('afterend', productScroll);
+
+		}
+
 		window.addEventListener("scroll", () => {
 
 			window.requestAnimationFrame( () => {
@@ -37,6 +46,14 @@
 				headerBottom.style.opacity = o;
 
 				document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+
+				// product scroll
+
+				if ( productScroll ) {
+
+					productScroll.classList.toggle('is-show', window.isInViewport(productForm) === false);
+
+				}
 
 			});
 
