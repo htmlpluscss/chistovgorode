@@ -163,7 +163,7 @@
 		&-text {
 
 			color: var(--grey);
-			margin-top: 3px;
+			margin: 3px 0;
 
 			b {
 

@@ -286,3 +286,11 @@
 	}
 
 }
+
+.form-city {
+
+	&__list {
+
+		outline:1px solid red;
+	}
+}
