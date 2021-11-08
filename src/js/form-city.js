@@ -6,7 +6,13 @@
 
 	}
 
-	formCity.addEventListener('change', () => {
+	const list = formCity.querySelector('.form-city__list'),
+		  btnList = list.querySelectorAll('.form-city__btn'),
+		  formCityInput = formCity.querySelector('.form-city__input-filter');
+
+	let countVisible = btnList.length;
+
+	const submit = ()=> {
 
 		fetch(formCity.getAttribute('action'), {
 			method: 'POST',
@@ -27,28 +33,64 @@
 
 		});
 
+	}
+
+	formCityInput.addEventListener('input', event => {
+
+		const value = formCityInput.value.toLowerCase();
+
+		countVisible = 0;
+
+		if(value.length > 0) {
+
+			Array.from(btnList, btn => {
+
+				const name = btn.getAttribute('data-name').toLowerCase();
+
+				btn.classList.toggle('hide', name.indexOf(value) === -1);
+
+				if ( name.indexOf(value) !== -1 ) {
+
+					countVisible++;
+
+				}
+
+			});
+
+		} else {
+
+			Array.from(btnList, btn => btn.classList.remove('hide'));
+
+			countVisible = btnList.length;
+
+		}
+
+		list.classList.toggle('is-empty', countVisible === 0);
+
+	});
+
+	Array.from(btnList, btn => {
+
+		btn.querySelector('.form-city__radio').addEventListener( 'change', () => submit() );
+
 	});
 
 	formCity.addEventListener('submit', event => {
 
 		event.preventDefault();
 
-/*
+		if ( countVisible === 1 ) {
 
-также учитываем ввод текста, если жмет ентер и совпадение !== 1
-то лож, иначе отправка
-*/
+			Array.from( btnList, btn => btn.querySelector('.form-city__radio').checked = btn.classList.contains('hide') === false );
 
-	});
+		}
 
-	formCity.addEventListener('keyup', event => {
+		if ( formCityInput.value.length > 0 ) {
 
-		console.log(event.key);
+			submit();
 
-		// фильтруем
-/*
+		}
 
-и надо показать при вводе что нет городов, если набрал белиберду*/
 	});
 
 })(document.querySelector('.form-city'));

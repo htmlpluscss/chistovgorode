@@ -14,7 +14,7 @@
 						Ваш город
 					</label>
 
-					<input id="form-city-input" class="input form-city__input-filter" placeholder="Введите название">
+					<input id="form-city-input" class="input form-city__input-filter" placeholder="Введите название" autocomplete="off" name="keywords">
 
 				</div>
 
@@ -40,7 +40,7 @@
 
 {% for name in list %}
 
-					<label class="form-city__btn">
+					<label class="form-city__btn" data-name="{{ name }}">
 
 						<input class="form-city__radio" type="radio" name="city" value="{{ loop.index }}">
 

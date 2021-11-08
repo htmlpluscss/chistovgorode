@@ -291,6 +291,74 @@
 
 	&__list {
 
-		outline:1px solid red;
+		height: 210px;
+		margin: 12px 0 -30px;
+
+		overflow-y: auto;
+
+		scrollbar-width: thin;
+		scrollbar-color: var(--border) transparent;
+
+		&::-webkit-scrollbar {
+
+			width: 3px;
+			border-radius: 3px;
+			background-color: transparent;
+
+		}
+
+		&::-webkit-scrollbar-thumb {
+
+			border-radius: 3px;
+			background-color: var(--border);
+
+		}
+
+		&.is-empty::after {
+
+			display: block;
+			text-align: center;
+			color: var(--grey);
+			font-size: 16px;
+			margin: 36px 0;
+			content: attr(data-empty);
+
+		}
+
 	}
+
+	&__btn {
+
+		display: block;
+		width: 100%;
+		cursor: pointer;
+		position: relative;
+
+	}
+
+	&__radio {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: .001
+
+	}
+
+	&__label {
+
+		font-size: 15px;
+		line-height: 18px;
+		display: block;
+		padding: 6px 0;
+
+	}
+
+	&__radio:checked ~ &__label {
+
+		font-weight: 500;
+
+	}
+
 }
