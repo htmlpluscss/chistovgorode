@@ -1,6 +1,16 @@
 .category {
 
+	margin: 45px 0 0;
 	display: flex;
+
+	&__title {
+
+		font-weight: 500;
+		font-size: 36px;
+		line-height: 42px;
+		margin-bottom: 30px;
+
+	}
 
 	&__head {
 
@@ -13,6 +23,7 @@
 	&__body {
 
 		width: calc( 100% - 370px );
+		margin-top: 56px;
 
 	}
 

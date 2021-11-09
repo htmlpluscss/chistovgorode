@@ -35,15 +35,33 @@
 	&__big-link {
 
 		display: flex;
+		flex-grow: 1;
+		justify-content: space-between;
 
 		&-left {
 
-			padding: 54px 72px;
+			padding: 50px 0 54px 72px;
+
+			.stock__label {
+
+				margin-top: 4px;
+
+			}
 
 			.stock__name {
 
 				display: block;
 				margin: 18px 0 0;
+
+				@media ($mdWidth) {
+
+					br {
+
+						display: none;
+
+					}
+
+				}
 
 			}
 
@@ -57,7 +75,7 @@
 
 			img {
 
-				mix-blend-mode: multiply;
+				mix-blend-mode: darken;
 
 			}
 
@@ -69,6 +87,7 @@
 
 		position: relative;
 		display: flex;
+		justify-content: space-between;
 		border-radius: 3px;
 
 		@media ($desktop) {
@@ -97,6 +116,12 @@
 
 			background-color: #f6fdfa;
 
+			&-2 {
+
+				background-color: #e0f8eb;
+
+			}
+
 		}
 
 	}
@@ -122,7 +147,8 @@
 
 	}
 
-	&__label {
+	&__label,
+	&__logo {
 
 		display: flex;
 		margin-bottom: 15px;
