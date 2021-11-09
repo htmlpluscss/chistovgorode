@@ -64,6 +64,7 @@
 					modal.ok(result.title, result.text, result.mod);
 
 				}
+*/
 
 			// ok in form
 
@@ -74,7 +75,7 @@
 						okText.textContent = result.text;
 						okText.classList.remove('hide');
 
-						if(!INTI.isInViewport(okText)){
+						if(!window.isInViewport(okText)){
 
 							okText.scrollIntoView({ behavior: 'smooth' });
 
@@ -97,7 +98,7 @@
 						errorText.textContent = result.text;
 						errorText.classList.remove('hide');
 
-						if(!INTI.isInViewport(errorText)){
+						if(!window.isInViewport(errorText)){
 
 							errorText.scrollIntoView({ behavior: 'smooth' });
 
@@ -122,7 +123,7 @@
 				}
 
 			// fadeout
-
+/*
 				if(result.fadeout) {
 
 					okText.classList.remove('is-fadeout');
@@ -131,7 +132,7 @@
 
 				}
 
-			// reset
+*/			// reset
 
 				if(result.reset) {
 
@@ -146,7 +147,7 @@
 					location.reload();
 
 				}
-*/
+
 			});
 
 		});
@@ -154,27 +155,3 @@
 	});
 
 })(document.querySelectorAll('.form'));
-
-( files => {
-
-	if(!files.length) {
-
-		return;
-
-	}
-
-	Array.from(files, el => {
-
-		const input = el.querySelector('.input-file__input'),
-			  value = el.querySelector('.input-file__value');
-
-		input.addEventListener('change', () => {
-
-			el.classList.add('is-change');
-			value.textContent = input.value;
-
-		});
-
-	});
-
-})(document.querySelectorAll('.input-file'));
