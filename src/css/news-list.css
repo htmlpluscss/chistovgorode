@@ -2,6 +2,12 @@
 
 	margin: var(--space) 0;
 
+	.aktsii & {
+
+		margin-top: 42px;
+
+	}
+
 	.swiper-inner {
 
 		padding: 0;

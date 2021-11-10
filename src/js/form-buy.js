@@ -6,7 +6,7 @@
 
 	}
 
-	const modalCartTemplate = document.querySelector('#modal-cart-template').innerHTML;
+	const modalCartTemplate = document.querySelector('#modal-cart-template');
 
 	document.addEventListener('submit', event => {
 
@@ -35,7 +35,7 @@
 
 				btnSubmit.disabled = false;
 
-				modalCart.innerHTML = Mustache.render(modalCartTemplate, result);
+				modalCart.innerHTML = Mustache.render(modalCartTemplate.content.cloneNode(true), result);
 
 				// показать модалку
 

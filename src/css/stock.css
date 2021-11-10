@@ -12,6 +12,18 @@
 
 	}
 
+	.aktsii & {
+
+		margin-bottom: var(--space);
+
+	}
+
+	&__title {
+
+		margin-bottom: var(--gap);
+
+	}
+
 	&__list {
 
 		display: grid;
