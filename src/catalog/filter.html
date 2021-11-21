@@ -3,295 +3,107 @@
 		<input type="hidden" name="sort" value="price">
 		<input type="hidden" name="direction" value="decrease">
 
-		<fieldset class="filter__fieldset">
+{% set fieldset = {
 
-			<legend class="filter__legend h6">
-				Тип
-			</legend>
+	legend : "Тип",
+	name   : "type",
+	all    : "checked",
 
-			<div class="filter__item">
+	list : [
+		{
+			label : "Пылесосы с аквафильтром"
+		},
+		{
+			label : "Моющие пылесосы"
+		},
+		{
+			label : "Пылесосы сухой уборки"
+		},
+		{
+			label : "Хозяйственные пылесосы"
+		},
+		{
+			label : "Паропылесосы"
+		}
+	]
 
-				<div class="checkbox">
+} %}
 
-					<label class="checkbox__control">
+{% include "_include/filter__checkbox.html" %}
 
-						<input type="checkbox" class="checkbox__input filter__checkbox-all" checked="checked" name="param-1[]">
 
-						<span class="checkbox__label">
-							Все
-						</span>
+{% set fieldset = {
 
-					</label>
+	min : 8345,
+	max : 150953,
+	minThousands : "8 345",
+	maxThousands : "150 953"
 
-				</div>
+} %}
 
-			</div>
+{% include "_include/filter__nouislider.html" %}
 
-			<div class="filter__item">
+{% set fieldset = {
 
-				<div class="checkbox">
+	legend : "Производитель",
+	name   : "brend",
 
-					<label class="checkbox__control">
+	list : [
+		{
+			label : "Karcher",
+			checked: true,
+			disabled : true
+		}
+	]
 
-						<input type="checkbox" class="checkbox__input" name="param-1[]" value="1">
+} %}
 
-						<span class="checkbox__label">
-							Пылесосы с аквафильтром
-						</span>
+{% include "_include/filter__checkbox.html" %}
 
-					</label>
 
-				</div>
+{% set fieldset = {
 
-			</div>
+	legend : "Материал помпы",
+	name   : "pump",
+	all    : "checked",
 
-			<div class="filter__item">
+	list : [
+		{
+			label : "Композит (N-cor)"
+		},
+		{
+			label : "Силлумин"
+		},
+		{
+			label : "Латунь"
+		}
+	]
 
-				<div class="checkbox">
+} %}
 
-					<label class="checkbox__control">
+{% include "_include/filter__checkbox.html" %}
 
-						<input type="checkbox" class="checkbox__input" name="param-1[]" value="2">
 
-						<span class="checkbox__label">
-							Моющие пылесосы
-						</span>
+{% set fieldset = {
 
-					</label>
+	legend : "Забор воды из емкости",
+	name   : "tank",
+	all    : "checked",
 
-				</div>
+	list : [
+		{
+			label : "Есть",
+			value : "yes"
+		},
+		{
+			label : "Нет",
+			value : "no"
+		}
+	]
 
-			</div>
+} %}
 
-			<div class="filter__item">
+{% include "_include/filter__radio.html" %}
 
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-1[]" value="3">
-
-						<span class="checkbox__label">
-							Пылесосы сухой уборки
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-1[]" value="4">
-
-						<span class="checkbox__label">
-							Хозяйственные пылесосы
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-1[]" value="5">
-
-						<span class="checkbox__label">
-							Паропылесосы
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-		</fieldset>
-
-		<fieldset class="filter__fieldset">
-
-			<legend class="filter__legend h6">
-				Цена
-			</legend>
-
-			<div class="filter__nouislider">
-
-				<div class="nouislider" data-min="8345" data-max="150953" data-step="1" data-suf="₽">
-
-					<div class="nouislider__inputbox">
-
-						<input type="tel" class="input nouislider__min is-side" name="price-min" value="8 345 ₽">
-						<input type="tel" class="input nouislider__max is-side" name="price-max" value="150 953 ₽">
-
-					</div>
-
-					<div class="nouislider__track"></div>
-
-				</div>
-
-			</div>
-
-		</fieldset>
-
-		<fieldset class="filter__fieldset">
-
-			<legend class="filter__legend h6">
-				Производитель
-			</legend>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" checked="checked" name="param-3[]" value="1" disabled="disabled">
-
-						<span class="checkbox__label">
-							Karcher
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-		</fieldset>
-
-		<fieldset class="filter__fieldset">
-
-			<legend class="filter__legend h6">
-				Материал помпы
-			</legend>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input filter__checkbox-all" checked="checked" name="param-4[]">
-
-						<span class="checkbox__label">
-							Все
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-4[]" value="1">
-
-						<span class="checkbox__label">
-							Композит (N-cor)
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-4[]" value="2">
-
-						<span class="checkbox__label">
-							Силлумин
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="checkbox" class="checkbox__input" name="param-4[]" value="3">
-
-						<span class="checkbox__label">
-							Латунь
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-		</fieldset>
-
-		<fieldset class="filter__fieldset">
-
-			<legend class="filter__legend h6">
-				Забор воды из емкости
-			</legend>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="radio" class="checkbox__input" name="param-5" value="yes">
-
-						<span class="checkbox__label">
-							Есть
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-			<div class="filter__item">
-
-				<div class="checkbox">
-
-					<label class="checkbox__control">
-
-						<input type="radio" class="checkbox__input" name="param-5" value="no">
-
-						<span class="checkbox__label">
-							Нет
-						</span>
-
-					</label>
-
-				</div>
-
-			</div>
-
-		</fieldset>
 
 	</form>

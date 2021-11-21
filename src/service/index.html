@@ -1,0 +1,43 @@
+{% set title = "Сервис" %}
+
+{% set description = "Сервис Бытовой техники: Моющие пылесосы Karcher, Пароочистители, Стеклоочистители, Насосы и станции водоснабжения" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="service">
+
+			<h1 class="h2">
+				{{ title }}
+			</h1>
+
+			<div class="catalog">
+
+				<div class="catalog__filter">
+
+{% include "service/filter.html" %}
+
+				</div>
+
+				<div class="catalog__body">
+
+{% include "service/sort.html" %}
+
+					<div class="catalog__result">
+
+{% include "service/list.html" %}
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}
