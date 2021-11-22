@@ -1,0 +1,152 @@
+.contacts {
+
+	margin: calc( var(--space) / 2) 0 var(--space);
+
+	&__title {
+
+		margin-bottom: var(--gap);
+		margin-bottom: 27px;
+
+	}
+
+	&__common {
+
+		display: flex;
+		height: 135px;
+		background-color: #fbfafb;
+		padding: 30px 13px;
+
+		&-item {
+
+			margin: 0 56px;
+
+		}
+
+		dt {
+
+			margin: 9px 0;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 24px;
+
+		}
+
+		dd {
+
+			font-size: 15px;
+			line-height: 24px;
+			position: relative;
+			padding-left: 30px;
+
+		}
+
+		svg {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			fill: #f5c400;
+
+		}
+
+	}
+
+	&__flex {
+
+		margin: calc( var(--space) / 2) 0 var(--space);
+		display: flex;
+		flex-direction: row-reverse;
+
+	}
+
+	&__map {
+
+		position: relative;
+		width: 663px;
+		flex-shrink: 0;
+		background-color: #fbfafb;
+
+	}
+
+	&__list {
+
+		padding: 0 50px;
+		flex-grow: 1;
+
+	}
+
+	&__item {
+
+		margin: 22px 0;
+
+		& + & {
+
+			margin-top: calc( var(--space) / 2);
+
+		}
+
+		&-name {
+
+			position: relative;
+			padding-left: 30px;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 24px;
+			margin-bottom: 6px;
+
+			svg {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				fill: var(--grey);
+
+			}
+
+		}
+
+		&-address {
+
+			color: var(--grey);
+			font-size: 15px;
+			line-height: 21px;
+			margin-bottom: 21px;
+			padding-left: 10px;
+
+		}
+
+		&-row {
+
+			display: flex;
+			margin-left: 10px;
+
+		}
+
+		&-col {
+
+			white-space: nowrap;
+			width: 178px;
+			font-size: 15px;
+			line-height: 24px;
+
+			svg {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				fill: #f5c400;
+
+			}
+
+		}
+
+	}
+
+	&__ico {
+
+		position: relative;
+		padding-left: 30px;
+
+	}
+
+}
