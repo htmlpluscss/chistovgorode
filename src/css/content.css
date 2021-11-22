@@ -3,6 +3,12 @@
 	color: var(--yellow);
 
 }
+
+.color-green {
+
+	color: var(--green);
+
+}
 /*
 hr {
 

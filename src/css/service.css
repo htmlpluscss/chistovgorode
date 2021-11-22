@@ -1,5 +1,5 @@
 .service {
 
-	margin: 42px 0;
+	margin: calc( var(--space) / 2) 0;
 
 }

@@ -4,7 +4,7 @@
 
 	.aktsii & {
 
-		margin-top: 42px;
+		margin-top: calc( var(--space) / 2);
 
 	}
 
