@@ -221,7 +221,35 @@ legend {
 		padding: 0;
 		font-weight: 500;
 		font-size: 15px;
-		line-height: 21px;
+
+	}
+
+	&--add {
+
+		height: 24px;
+		line-height: 24px;
+		background-color: transparent !important;
+		gap: 15px;
+		padding: 0;
+		font-weight: 500;
+		font-size: 18px;
+		color: var(--blue);
+
+		@media ($desktop) {
+
+			&:hover {
+
+				--blue: var(--Indigo_dark);
+
+			}
+
+		}
+
+		svg {
+
+			fill: var(--blue);
+
+		}
 
 	}
 

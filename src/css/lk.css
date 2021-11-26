@@ -1,0 +1,190 @@
+.user-menu {
+
+	&__photo {
+
+		width: 121px;
+		height: 121px;
+		line-height: 121px;
+		text-align: center;
+		color: #fff;
+		font-size: 33px;
+		font-weight: 700;
+		letter-spacing: 4.5px;
+		border-radius: 50%;
+		background-color: var(--border);
+		text-transform: uppercase;
+
+	}
+
+	&__name {
+
+		font-size: 24px;
+		line-height: 30px;
+		color: var(--text);
+		margin: 24px 0;
+
+	}
+
+	&__email {
+
+		font-size: 15px;
+		line-height: 24px;
+		color: var(--grey);
+
+	}
+
+	&__item {
+
+		margin: 12px 0;
+
+		&.is-active {
+
+			--grey: var(--dark);
+
+		}
+
+	}
+
+	&__link {
+
+		display: flex;
+		align-items: center;
+		color: var(--grey);
+		font-size: 18px;
+		line-height: 24px;
+		width: 100%;
+
+		svg {
+
+			fill: var(--grey);
+			margin-right: 12px;
+
+		}
+
+		@media ($desktop) {
+
+			&:hover {
+
+				--grey: var(--dark);
+
+			}
+
+		}
+
+	}
+
+	hr {
+
+		margin: 24px 0;
+
+	}
+
+	&--header {
+
+		padding: 30px;
+		width: 435px;
+		background-color: #fff;
+		box-shadow: var(--box-shadow);
+		border-radius: 3px;
+		text-align: left;
+
+	}
+
+	&--header &__head {
+
+		margin: 6px 0 var(--gap);
+		position: relative;
+		padding-left: 90px;
+		min-height: 69px;
+		padding-top: 6px;
+
+	}
+
+	&--header &__photo {
+
+		width: 69px;
+		height: 69px;
+		line-height: 69px;
+		font-size: 20px;
+		letter-spacing: 1.5px;
+		top: 0;
+		left: 0;
+		position: absolute;
+
+	}
+
+	&--header &__name {
+
+		margin: 0 0 3px;
+
+	}
+
+}
+
+.lk {
+
+	margin: calc( var(--space) / 2) 0 var(--space);
+	display: flex;
+
+	&__head {
+
+		width: 290px;
+		margin-right: 85px;
+		flex-shrink: 0;
+
+	}
+
+	&__body {
+
+		flex-grow: 1;
+
+	}
+
+	&__title {
+
+		margin: 20px 0 var(--gap);
+
+	}
+
+	&__box {
+
+		padding: 30px;
+		box-shadow: var(--card-shadow);
+		border-radius: 3px;
+
+	}
+
+	&__empty {
+
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: 30px 0;
+		text-align: center;
+
+		.h3 {
+
+			margin-top: 30px;
+			color: var(--grey);
+			font-weight: 400;
+
+		}
+
+		.btn {
+
+			min-width: 231px;
+			margin-top: 42px;
+
+		}
+
+	}
+
+	&__btn-add {
+
+		display: flex;
+		justify-content: center;
+		margin-top: calc( var(--space) / 2);
+
+	}
+
+}

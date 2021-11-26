@@ -10,6 +10,12 @@
 
 }
 
+.color-blue {
+
+	color: var(--blue);
+
+}
+
 hr {
 
 	border: 0;

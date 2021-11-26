@@ -1,26 +1,22 @@
-								<div class="header-account">
+								<div class="user-menu">
 
-									<div class="header-account__head">
+									<div class="user-menu__head">
 
-										<div class="header-account__photo">
+										<div class="user-menu__photo">
 											АП
 										</div>
 
-										<p class="header-account__name">
+										<p class="user-menu__name">
 											Анна Петрова
 										</p>
 
-										<a class="header-account__email" href="emailto:anna.petrova@gmail.com">
-											anna.petrova@gmail.com
-										</a>
-
 									</div>
 
-									<ul class="header-account__menu">
+									<ul class="user-menu__list">
 
-										<li class="header-account__item">
+										<li class="user-menu__item{% if title === 'Данные аккаунта' %} is-active{% endif %}">
 
-											<a class="header-account__link" href="/lk/">
+											<a class="user-menu__link" href="/lk/">
 
 												<svg width="24" height="24" viewBox="0 0 24 24">
 													<use xlink:href="#svg-user"/>
@@ -32,9 +28,9 @@
 
 										</li>
 
-										<li class="header-account__item">
+										<li class="user-menu__item{% if title === 'Сохраненные карты' %} is-active{% endif %}">
 
-											<a class="header-account__link" href="/lk/card/">
+											<a class="user-menu__link" href="/lk/card/">
 
 												<svg width="24" height="24" viewBox="0 0 24 24">
 													<path d="M5.01 17h14v-6h-14v6Zm0-8h14V7h-14v2ZM19 5H5a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z" fill-rule="evenodd"/>
@@ -47,9 +43,9 @@
 
 										</li>
 
-										<li class="header-account__item">
+										<li class="user-menu__item{% if title === 'Мои адреса' %} is-active{% endif %}">
 
-											<a class="header-account__link" href="/lk/address/">
+											<a class="user-menu__link" href="/lk/address/">
 
 												<svg width="24" height="24" viewBox="0 0 24 24">
 													<use xlink:href="#svg-location"/>
@@ -61,9 +57,9 @@
 
 										</li>
 
-										<li class="header-account__item">
+										<li class="user-menu__item{% if title === 'Мои заказы' %} is-active{% endif %}">
 
-											<a class="header-account__link" href="/lk/order/">
+											<a class="user-menu__link" href="/lk/order/">
 
 												<svg width="24" height="24" viewBox="0 0 24 24">
 													<use xlink:href="#svg-order"/>
@@ -79,7 +75,7 @@
 
 									<hr>
 
-									<button class="header-account__link button" data-modal="exit" type="button">
+									<button class="user-menu__link button" data-modal="exit" type="button">
 
 										<svg width="24" height="24" viewBox="0 0 24 24">
 											<path d="M4.98 11A.99.99 0 0 0 4 12c0 .55.44 1 .98 1h11.04a.99.99 0 0 0 .98-1 .99.99 0 0 0-.98-1H4.98Z" clip-rule="evenodd"/>
