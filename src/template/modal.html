@@ -2,9 +2,13 @@
 
 		<div class="modal__box">
 
-{% include "template/modal/login.html" %}
+{% if headerUser === true %}
 
 {% include "template/modal/exit.html" %}
+
+{% else %}
+
+{% include "template/modal/login.html" %}
 
 {% include "template/modal/reg.html" %}
 
@@ -12,9 +16,27 @@
 
 {% include "template/modal/login-required.html" %}
 
+{% endif %}
+
 {% include "template/modal/cart.html" %}
 
 {% include "template/modal/city.html" %}
+
+{% if editAccount === true %}
+
+{% include "template/modal/account-edit-name.html" %}
+{% include "template/modal/account-edit-phone.html" %}
+{% include "template/modal/account-edit-email.html" %}
+{% include "template/modal/account-edit-password.html" %}
+
+{% endif %}
+
+			<div class="modal__item modal__item--ok">
+
+				<div class="modal-login__head h2"></div>
+				<div class="modal-login__text"></div>
+
+			</div>
 
 			<button type="button" class="modal__close modal__close-btn button" aria-label="Закрыть">
 				<svg width="24" height="24" viewBox="0 0 24 24">

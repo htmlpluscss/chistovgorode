@@ -1,6 +1,7 @@
 {% set title = 'Данные аккаунта' %}
 
 {% set headerUser = true %}
+{% set editAccount = true %}
 
 {% extends "template/base.html" %}
 
@@ -24,10 +25,97 @@
 
 				</h1>
 
-				<div class="lk__box">
+				<dl class="lk-data-card">
 
+					<div class="lk-data-card__item">
 
-				</div>
+						<dt class="lk-data-card__name">
+
+							ФИО
+
+							<button class="btn btn--edit" type="button" data-modal="account-edit-name" aria-label="редактировать">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</button>
+
+						</dt>
+
+						<dd class="lk-data-card__value">
+
+							Петрова Анна Михайловна
+
+						</dd>
+
+					</div>
+
+					<div class="lk-data-card__item">
+
+						<dt class="lk-data-card__name">
+
+							Телефон
+
+							<button class="btn btn--edit" type="button" data-modal="account-edit-phone" aria-label="редактировать телефон">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</button>
+
+						</dt>
+
+						<dd class="lk-data-card__value">
+
+							+7 (999) 567 45 32
+
+						</dd>
+
+					</div>
+
+					<div class="lk-data-card__item">
+
+						<dt class="lk-data-card__name">
+
+							Email
+
+							<button class="btn btn--edit" type="button" data-modal="account-edit-email" aria-label="редактировать электронную почту">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</button>
+
+						</dt>
+
+						<dd class="lk-data-card__value">
+
+							anna.petrova@gmail.com
+
+						</dd>
+
+					</div>
+
+					<div class="lk-data-card__item">
+
+						<dt class="lk-data-card__name">
+
+							Пароль
+
+							<button class="btn btn--edit" type="button" data-modal="account-edit-password" aria-label="редактировать пароль">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</button>
+
+						</dt>
+
+						<dd class="lk-data-card__value">
+
+							************
+
+						</dd>
+
+					</div>
+
+				</dl>
 
 			</div>
 

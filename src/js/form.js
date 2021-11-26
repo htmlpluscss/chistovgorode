@@ -56,15 +56,15 @@
 					window.modal.dispatchEvent(eventModalShow);
 
 				}
-
+*/
 			// info modal
 
-				if(result.type === 'ok' || result.type === 'error') {
+				if(result.type === 'ok') {
 
-					modal.ok(result.title, result.text, result.mod);
+					modal.ok(result.title, result.text);
 
 				}
-*/
+
 
 			// ok in form
 

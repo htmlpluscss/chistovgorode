@@ -188,3 +188,46 @@
 	}
 
 }
+
+.lk-data-card {
+
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: -9px;
+
+	&__item {
+
+		margin: 9px;
+		box-shadow: var(--card-shadow);
+		border-radius: 3px;
+		width: calc( 50% - 18px );
+		padding: 27px 30px;
+		position: relative;
+		font-size: 18px;
+		line-height: 24px;
+
+		.btn {
+
+			position: absolute;
+			top: -12px;
+			right: -12px;
+
+		}
+
+	}
+
+	&__name {
+
+		color: var(--grey);
+		position: relative;
+		margin-bottom: 12px;
+
+	}
+
+	&__value {
+
+
+	}
+
+}

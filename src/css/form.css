@@ -253,6 +253,31 @@ legend {
 
 	}
 
+	&--edit {
+
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		background-color: transparent !important;
+
+		svg {
+
+			fill: #d9d8df;
+
+		}
+
+		@media ($desktop) {
+
+			&:hover svg {
+
+				fill: #afaec6;
+
+			}
+
+		}
+
+	}
+
 }
 
 .input {
@@ -307,6 +332,12 @@ legend {
 	@media ($desktop) {
 
 		font-size: 15px;
+
+		&--fz18 {
+
+			font-size: 18px;
+
+		}
 
 	}
 
