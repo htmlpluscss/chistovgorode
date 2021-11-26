@@ -1,101 +1,73 @@
+						<div class="header__account-item">
+
+							<a class="header__account-link" href="/lk/order/">
+
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<g id="svg-order">
+										<path d="M19 3H4.85A2 2 0 0 0 3 5v4h1v10.45A1.67 1.67 0 0 0 5.77 21h12.46A1.67 1.67 0 0 0 20 19.45V9h1V5a2 2 0 0 0-2-2Zm-1 16H6V9h12v10Zm1-12H5V5h14v2Zm-4 7H9v-2h6v2Z"/>
+									</g>
+								</svg>
+
+								Заказы
+
+							</a>
+
+						</div>
+
+						<div class="header__account-item">
+
+							<a class="header__account-link" href="/cart/" data-counter="3">
+
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M9.71 16.17a2.45 2.45 0 1 0 0 4.9 2.45 2.45 0 0 0 0-4.9Zm-.45 2.45c0-.25.2-.45.45-.45s.45.2.45.45-.2.45-.45.45a.45.45 0 0 1-.45-.45ZM17 16.17a2.45 2.45 0 1 0 0 4.9 2.45 2.45 0 0 0 0-4.9Zm0 1.99c.25 0 .45.2.45.45s-.2.45-.45.45a.45.45 0 0 1-.45-.45c0-.25.2-.45.45-.45ZM20.81 5.69a1.03 1.03 0 0 0-.81-.41H7.9l-.18-1.11A2.6 2.6 0 0 0 5.15 2H4a1 1 0 0 0-1 1 1 1 0 0 0 1 1h1.15c.3 0 .55.21.6.51l1.45 8.57a2.59 2.59 0 0 0 2.56 2.17h8.58a1 1 0 0 0 1-1 1 1 0 0 0-1-1H9.77a.6.6 0 0 1-.6-.51l-.03-.17h7.7a3 3 0 0 0 2.86-2.09l1.25-3.9c.1-.3.05-.63-.14-.89ZM17.8 9.88a1 1 0 0 1-.96.7H8.8l-.56-3.3h10.39l-.83 2.6Z"/>
+								</svg>
+
+								Корзина
+
+							</a>
+
+						</div>
+
+						<div class="header__account-item">
+
 {% if headerUser === true %}
 
-						<div class="header__favourites">
+							<a class="header__account-link" href="/lk/">
 
-							<button class="button" type="button" aria-label="Избранное">
-								<svg width="20" height="20" viewBox="0 0 20 20">
-									<path d="M9.08 1.57a1 1 0 0 1 1.84 0l1.83 4.24a1 1 0 0 0 .82.6l4.6.43a1 1 0 0 1 .56 1.75l-3.45 3.05a1 1 0 0 0-.32.97l1 4.5a1 1 0 0 1-1.48 1.08l-3.97-2.35a1 1 0 0 0-1.02 0L5.52 18.2a1 1 0 0 1-1.48-1.08l1-4.5a1 1 0 0 0-.32-.97L1.27 8.59a1 1 0 0 1 .56-1.75l4.6-.44a1 1 0 0 0 .82-.6l1.83-4.23Z"/>
-								</svg>
-							</button>
-
-						</div>
-
-						<div class="header__notification as-unread">
-
-							<button class="button" type="button" aria-label="Уведомления">
 								<svg width="24" height="24" viewBox="0 0 24 24">
-									<path d="M12.33 20.88c1.01 0 1.84-.83 1.84-1.84H10.5a1.83 1.83 0 0 0 1.83 1.84Zm5.5-5.5v-4.59c0-2.81-1.5-5.17-4.12-5.8v-.62a1.37 1.37 0 1 0-2.75 0V5c-2.63.62-4.13 2.97-4.13 5.8v4.57L5 17.21v.91h14.67v-.91l-1.84-1.84Z"/>
-								</svg>
-							</button>
-
-						</div>
-
-						<div class="header__user">
-
-							<button type="button" class="header__user-btn button" aria-label="открыть меню пользователя">
-
-								<svg width="26" height="26" viewBox="0 0 26 26">
-									<path d="M19.74 11.92H6.06c-.6 0-.64.48-.64 1.08 0 .6.05 1.08.64 1.08h13.68c.59 0 .64-.48.64-1.08 0-.6-.05-1.08-.64-1.08Zm0 4.33H6.06c-.6 0-.64.48-.64 1.08 0 .6.05 1.09.64 1.09h13.68c.59 0 .64-.49.64-1.09 0-.6-.05-1.08-.64-1.08ZM6.06 9.75h13.68c.59 0 .64-.48.64-1.08 0-.6-.05-1.09-.64-1.09H6.06c-.6 0-.64.49-.64 1.09 0 .6.05 1.08.64 1.08Z"/>
+									<g id="svg-user">
+										<path d="M14.5 13h-5A2.5 2.5 0 0 0 7 15.52v3.98a8.95 8.95 0 0 0 10 0v-3.98a2.5 2.5 0 0 0-2.5-2.5Z"/>
+										<path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+										<path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0 2a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/>
+									</g>
 								</svg>
 
-								<span class="header__user-avatar">
+								Профиль
 
-									<img src="/img/account/UserAvatar.jpg" srcset="/img/account/UserAvatar@2x.jpg 2x" width="36" height="36" loading="eager" alt="Имя/Названия компании/пользователя">
+							</a>
 
-								</span>
+							<div class="header__account-sub">
 
-							</button>
-
-							<div class="header__user-menu">
-
-								<ul class="header__user-list">
-
-									<li class="header__user-item">
-										<a class="header__user-link" href="/account/">
-											Профиль
-										</a>
-									</li>
-
-									<li class="header__user-item">
-										<button class="header__user-link button" type="button">
-											Помощь
-										</button>
-									</li>
-
-									<li class="header__user-item">
-										<button class="header__user-link button" type="button">
-											Выйти
-										</button>
-									</li>
-
-								</ul>
+{% include "template/header/header-account.html" %}
 
 							</div>
 
-						</div>
-
 {% else %}
 
-						<a class="header__account-item" href="/account/orders/">
+							<button class="header__account-link button" data-modal="login" type="button">
 
-							<svg width="24" height="24" viewBox="0 0 24 24">
-								<path d="M19 3H4.85A2 2 0 0 0 3 5v4h1v10.45A1.67 1.67 0 0 0 5.77 21h12.46A1.67 1.67 0 0 0 20 19.45V9h1V5a2 2 0 0 0-2-2Zm-1 16H6V9h12v10Zm1-12H5V5h14v2Zm-4 7H9v-2h6v2Z"/>
-							</svg>
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<g id="svg-user">
+										<path d="M14.5 13h-5A2.5 2.5 0 0 0 7 15.52v3.98a8.95 8.95 0 0 0 10 0v-3.98a2.5 2.5 0 0 0-2.5-2.5Z"/>
+										<path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+										<path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0 2a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/>
+									</g>
+								</svg>
 
-							Заказы
+								Вход
 
-						</a>
-
-						<a class="header__account-item" href="/cart/">
-
-							<svg width="24" height="24" viewBox="0 0 24 24">
-								<path d="M9.71 16.17a2.45 2.45 0 1 0 0 4.9 2.45 2.45 0 0 0 0-4.9Zm-.45 2.45c0-.25.2-.45.45-.45s.45.2.45.45-.2.45-.45.45a.45.45 0 0 1-.45-.45ZM17 16.17a2.45 2.45 0 1 0 0 4.9 2.45 2.45 0 0 0 0-4.9Zm0 1.99c.25 0 .45.2.45.45s-.2.45-.45.45a.45.45 0 0 1-.45-.45c0-.25.2-.45.45-.45ZM20.81 5.69a1.03 1.03 0 0 0-.81-.41H7.9l-.18-1.11A2.6 2.6 0 0 0 5.15 2H4a1 1 0 0 0-1 1 1 1 0 0 0 1 1h1.15c.3 0 .55.21.6.51l1.45 8.57a2.59 2.59 0 0 0 2.56 2.17h8.58a1 1 0 0 0 1-1 1 1 0 0 0-1-1H9.77a.6.6 0 0 1-.6-.51l-.03-.17h7.7a3 3 0 0 0 2.86-2.09l1.25-3.9c.1-.3.05-.63-.14-.89ZM17.8 9.88a1 1 0 0 1-.96.7H8.8l-.56-3.3h10.39l-.83 2.6Z"/>
-							</svg>
-
-							Корзина
-
-						</a>
-
-						<button class="header__account-item button" data-modal="login" type="button">
-
-							<svg width="24" height="24" viewBox="0 0 24 24">
-								<path d="M14.5 13h-5A2.5 2.5 0 0 0 7 15.52v3.98a8.95 8.95 0 0 0 10 0v-3.98a2.5 2.5 0 0 0-2.5-2.5Z"/>
-								<path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-								<path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0 2a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/>
-							</svg>
-
-							Вход
-
-						</button>
+							</button>
 
 {% endif %}
+
+						</div>

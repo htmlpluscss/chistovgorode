@@ -9,15 +9,14 @@
 	color: var(--green);
 
 }
-/*
+
 hr {
 
 	border: 0;
 	height: 1px;
-	background-color: rgba(0,0,0,.12);
+	background-color: #f7f7f9;
 
 }
- */
 
 .link {
 
@@ -207,7 +206,7 @@ table {
 
 	&__sale {
 
-		color: var(--Notice);
+		color: var(--red);
 		font-weight: bold;
 
 	}
@@ -231,7 +230,7 @@ table {
 			bottom: 2px;
 			margin: auto;
 			content: '';
-			background-color: var(--Notice);
+			background-color: var(--red);
 			transform: rotate(-5deg);
 
 		}

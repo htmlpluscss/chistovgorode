@@ -507,7 +507,7 @@ legend {
 		background-repeat: no-repeat;
 		font-size: 15px;
 		line-height: 24px;
-		color: var(--Notice);
+		color: var(--red);
 		margin: 24px 0;
 
 	}

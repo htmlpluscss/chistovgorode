@@ -15,6 +15,19 @@
 
 	}
 
+	&__top {
+
+		position: relative;
+		z-index: 1;
+
+	}
+
+	&__bottom {
+
+		position: relative;
+
+	}
+
 	&__bottom &__flex {
 
 		padding-top: 24px;
@@ -53,12 +66,42 @@
 		grid-gap: 24px;
 		margin-left: 32px;
 
+		&-sub {
+
+			position: absolute;
+			top: 100%;
+			right: -6px;
+			padding: 12px 0;
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(33px);
+			transition: opacity var(--transitionDefault) 0s, transform 0s var(--transitionDefault);
+
+		}
+
 		&-item {
+
+			position: relative;
+
+		}
+
+		&-item:hover &-sub {
+
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+			transition: opacity var(--transitionDefault) 0s, transform var(--transitionDefault) 0s;
+
+		}
+
+		&-link {
 
 			--text: var(--dark);
 			text-align: center;
 			font-size: 12px;
 			line-height: 20px;
+			position: relative;
+			display: block;
 			transition: var(--transitionDefault);
 
 			@media ($desktop) {
@@ -77,6 +120,24 @@
 
 			}
 
+			&[data-counter]::after {
+
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				top: -3px;
+				left: 50%;
+				margin-left: 2px;
+				content: attr(data-counter);
+				border-radius: 50%;
+				color: #fff;
+				text-align: center;
+				font-size: 10px;
+				line-height: 14px;
+				background-color: var(--red);
+
+			}
+
 		}
 
 	}
@@ -84,6 +145,107 @@
 	&__menu-service {
 
 		flex-grow: 1;
+
+	}
+
+}
+
+.header-account {
+
+	padding: 30px;
+	width: 435px;
+	background-color: #fff;
+	box-shadow: 0px 4px 10px 2px rgba(175, 174, 198, 0.23);
+	border-radius: 3px;
+	text-align: left;
+
+	&__head {
+
+		margin: 6px 0;
+		position: relative;
+		padding-left: 90px;
+		min-height: 69px;
+
+	}
+
+	&__photo {
+
+		position: absolute;
+		width: 69px;
+		height: 69px;
+		top: 0;
+		left: 0;
+		text-align: center;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 69px;
+		border-radius: 50%;
+		background-color: var(--border);
+		text-transform: uppercase;
+
+	}
+
+	&__name {
+
+		font-size: 24px;
+		line-height: 30px;
+		color: var(--text);
+		padding: 6px 0 3px;
+
+	}
+
+	&__email {
+
+		font-size: 15px;
+		line-height: 24px;
+		color: var(--grey);
+
+	}
+
+	&__menu {
+
+		margin-top: var(--gap);
+
+	}
+
+	&__item {
+
+		margin: 12px 0;
+
+	}
+
+	&__link {
+
+		display: flex;
+		align-items: center;
+		color: var(--grey);
+		font-size: 18px;
+		line-height: 24px;
+		width: 100%;
+
+		svg {
+
+			fill: var(--grey);
+			margin-right: 12px;
+
+		}
+
+		@media ($desktop) {
+
+			&:hover {
+
+				--grey: var(--dark);
+
+			}
+
+		}
+
+	}
+
+	hr {
+
+		margin: 24px 0;
 
 	}
 

@@ -19,6 +19,7 @@
 	--violet: var(--Violet);
 	--blue: var(--Indigo);
 	--pink: var(--Pink);
+	--red: var(--Notice);
 	--error: #f00;
 	--bg: #fff;
 	--border: #eeeef1; /* BnW800 */
