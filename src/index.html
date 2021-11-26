@@ -55,7 +55,88 @@ setTimeout( ()=> {
 		<li><a href="/lk/address/">Мои адреса</a></li>
 		<li><a href="/lk/address/empty/">Мои адреса (нет адресов)</a></li>
 		<li><a href="/lk/address/add/">Добавление адреса</a></li>
+		<li><a href="/lk/address/edit/">Редактирование адреса</a></li>
 	</ul>
+
+	<hr>
+
+	<h2>
+		Modal
+	</h2>
+
+	<div class="flex flex--wrap">
+
+		<div class="item">
+
+			<button class="btn" type="button" onClick="modal.ok('Подтвердите электронную почту', 'Письмо подтверждения было отправлено на адрес anna.petrova@gmail.com')">
+				Информационное окно
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="login-required">
+				Требуется вход для совершения действия
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="reg">
+				Регистрация
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="login">
+				Вход
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="exit">
+				Выход
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="recovery">
+				Забыли пароль
+			</button>
+
+		</div>
+
+	</div>
+
+	<div class="flex flex--wrap">
+
+		<form class="item form-buy">
+
+			<input type="hidden" name="id" value="123">
+
+			<button class="btn form-buy__submit">
+				Товар добавлен в корзину
+			</button>
+
+		</form>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="city">
+				Выберите город
+			</button>
+
+		</div>
+
+	</div>
 
 	<hr>
 
@@ -243,9 +324,19 @@ setTimeout( ()=> {
 
 		<div class="item">
 
-			<button class="btn btn--edit" type="button" aria-label="редактировать">
+			<button class="btn btn--ico" type="button" aria-label="редактировать">
 				<svg width="24" height="24" viewBox="0 0 24 24">
 					<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+				</svg>
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn btn--ico" type="button" aria-label="удалить">
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
 				</svg>
 			</button>
 
@@ -518,84 +609,6 @@ setTimeout( ()=> {
 				<input id="inputbox-2" value="123" class="input" required="required">
 
 			</div>
-
-		</div>
-
-	</div>
-
-	<h2>
-		Buttons
-	</h2>
-
-	<div class="flex flex--wrap">
-
-		<div class="item">
-
-			<button class="btn" type="button" onClick="modal.ok('Подтвердите электронную почту', 'Письмо подтверждения было отправлено на адрес anna.petrova@gmail.com')">
-				Информационное окно
-			</button>
-
-		</div>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="login-required">
-				Требуется вход для совершения действия
-			</button>
-
-		</div>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="reg">
-				Регистрация
-			</button>
-
-		</div>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="login">
-				Вход
-			</button>
-
-		</div>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="exit">
-				Выход
-			</button>
-
-		</div>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="recovery">
-				Забыли пароль
-			</button>
-
-		</div>
-
-	</div>
-
-	<div class="flex flex--wrap">
-
-		<form class="item form-buy">
-
-			<input type="hidden" name="id" value="123">
-
-			<button class="btn form-buy__submit">
-				Товар добавлен в корзину
-			</button>
-
-		</form>
-
-		<div class="item">
-
-			<button class="btn" type="button" data-modal="city">
-				Выберите город
-			</button>
 
 		</div>
 

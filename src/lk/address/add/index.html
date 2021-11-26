@@ -1,0 +1,111 @@
+{% set title = 'Мои адреса' %}
+
+{% set headerUser = true %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<div class="center">
+
+		<div class="lk">
+
+			<div class="lk__head">
+
+{% include "lk/user-menu.html" %}
+
+			</div>
+
+			<div class="lk__body">
+
+				<h1 class="lk__title h2">
+
+					Добавление адреса
+
+				</h1>
+
+				<div class="lk__box">
+
+					<form action="/lk/address/" class="lk-add-address">
+
+						<div class="lk-add-address__row">
+
+							<div class="inputbox">
+
+								<label for="inputbox-address" class="inputbox__label">
+									* Адрес
+								</label>
+
+								<input id="inputbox-address" placeholder="Город, улица, номер дома" class="input" required="required">
+
+							</div>
+
+						</div>
+
+						<div class="lk-add-address__row">
+
+							<div class="inputbox">
+
+								<label for="inputbox-kvartira" class="inputbox__label">
+									* Квартира
+								</label>
+
+								<input id="inputbox-kvartira" placeholder="Номер квартиры" type="tel" class="input" required="required">
+
+							</div>
+
+							<div class="inputbox">
+
+								<label for="inputbox-pofezd" class="inputbox__label">
+									Подъезд
+								</label>
+
+								<input id="inputbox-pofezd" placeholder="Номер подъезда" type="tel" class="input">
+
+							</div>
+
+							<div class="inputbox">
+
+								<label for="inputbox-etaj" class="inputbox__label">
+									Этаж
+								</label>
+
+								<input id="inputbox-etaj" placeholder="Этаж" type="tel" class="input">
+
+							</div>
+
+							<div class="inputbox">
+
+								<label for="inputbox-domofon" class="inputbox__label">
+									Домофон
+								</label>
+
+								<input id="inputbox-domofon" placeholder="Код домофона" type="tel" class="input">
+
+							</div>
+
+						</div>
+
+						<div class="lk-add-address__foot">
+
+							<a href="/lk/address/" class="btn btn--white btn--medium">
+								Отмена
+							</a>
+
+							<button class="btn btn--medium">
+								Сохранить адрес
+							</button>
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endblock %}

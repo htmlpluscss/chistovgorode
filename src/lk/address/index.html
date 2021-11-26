@@ -1,6 +1,7 @@
 {% set title = 'Мои адреса' %}
 
 {% set headerUser = true %}
+{% set editAddress = true %}
 
 {% extends "template/base.html" %}
 
@@ -24,8 +25,94 @@
 
 				</h1>
 
-				<div class="lk__box">
+				<div class="lk-address-list">
 
+					<div class="lk-address-list__item">
+
+						<div class="lk-address-list__ico">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-location"/>
+							</svg>
+
+						</div>
+
+						<div class="lk-address-list__text">
+
+							<b>г. Санкт-Петербург,</b>
+
+							ул. Разъезжая, д. 13 корп.4, кв. 19
+
+						</div>
+
+						<div class="lk-address-list__btns">
+
+							<a href="/lk/address/edit/" class="btn btn--ico">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</a>
+
+							<button class="btn btn--ico" type="button" data-modal="account-address-remove" aria-label="удалить адрес" data-id="1" data-text="г. Санкт-Петербург, ул. Разъезжая, д. 13 корп.4, кв. 19">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+					<div class="lk-address-list__item">
+
+						<div class="lk-address-list__ico">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="#svg-location"/>
+							</svg>
+
+						</div>
+
+						<div class="lk-address-list__text">
+
+							<b>г. Москва,</b>
+
+							ул. Разъезжая, д. 13 корп.4, кв. 19
+
+						</div>
+
+						<div class="lk-address-list__btns">
+
+							<a href="/lk/address/edit/" class="btn btn--ico">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M4.02 19.23a1 1 0 0 0 1.18 1.18l3.81-.78-4.21-4.21-.78 3.81Zm5.92-2.62-2.12-2.12L16.31 6l2.12 2.12-8.49 8.5v-.01Zm9.9-9.9-2.12-2.13a2 2 0 0 0-2.83 0l-9.75 9.76 4.95 4.95 9.75-9.75a2 2 0 0 0 0-2.83Z"/>
+								</svg>
+							</a>
+
+							<button class="btn btn--ico" type="button" data-modal="account-address-remove" aria-label="удалить адрес" data-id="2" data-text="г. Москва, ул. Разъезжая, д. 13 корп.4, кв. 19">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="lk__btn-add">
+
+					<a href="/lk/address/add/" class="btn btn--add">
+
+						<svg width="24" height="24" viewBox="0 0 24 24">
+							<path d="M12 3a6 6 0 0 0-6 6c0 3.31 3.72 12 6 12s6-8.69 6-12h-3.09a2.87 2.87 0 0 1-.22 1.2A2.91 2.91 0 1 1 12 6.18V3Z"/>
+							<path d="M17 4V2.99a1 1 0 0 0-2 0V4h-1a1 1 0 1 0 0 2h1v1.01a1 1 0 0 0 2 0V6h1a1 1 0 1 0 0-2h-1Z"/>
+						</svg>
+
+						Добавить адрес
+
+					</a>
 
 				</div>
 
