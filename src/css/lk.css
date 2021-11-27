@@ -320,6 +320,47 @@
 			margin-left: 24px;
 
 		}
+
+	}
+
+}
+
+.lk-card-list {
+
+	&__item {
+
+		padding: 36px 27px;
+		display: flex;
+		margin: 18px 0;
+		box-shadow: var(--card-shadow);
+		border-radius: 3px;
+
+	}
+
+	&__logo {
+
+		flex-shrink: 0;
+		width: 76px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 2px;
+
+	}
+
+	&__text {
+
+		flex-grow: 1;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 500;
+
+	}
+
+	&__btns {
+
+		display: flex;
+
 	}
 
 }

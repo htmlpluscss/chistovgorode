@@ -1,6 +1,7 @@
 {% set title = 'Сохраненные карты' %}
 
 {% set headerUser = true %}
+{% set editCard = true %}
 
 {% extends "template/base.html" %}
 
@@ -24,8 +25,100 @@
 
 				</h1>
 
-				<div class="lk__box">
+				<div class="lk-card-list">
 
+					<div class="lk-card-list__item">
+
+						<div class="lk-card-list__logo">
+
+							<img src="/img/footer/Visa-electron.svg" loading="lazy" alt="Visa electron" width="39" height="25">
+
+						</div>
+
+						<div class="lk-card-list__text">
+
+							Visa**4567
+
+						</div>
+
+						<div class="lk-card-list__btns">
+
+							<button class="btn btn--ico" type="button" data-modal="account-card-remove" aria-label="удалить карту" data-id="1" data-text="**** **** **** 4567">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+					<div class="lk-card-list__item">
+
+						<div class="lk-card-list__logo">
+
+							<img src="/img/footer/Visa.svg" loading="lazy" alt="visa" width="60" height="25">
+
+						</div>
+
+						<div class="lk-card-list__text">
+
+							Visa**4567
+
+						</div>
+
+						<div class="lk-card-list__btns">
+
+							<button class="btn btn--ico" type="button" data-modal="account-card-remove" aria-label="удалить карту" data-id="2" data-text="**** **** **** 4567">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+					<div class="lk-card-list__item">
+
+						<div class="lk-card-list__logo">
+
+							<img src="/img/footer/MasterCard.svg" loading="lazy" alt="MasterCard" width="41" height="25">
+
+						</div>
+
+						<div class="lk-card-list__text">
+
+							MasterCard**4567
+
+						</div>
+
+						<div class="lk-card-list__btns">
+
+							<button class="btn btn--ico" type="button" data-modal="account-card-remove" aria-label="удалить карту" data-id="3" data-text="**** **** **** 4567">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<path d="M5 5a1 1 0 0 0-1 1v1h16V6a1 1 0 0 0-1-1H5Zm11.15 15h-8.3a1 1 0 0 1-1-.84L5 8h14l-1.86 11.17a1 1 0 0 1-.99.83ZM9 4.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V5H9v-.5Z"/>
+								</svg>
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="lk__btn-add">
+
+					<a href="/lk/card/add/" class="btn btn--add">
+
+						<svg width="24" height="24" viewBox="0 0 24 24">
+							<path d="M16 17H5.01v-6h14v3H21V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11v-2Zm3.01-8h-14V7h14v2Zm-10 6h-2v-2h2v2Z"/>
+							<path d="M21 17v-1.01a1 1 0 0 0-2 0V17h-1a1 1 0 0 0 0 2h1v1.01a1 1 0 0 0 2 0V19h1a1 1 0 0 0 0-2h-1Z"/>
+						</svg>
+
+						Добавить карту
+
+					</a>
 
 				</div>
 

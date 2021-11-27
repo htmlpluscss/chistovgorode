@@ -1,0 +1,45 @@
+{% set title = 'Сохраненные карты' %}
+
+{% set headerUser = true %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<div class="center">
+
+		<div class="lk">
+
+			<div class="lk__head">
+
+{% include "lk/user-menu.html" %}
+
+			</div>
+
+			<div class="lk__body">
+
+				<h1 class="lk__title h2">
+
+					Привязка карты
+
+				</h1>
+
+				<form action="/" class="lk-add-card">
+
+					<div class="lk-add-card__btn">
+
+						<button class="btn" disabled="disabled">
+							Привязать
+						</button>
+
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endblock %}
