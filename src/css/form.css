@@ -77,9 +77,11 @@ legend {
 	gap: 6px;
 	background-color: var(--yellow);
 
-	&:disabled {
+	&:disabled,
+	&--disabled {
 
 		background-color: #fff4ad;
+		pointer-events: none;
 
 	}
 

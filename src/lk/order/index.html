@@ -24,10 +24,34 @@
 
 				</h1>
 
-				<div class="lk__box">
+				<form action="/lk/order/" class="lk-filter">
 
+					<div class="select select--right">
 
-				</div>
+						<select name="status">
+
+							<option value="1" selected="selected">Все заказы</option>
+							<option value="2">Готов к выдаче</option>
+							<option value="3">Собирается</option>
+							<option value="4">Отправлен</option>
+							<option value="5">Получен заказчиком</option>
+							<option value="6">Ожидает согласования</option>
+
+						</select>
+
+					</div>
+
+				</form>
+
+{% include "lk/order/order-0.html" %}
+
+{% set payOrder = true %}
+{% set buildOrder = true %}
+
+{% include "lk/order/order-1.html" %}
+{% include "lk/order/order-2.html" %}
+{% include "lk/order/order-3.html" %}
+{% include "lk/order/order-4.html" %}
 
 			</div>
 

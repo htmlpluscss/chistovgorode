@@ -43,3 +43,41 @@
 	}
 
 })(document.querySelectorAll('[data-modal="account-card-remove"]'));
+
+// filter
+
+( form => {
+
+	if ( form ) {
+
+		form.addEventListener('change', () => {
+
+			form.dispatchEvent(new CustomEvent("submit"));
+
+		});
+
+	}
+
+})(document.querySelector('.lk-filter'));
+
+// развернуть заказ
+
+( list => {
+
+	if ( list.length ) {
+
+		Array.from(list, item => {
+
+			const btn = item.querySelector('.lk-order__foot .btn');
+
+			if ( btn ) {
+
+				btn.addEventListener('click', () => item.classList.toggle('is-short'));
+
+			}
+
+		});
+
+	}
+
+})(document.querySelectorAll('.lk-order'));

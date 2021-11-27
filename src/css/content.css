@@ -16,6 +16,12 @@
 
 }
 
+.color-red {
+
+	color: var(--red);
+
+}
+
 hr {
 
 	border: 0;
@@ -171,6 +177,12 @@ table {
 	&--pink {
 
 		background-color: var(--pink);
+
+	}
+
+	&--grey {
+
+		background-color: #bcbbc7;
 
 	}
 
