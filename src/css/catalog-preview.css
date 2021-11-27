@@ -14,7 +14,7 @@
 
 	}
 
-	.catalog-swiper--col-3 & {
+	.catalog-swiper-group & {
 
 		padding: 12px 12px 15px;
 
@@ -63,7 +63,7 @@
 		right: 15px;
 
 		.catalog__list &,
-		.catalog-swiper--col-3 & {
+		.catalog-swiper-group & {
 
 			top: 12px;
 			right: 12px;
@@ -82,7 +82,7 @@
 
 		}
 
-		.catalog-swiper--col-3 & {
+		.catalog-swiper-group & {
 
 			margin: 10px 0 3px;
 
