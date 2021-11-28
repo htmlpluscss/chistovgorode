@@ -54,6 +54,100 @@
 	&__list {
 
 		flex-grow: 1;
+		margin-top: -24px;
+
+	}
+
+	&__item {
+
+		box-shadow: var(--card-shadow);
+		border-radius: 3px;
+		margin-top: 24px;
+
+		&.is-remove {
+
+			transition: var(--transitionDefault);
+			opacity: 0;
+			margin-top: 0;
+			overflow: hidden;
+			pointer-events: none;
+			height: 0 !important;
+
+		}
+
+		&-flex {
+
+			position: relative;
+			display: flex;
+			padding: 39px 33px;
+			align-items: center;
+
+		}
+
+		&-link {
+
+			display: flex;
+			align-items: center;
+			width: 450px;
+			flex-shrink: 0;
+
+		}
+
+		&-img {
+
+			width: 81px;
+			margin-right: 6px;
+			flex-shrink: 0;
+
+		}
+
+		&-name {
+
+			font-weight: 400;
+
+		}
+
+		&-desc {
+
+			margin-top: 6px;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 18px;
+			color: #f5c400;
+
+		}
+
+		&-price {
+
+			display: flex;
+			flex-grow: 1;
+			justify-content: flex-end;
+			margin: 0 10px;
+
+			.price__old {
+
+				margin-left: 0;
+				margin-right: 12px;
+
+			}
+
+		}
+
+		&-count {
+
+			width: 117px;
+			margin: 0 20px;
+			flex-shrink: 0;
+
+		}
+
+		&-remove {
+
+			position: absolute;
+			top: 12px;
+			right: 12px;
+
+		}
 
 	}
 
@@ -111,8 +205,6 @@
 
 		&-list {
 
-			margin-bottom: 30px;
-
 			&-row {
 
 				display: flex;
@@ -148,6 +240,12 @@
 
 		}
 
+		&-next {
+
+			margin-top: 30px;
+
+		}
+
 		&-info {
 
 			color: var(--grey);
@@ -158,11 +256,19 @@
 
 		}
 
+		&-min-order {
+
+			color: var(--red);
+			font-size: 15px;
+			line-height: 21px;
+			margin: 15px 0;
+
+		}
+
 	}
 
 	&-quantity {
 
-		width: 74px;
 		position: relative;
 		display: block;
 		user-select: none;
@@ -170,49 +276,40 @@
 		&__count {
 
 			text-align: center;
-			line-height: 30px;
-			height: 30px;
-			border: 0;
-			text-decoration: underline;
+			line-height: 39px;
+			height: 39px;
+			font-weight: 700;
+			padding: 0;
+
+			@media ($desktop) {
+
+				font-size: 18px;
+
+			}
 
 		}
 
 		&__btn {
 
 			position: absolute;
-			left: 0;
-			width: 20px;
+			width: 21px;
+			height: 21px;
 			top: 0;
 			bottom: 0;
+			right: 14px;
+			margin: auto;
 			z-index: 1;
+			font-size: 27px;
+			line-height: 21px;
+			color: var(--grey);
+			text-align: center;
 
-			&::after,
-			&::before {
+			&--down {
 
-				content: '';
-				width: 10px;
-				height: 2px;
-				background-color: var(--border);
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-
-			}
-
-			&--up {
-
-				left: auto;
-				right: 0;
-
-				&::after {
-
-					width: 2px;
-					height: 10px;
-
-				}
+				left: 15px;
+				right: auto;
+				color: #d9d8df;
+				font-weight: 500;
 
 			}
 

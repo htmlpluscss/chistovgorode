@@ -1,15 +1,41 @@
-/*
-// dual-order
 
-( btn => {
+// remove
 
-	if(btn) {
+( btns => {
 
-		btn.addEventListener("click", () => btn.closest('.cart-alert-dual-order').classList.toggle('is-hide'));
+	const form = document.querySelector('.cart__list');
+
+	if( btns.length ) {
+
+		Array.from(btns, btn => {
+
+			const item = btn.closest('.cart__item');
+
+			btn.querySelector('.btn').addEventListener("click", () => {
+
+				item.style.height = item.clientHeight + "px";
+
+				item.addEventListener(window.cssAnimation('transition'), () => {
+
+					if ( item.clientHeight === 0) {
+
+						item.remove();
+
+						setTimeout( ()=> form.dispatchEvent(new CustomEvent('submit')));
+
+					}
+
+				});
+
+				setTimeout( ()=> item.classList.add('is-remove') );
+
+			});
+
+		});
 
 	};
 
-})(document.querySelector('.cart-alert-dual-order__close'));*/
+})(document.querySelectorAll('.cart__item-remove'));
 
 
 ( form => {
