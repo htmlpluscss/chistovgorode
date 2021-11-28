@@ -1,6 +1,7 @@
 {% set title = site %}
 
 {% set dev = true %}
+{% set cart = true %}
 
 {% extends "template/base.html" %}
 
@@ -142,6 +143,22 @@ setTimeout( ()=> {
 
 			<button class="btn" type="button" data-modal="city">
 				Выберите город
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="order-finish">
+				Спасибо за заказ!
+			</button>
+
+		</div>
+
+		<div class="item">
+
+			<button class="btn" type="button" data-modal="order-create">
+				Спасибо за заказ! доставка ТК
 			</button>
 
 		</div>

@@ -43,6 +43,13 @@
 
 {% endif %}
 
+{% if cart === true %}
+
+{% include "template/modal/order-finish.html" %}
+{% include "template/modal/order-create.html" %}
+
+{% endif %}
+
 			<div class="modal__item modal__item--ok">
 
 				<div class="modal-login__head h2"></div>
