@@ -44,15 +44,14 @@ const w3cjs            = require('gulp-w3cjs');
 let config             = null;
 
 const site             = 'Чисто в городе';
-const domain           = 'chistovgorode.wndrbase.com';
+const domain           = 'chisto.iidea.agency';
 const catalog         = require('./catalog.json');
 
 try {
 
 	config           = require('./config.json');
 
-	config.ftp.remotePath += domain;
-
+	config.ftp.remotePath = domain + config.ftp.remotePath;
 
 }catch(e){
 

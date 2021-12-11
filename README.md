@@ -1,5 +1,5 @@
 # Чисто в городе
-[build](https://chistovgorode.wndrbase.com/)
+[build](https://chisto.iidea.agency/)
 
 ## support browsers:
 **Android >= 5**
