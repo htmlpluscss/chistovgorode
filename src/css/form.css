@@ -272,7 +272,7 @@ legend {
 
 			&:hover svg {
 
-				fill: #afaec6;
+				fill: var(--BnW);
 
 			}
 
@@ -375,7 +375,7 @@ legend {
 	&:focus {
 
 		outline: none;
-		border-color: #afaec6;
+		border-color: var(--BnW);
 
 	}
 
@@ -513,7 +513,7 @@ legend {
 		bottom: 0;
 		display: flex;
 		align-items: center;
-		--text: #afaec6;
+		--text: var(--BnW);
 
 		&:hover {
 

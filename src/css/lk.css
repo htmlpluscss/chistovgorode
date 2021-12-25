@@ -29,7 +29,12 @@
 
 		font-size: 15px;
 		line-height: 24px;
-		color: var(--grey);
+
+		a {
+
+			color: var(--grey);
+
+		}
 
 	}
 
@@ -79,9 +84,11 @@
 
 	}
 
+	/* наведение в шапке */
+
 	&--header {
 
-		padding: 30px;
+		padding: 42px 30px;
 		width: 435px;
 		background-color: #fff;
 		box-shadow: var(--box-shadow);
@@ -92,11 +99,10 @@
 
 	&--header &__head {
 
-		margin: 6px 0 var(--gap);
+		margin-bottom: var(--gap);
 		position: relative;
 		padding-left: 90px;
-		min-height: 69px;
-		padding-top: 6px;
+		min-height: 63px;
 
 	}
 
@@ -107,7 +113,7 @@
 		line-height: 69px;
 		font-size: 20px;
 		letter-spacing: 1.5px;
-		top: 0;
+		top: -6px;
 		left: 0;
 		position: absolute;
 
@@ -116,6 +122,98 @@
 	&--header &__name {
 
 		margin: 0 0 3px;
+
+	}
+
+	/* гамбургер в мобильном */
+
+	&--mobile {
+
+		hr {
+
+			display: none;
+
+		}
+
+	}
+
+	&--mobile &__head {
+
+		position: relative;
+		min-height: 60px;
+		background-color: #fbfafb;
+		padding: var(--indent);
+		margin: 0 calc( var(--indent) * -1);
+
+	}
+
+	&--mobile &__photo {
+
+		width: 48px;
+		height: 48px;
+		line-height: 48px;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 1.5px;
+		top: var(--indent);
+		left: var(--indent);
+		position: absolute;
+
+	}
+
+	&--mobile &__name {
+
+		font-size: 21px;
+		line-height: 27px;
+		margin: 0 0 3px 60px;
+
+	}
+
+	&--mobile &__email {
+
+		font-size: 12px;
+		line-height: 18px;
+		margin-left: 60px;
+
+	}
+
+	&--mobile &__list {
+
+		margin: 25px 0;
+
+	}
+
+	&--mobile &__item {
+
+		margin: 21px 0;
+
+	}
+
+	&--mobile &__link {
+
+		color: var(--text);
+		font-size: 15px;
+
+		svg {
+
+			fill: var(--text);
+			margin-right: 9px;
+
+		}
+
+		&--exit {
+
+			color: var(--grey);
+			margin: 33px 0 28px;
+
+			svg {
+
+				fill: var(--grey);
+
+			}
+
+		}
 
 	}
 

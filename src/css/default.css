@@ -103,6 +103,16 @@ li {
 	display: flex;
 	flex-direction: column;
 
+	@media ($smWidth) {
+
+		.header-fixed & {
+
+			padding-top: var(--heightHeaderFixed);
+
+		}
+
+	}
+
 }
 
 

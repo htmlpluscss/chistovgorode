@@ -352,11 +352,11 @@
 
 	&.is-not {
 
-		color: #afaec6;
+		color: var(--BnW);
 
 		&::before {
 
-			background-color: #afaec6;
+			background-color: var(--BnW);
 
 		}
 

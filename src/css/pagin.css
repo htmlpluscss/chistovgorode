@@ -12,7 +12,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: #AFAEC6;
+			color: var(--BnW);
 
 		}
 
@@ -32,7 +32,7 @@
 
 		svg {
 
-			fill: #AFAEC6;
+			fill: var(--BnW);
 
 		}
 

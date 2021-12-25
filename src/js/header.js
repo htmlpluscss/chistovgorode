@@ -3,6 +3,7 @@
 	if(header) {
 
 		document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+		document.documentElement.style.setProperty('--heightHeaderFixed', document.documentElement.style.getPropertyValue('--heightHeader'));
 
 		const headerBottom = header.querySelector('.header__bottom'),
 			  headerBottomInner = headerBottom.querySelector('.header__flex');
@@ -20,38 +21,58 @@
 
 			window.requestAnimationFrame( () => {
 
-				const max = headerBottomInner.clientHeight;
+				if (window.innerWidth < 768) {
 
-				let h = max - window.pageYOffset,
-					o = ( max / 2 - window.pageYOffset ) / ( max / 2 );
+					if ( window.pageYOffset > document.documentElement.clientHeight ) {
 
-				if ( h < 0 ) {
+						document.body.classList.add('header-fixed');
 
-					h = 0;
+					} else {
 
-				}
+						document.body.classList.remove('header-fixed');
 
-				if ( o < 0 ) {
+						document.documentElement.style.setProperty('--heightHeaderFixed', document.documentElement.style.getPropertyValue('--heightHeader'));
 
-					o = 0;
-					headerBottomInner.classList.add('is-off');
+					}
+
+					document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
 
 				} else {
 
-					headerBottomInner.classList.remove('is-off');
+					const max = headerBottomInner.clientHeight;
 
-				}
+					let h = max - window.pageYOffset,
+						o = ( max / 2 - window.pageYOffset ) / ( max / 2 );
 
-				headerBottom.style.height = h + 'px';
-				headerBottom.style.opacity = o;
+					if ( h < 0 ) {
 
-				document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+						h = 0;
 
-				// product scroll
+					}
 
-				if ( productScroll ) {
+					if ( o < 0 ) {
 
-					productScroll.classList.toggle('is-show', window.isInViewport(productForm) === false);
+						o = 0;
+						headerBottomInner.classList.add('is-off');
+
+					} else {
+
+						headerBottomInner.classList.remove('is-off');
+
+					}
+
+					headerBottom.style.height = h + 'px';
+					headerBottom.style.opacity = o;
+
+					document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+
+					// product scroll
+
+					if ( productScroll ) {
+
+						productScroll.classList.toggle('is-show', window.isInViewport(productForm) === false);
+
+					}
 
 				}
 

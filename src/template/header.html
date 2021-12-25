@@ -16,16 +16,18 @@
 
 					</div>
 
-					<div class="header__btn-catalog">
+					<div class="header__btn-catalog hidden-sm">
 
 						<button class="btn btn--big btn-toggle-menu-catalog" type="button">
 
 							<svg width="24" height="24" viewBox="0 0 24 24">
-								<path d="M16 18a1 1 0 0 0 0-2H6.99A1 1 0 0 0 6 17a1 1 0 0 0 .99 1H16ZM6 7a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1 1 1 0 0 0-1-1H7a1 1 0 0 0-1 1Zm14 6a1 1 0 1 0 0-2H7a1 1 0 1 0 0 2h13Z"/>
-								<circle cx="4" cy="7" r="1"/>
-								<circle cx="4" cy="12" r="1"/>
-								<circle cx="4" cy="17" r="1"/>
-								<path opacity="0" d="m12 10.59-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 0 0 1.42 1.4L12 13.42l5.3 5.3a1 1 0 0 0 1.4-1.42L13.42 12l5.3-5.3a1 1 0 1 0-1.42-1.4L12 10.58Z"/>
+								<g id="svg-catalog">
+									<path d="M16 18a1 1 0 0 0 0-2H6.99A1 1 0 0 0 6 17a1 1 0 0 0 .99 1H16ZM6 7a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1 1 1 0 0 0-1-1H7a1 1 0 0 0-1 1Zm14 6a1 1 0 1 0 0-2H7a1 1 0 1 0 0 2h13Z"/>
+									<circle cx="4" cy="7" r="1"/>
+									<circle cx="4" cy="12" r="1"/>
+									<circle cx="4" cy="17" r="1"/>
+									<path opacity="0" d="m12 10.59-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 0 0 1.42 1.4L12 13.42l5.3 5.3a1 1 0 0 0 1.4-1.42L13.42 12l5.3-5.3a1 1 0 1 0-1.42-1.4L12 10.58Z"/>
+								</g>
 							</svg>
 
 							Каталог
@@ -48,41 +50,13 @@
 
 					</div>
 
-					<div class="header__account">
+					<div class="header__account hidden-sm">
 
 {% include "template/header/account.html" %}
 
 					</div>
 
-					<button class="button btn-menu-open" type="button" aria-label="открыть меню сайта">
-
-						<svg width="24" height="24" viewBox="0 0 24 24">
-							<path d="M16.92 18a1 1 0 0 0 0-2H4A1 1 0 0 0 3 17a1 1 0 0 0 .99 1h12.93ZM3 7a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1 1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Zm17 6a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2h16Z"/>
-						</svg>
-
-					</button>
-
-					<a class="header__cart-mobile" href="/cart/" data-counter="3" aria-label="Корзина">
-
-						<svg width="24" height="24" viewBox="0 0 24 24">
-							<use xlink:href="#svg-cart"/>
-						</svg>
-
-					</a>
-
-					<div class="header__location-mobile">
-
-						<button class="header__location-mobile-link button" type="button">
-
-							<svg width="24" height="24" viewBox="0 0 24 24">
-								<use xlink:href="#svg-location"/>
-							</svg>
-
-							Владимир
-
-						</button>
-
-					</div>
+{% include "template/header/mobile.html" %}
 
 				</div>
 
@@ -98,7 +72,7 @@
 
 					</div>
 
-					<div class="header__menu-contacts">
+					<div class="header__menu-contacts hidden-sm">
 
 {% include "template/header/menu-contacts.html" %}
 

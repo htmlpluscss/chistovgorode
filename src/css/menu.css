@@ -273,9 +273,22 @@
 
 	display: flex;
 
+	@media ($smWidth) {
+
+		display: block;
+		border-top: 1.5px solid #f7f7f9;
+
+	}
+
 	&__item {
 
 		margin-right: var(--gap);
+
+		@media ($smWidth) {
+
+			margin: 18px 0;
+
+		}
 
 	}
 
@@ -285,6 +298,12 @@
 		font-size: 15px;
 		line-height: 24px;
 		transition: var(--transitionDefault);
+
+		@media ($smWidth) {
+
+			color: var(--grey);
+
+		}
 
 		@media ($desktop) {
 

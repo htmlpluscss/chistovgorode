@@ -19,7 +19,7 @@
 	&__item {
 
 		background-color: #fff;
-		padding: 24px 33px;
+		padding: 24px var(--gap);
 		max-width: 100%;
 		box-shadow: var(--card-shadow);
 		border-radius: 3px;

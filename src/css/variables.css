@@ -28,6 +28,7 @@
 	--card-shadow: 0 4px 8px 2px rgba(175, 174, 198, 0.14);
 
 	--transitionDefault: 0s;
+	--heightHeaderFixed: 0; /* для отступа wrapper при фиксировании меню */
 
 	--indent: 23px;
 	--gap: 33px;
