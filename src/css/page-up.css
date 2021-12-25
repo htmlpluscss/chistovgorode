@@ -1,0 +1,30 @@
+.page-up {
+
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	bottom: 390px;
+	left: calc( 50% + ( 1336px / 2 ) - var(--indent) - 30px );
+	transition: opacity var(--transitionDefault);
+	z-index: 8;
+
+	&.is-hidden {
+
+		opacity: 0;
+		pointer-events: none;
+
+	}
+
+	svg {
+
+		fill: #f5c400;
+
+	}
+
+}
