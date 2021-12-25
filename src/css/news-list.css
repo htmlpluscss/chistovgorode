@@ -25,6 +25,16 @@
 
 		display: flex;
 
+		@media ($smWidth) {
+
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-padding-left: var(--indent);
+			margin: 0 calc( var(--indent) * -1 );
+			padding-left: var(--indent);
+
+		}
+
 	}
 
 	&__item {
@@ -33,6 +43,14 @@
 		flex-shrink: 0;
 		position: relative;
 		margin-right: var(--gap);
+
+		@media ($smWidth) {
+
+			width: 240px !important;
+			margin-right: var(--indent);
+			scroll-snap-align: start;
+
+		}
 
 		@media ($desktop) {
 
@@ -56,6 +74,21 @@
 		margin-bottom: 30px;
 		display: block;
 
+		@media ($smWidth) {
+
+			height: 170px;
+			margin-bottom: 9px;
+
+			img {
+
+				height: 170px;
+				width: 100%;
+				object-fit: cover;
+
+			}
+
+		}
+
 	}
 
 	&__name {
@@ -69,6 +102,14 @@
 		display: block;
 		line-height: 21px;
 		color: var(--grey);
+
+		@media ($smWidth) {
+
+			font-size: 12px;
+			line-height: 18px;
+			margin-bottom: 9px;
+
+		}
 
 	}
 

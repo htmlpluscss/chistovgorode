@@ -104,21 +104,27 @@
 
 			toggleSwipe = () => {
 
-				toggleSwipe = false;
+				resetSwipe();
 
-				swipe.parentNode.parentNode.appendChild(swipeControls);
+				if (window.innerWidth >= 768) {
 
-				swipePrev.classList.add('swiper-button-disabled');
+					swipe.parentNode.parentNode.appendChild(swipeControls);
 
-				new Swiper(swipe, {
+					swipePrev.classList.add('swiper-button-disabled');
 
-					slidesPerView: "auto",
-					navigation: {
-						nextEl: swipeNext,
-						prevEl: swipePrev
-					}
+					swipe.parentNode.classList.add('swiper-container-style');
 
-				});
+					new Swiper(swipe, {
+
+						slidesPerView: "auto",
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
+						}
+
+					});
+
+				}
 
 			}
 

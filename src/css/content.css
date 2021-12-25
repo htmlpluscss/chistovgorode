@@ -54,6 +54,13 @@ hr {
 	font-size: 42px;
 	line-height: 54px;
 
+	@media ($smWidth) {
+
+		font-size: 24px;
+		line-height: 1.25;
+
+	}
+
 }
 
 .h1 {
@@ -69,6 +76,13 @@ hr {
 	font-weight: 500;
 	font-size: 30px;
 	line-height: 36px;
+
+	@media ($smWidth) {
+
+		font-size: 18px;
+		line-height: 24px;
+
+	}
 
 }
 
@@ -86,6 +100,13 @@ hr {
 	font-size: 24px;
 	line-height: 30px;
 
+	@media ($smWidth) {
+
+		font-size: 15px;
+		line-height: 21px;
+
+	}
+
 }
 
 .h5 {
@@ -94,6 +115,13 @@ hr {
 	font-size: 21px;
 	line-height: 27px;
 
+	@media ($smWidth) {
+
+		font-size: 15px;
+		line-height: 21px;
+
+	}
+
 }
 
 .h6 {
@@ -101,6 +129,13 @@ hr {
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 24px;
+
+	@media ($smWidth) {
+
+		font-size: 15px;
+		line-height: 21px;
+
+	}
 
 }
 
@@ -196,6 +231,12 @@ table {
 	font-size: 24px;
 	line-height: 30px;
 
+	@media ($smWidth) {
+
+		font-size: 21px;
+
+	}
+
 	&--fz18 {
 
 		font-size: 18px;
@@ -237,6 +278,13 @@ table {
 		font-weight: 400;
 		text-decoration: none;
 		position: relative;
+
+		@media ($smWidth) {
+
+			font-size: 15px;
+			margin-left: 12px;
+
+		}
 
 		&::after {
 

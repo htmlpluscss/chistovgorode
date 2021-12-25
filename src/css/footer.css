@@ -8,6 +8,12 @@
 
 		padding: 45px 0 30px;
 
+		@media ($smWidth) {
+
+			padding: 30px 0 0;
+
+		}
+
 	}
 
 	&__copyright {
@@ -18,15 +24,33 @@
 		color: #fff;
 		background-color: #d9d8df;
 
+		@media ($smWidth) {
+
+			padding: 15px 0;
+
+		}
+
 	}
 
 	&__flex {
 
 		display: flex;
 
+		@media ($smWidth) {
+
+			display: block;
+
+		}
+
 	}
 
 	&__col {
+
+		@media ($smWidth) {
+
+			margin-bottom: 38px;
+
+		}
 
 		&:nth-child(1) {
 
@@ -54,6 +78,13 @@
 
 			fill: #F5C400;
 
+			@media ($smWidth) {
+
+				width: 24px;
+				height: 24px;
+
+			}
+
 		}
 
 		&-link {
@@ -62,6 +93,14 @@
 			font-size: 18px;
 			line-height: 24px;
 			margin: 27px 0;
+
+			@media ($smWidth) {
+
+				font-size: 15px;
+				line-height: 21px;
+				margin: 12px 0;
+
+			}
 
 		}
 
@@ -93,10 +132,24 @@
 		align-items: center;
 		margin-top: 30px;
 
+		@media ($smWidth) {
+
+			margin: 24px 0;
+
+		}
+
 		img {
 
 			margin-right: 25px;
 			mix-blend-mode: multiply;
+
+			@media ($smWidth) {
+
+				width: auto;
+				height: 18px;
+				margin-right: 18px;
+
+			}
 
 		}
 

@@ -15,6 +15,42 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: var(--gap) 22px;
 
+		@media ($smWidth) {
+
+			display: flex;
+			gap: 0;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-padding-left: var(--indent);
+			margin: 0 calc( var(--indent) * -1 );
+			padding-left: var(--indent);
+
+			.catalog-preview {
+
+				width: 240px;
+				flex-shrink: 0;
+				margin-right: var(--indent);
+				scroll-snap-align: start;
+				padding: 9px 12px 24px;
+
+				img {
+
+					width: 112px;
+					height: 150px;
+					object-fit: contain;
+
+				}
+
+				&__price {
+
+					margin: 9px 0;
+
+				}
+
+			}
+
+		}
+
 	}
 
 }

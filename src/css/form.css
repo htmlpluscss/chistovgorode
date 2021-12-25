@@ -304,6 +304,15 @@ legend {
 	border: 1px solid var(--border);
 	border-radius: 3px;
 
+	@media ($smWidth) {
+
+		border-width: 1.5px;
+		height: 42px;
+		padding: 9px 15px;
+
+	}
+
+
 /*
 	textarea& {
 
@@ -525,6 +534,12 @@ legend {
 		border-color: var(--yellow);
 		padding-right: 88px;
 
+		@media ($smWidth) {
+
+			padding-right: 36px;
+
+		}
+
 	}
 
 	&__submit {
@@ -532,6 +547,21 @@ legend {
 		position: absolute;
 		top: 6px;
 		right: 6px;
+
+		@media ($smWidth) {
+
+			top: 9px;
+			right: 9px;
+			width: 24px;
+			height: 24px;
+			padding: 0;
+			line-height: 0;
+			color: transparent;
+			font-size: 0;
+			background-color: transparent;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23BCBBC7' d='M14.82 15.88a5.5 5.5 0 1 1 1.06-1.06l2.65 2.65c.3.3.53.59 0 1.06-.53.47-.77.3-1.06 0l-2.65-2.65Zm-3.32-.38a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'/%3E%3C/svg%3E");
+
+		}
 
 	}
 
@@ -550,6 +580,7 @@ legend {
 	}
 
 }
+
 .form {
 
 	&__ok {

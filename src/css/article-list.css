@@ -14,11 +14,32 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 24px;
 
+		@media ($smWidth) {
+
+			display: flex;
+			gap: 0;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-padding-left: var(--indent);
+			margin: 0 calc( var(--indent) * -1 );
+			padding-left: var(--indent);
+
+		}
+
 	}
 
 	&__item {
 
 		position: relative;
+
+		@media ($smWidth) {
+
+			width: 240px;
+			flex-shrink: 0;
+			margin-right: var(--indent);
+			scroll-snap-align: start;
+
+		}
 
 		@media ($desktop) {
 
@@ -38,6 +59,19 @@
 		margin-bottom: 27px;
 		display: block;
 
+		@media ($smWidth) {
+
+			height: 170px;
+			margin-bottom: 12px;
+
+			img {
+
+				height: 170px;
+
+			}
+
+		}
+
 		img {
 
 			border-radius: 3px;
@@ -52,6 +86,12 @@
 
 		margin-bottom: 18px;
 
+		@media ($smWidth) {
+
+			margin-bottom: 9px;
+
+		}
+
 	}
 
 	&__text {
@@ -59,6 +99,13 @@
 		font-size: 15px;
 		line-height: 21px;
 		color: var(--grey);
+
+		@media ($smWidth) {
+
+			font-size: 12px;
+			line-height: 1.5;
+
+		}
 
 	}
 

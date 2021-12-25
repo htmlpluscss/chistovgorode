@@ -108,6 +108,12 @@
 		right: 0;
 		bottom: 0;
 
+		@media ($smWidth) {
+
+			display: none;
+
+		}
+
 	}
 
 	.swiper-button {
@@ -198,6 +204,14 @@
 			&.is-active {
 
 				background-color: #d9d8df;
+
+			}
+
+			@media ($smWidth) {
+
+				width: 4px;
+				height: 4px;
+				margin: 0 3px;
 
 			}
 
