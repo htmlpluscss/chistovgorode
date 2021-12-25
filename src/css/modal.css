@@ -9,6 +9,13 @@
 	justify-content: center;
 	padding: var(--indent);
 
+	@media ($smWidth) {
+
+		padding: 0;
+		align-items: flex-end;
+
+	}
+
 	&__box {
 
 		position: relative;
@@ -24,6 +31,13 @@
 		box-shadow: var(--card-shadow);
 		border-radius: 3px;
 		width: 550px;
+
+		@media ($smWidth) {
+
+			border-radius: 9px 9px 0 0;
+			padding: 18px 21px;
+
+		}
 
 		&--cart {
 
@@ -45,6 +59,13 @@
 		top: 15px;
 		right: 15px;
 		--text: var(--grey);
+
+		@media ($smWidth) {
+
+			top: 12px;
+			right: 12px;
+
+		}
 
 		@media ($desktop) {
 
@@ -103,6 +124,14 @@
 
 		margin: 42px 0 21px;
 
+		@media ($smWidth) {
+
+			font-size: 21px;
+			line-height: 27px;
+			margin: 18px 0;
+
+		}
+
 	}
 
 	&__text {
@@ -112,17 +141,37 @@
 		line-height: 30px;
 		color: var(--grey);
 
+		@media ($smWidth) {
+
+			font-size: 15px;
+			line-height: 27px;
+			margin: 18px 0;
+
+		}
+
 	}
 
 	&__fieldset {
 
 		margin: 45px 0;
 
+		@media ($smWidth) {
+
+			margin: 36px 0;
+
+		}
+
 	}
 
 	.inputbox + .inputbox {
 
 		margin-top: var(--gap);
+
+		@media ($smWidth) {
+
+			margin-top: var(--space);
+
+		}
 
 	}
 
@@ -132,10 +181,39 @@
 		justify-content: flex-end;
 		margin-top: 51px;
 
+		@media ($smWidth) {
+
+			margin-top: 42px;
+
+			&--mobile-50p {
+
+				justify-content: space-between;
+
+				.btn {
+
+					padding: 0;
+					flex-grow: 1;
+
+				}
+
+			}
+
+		}
+
 		.btn {
 
 			padding: 0 28px;
 			margin-left: 15px;
+
+			@media ($smWidth) {
+
+				&:first-child {
+
+					margin-left: 0;
+
+				}
+
+			}
 
 		}
 
@@ -146,6 +224,12 @@
 		margin-top: 51px;
 		width: 100%;
 
+		@media ($smWidth) {
+
+			margin-top: 42px;
+
+		}
+
 	}
 
 	&__foot {
@@ -155,6 +239,12 @@
 		line-height: 21px;
 		color: var(--grey);
 		text-align: center;
+
+		@media ($smWidth) {
+
+			margin-bottom: 6px;
+
+		}
 
 		.link {
 

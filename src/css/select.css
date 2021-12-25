@@ -57,6 +57,12 @@
 		transition: var(--transitionDefault);
 		border: 1px solid var(--border);
 
+		@media ($smWidth) {
+
+			border-width: 1.5px;
+
+		}
+
 		svg {
 
 			fill: var(--text);

@@ -70,4 +70,11 @@
 
 @media ($xsWidth) {
 
+	.hidden-xs {
+
+		display: none !important;
+
+	}
+
+
 }

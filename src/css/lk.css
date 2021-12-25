@@ -224,11 +224,32 @@
 	margin: calc( var(--space) / 2) 0 var(--space);
 	display: flex;
 
+	@media ($mdWidth) {
+
+		display: block;
+		margin: var(--space) auto;
+		max-width: 830px;
+
+	}
+
+	@media ($smWidth) {
+
+		max-width: 550px;
+		margin: var(--space) auto 33px;
+
+	}
+
 	&__head {
 
 		width: 290px;
 		margin-right: 85px;
 		flex-shrink: 0;
+
+		@media ($mdWidth) {
+
+			display: none;
+
+		}
 
 	}
 
@@ -242,6 +263,14 @@
 
 		margin: 20px 0 var(--gap);
 
+		@media ($smWidth) {
+
+			font-size: 24px;
+			line-height: 30px;
+			margin-bottom: 21px;
+
+		}
+
 	}
 
 	&__box {
@@ -249,6 +278,12 @@
 		padding: 30px;
 		box-shadow: var(--card-shadow);
 		border-radius: 3px;
+
+		@media ($smWidth) {
+
+			padding: 18px;
+
+		}
 
 	}
 
@@ -259,6 +294,37 @@
 		flex-direction: column;
 		margin: 30px 0;
 		text-align: center;
+
+		@media ($smWidth) {
+
+			margin: 12px 0 0;
+
+			svg {
+
+				width: 36px;
+				height: 36px;
+
+			}
+
+			.h3 {
+
+				font-size: 18px;
+				line-height: 24px;
+				margin: 15px 0 12px;
+
+			}
+
+			.btn {
+
+				margin-top: 30px;
+				min-width: 164px;
+				font-size: 15px;
+				height: 42px;
+				line-height: 42px;
+
+			}
+
+		}
 
 		.h3 {
 
@@ -283,6 +349,12 @@
 		justify-content: center;
 		margin-top: calc( var(--space) / 2);
 
+		@media ($smWidth) {
+
+			margin-top: var(--space);
+
+		}
+
 	}
 
 }
@@ -293,6 +365,13 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	margin: -9px;
+
+	@media ($smWidth) {
+
+		display: block;
+		margin: 0;
+
+	}
 
 	&__item {
 
@@ -305,11 +384,26 @@
 		font-size: 18px;
 		line-height: 24px;
 
+		@media ($smWidth) {
+
+			margin: var(--gap) 0;
+			width: 100%;
+			padding: 18px;
+
+		}
+
 		.btn {
 
 			position: absolute;
 			top: -12px;
 			right: -12px;
+
+			@media ($smWidth) {
+
+				top: 0;
+				right: -2px;
+
+			}
 
 		}
 
@@ -334,10 +428,39 @@
 
 	margin: 0 15px;
 
+	@media ($smWidth) {
+
+		margin: 0;
+
+	}
+
 	&__row {
 
 		display: flex;
 		margin: 16px -9px 27px;
+
+		@media ($smWidth) {
+
+			&--col2 {
+
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				.inputbox {
+
+					width: calc( 50% - 18px );
+
+					&:nth-child(n+3) {
+
+						margin-top: 27px;
+
+					}
+
+				}
+
+			}
+
+		}
 
 		.inputbox {
 
@@ -354,6 +477,12 @@
 		justify-content: flex-end;
 		margin: 51px 0 -6px;
 
+		@media ($smWidth) {
+
+			margin: 42px 0 0;
+
+		}
+
 		.btn {
 
 			margin-left: 15px;
@@ -361,6 +490,13 @@
 			&--white {
 
 				min-width: 169px;
+
+				@media ($smWidth) {
+
+					min-width: 0;
+					margin-left: 0;
+
+				}
 
 			}
 
@@ -380,12 +516,25 @@
 		box-shadow: var(--card-shadow);
 		border-radius: 3px;
 
+		@media ($smWidth) {
+
+			padding: 18px;
+			margin: 12px 0;
+
+		}
+
 	}
 
 	&__ico {
 
 		margin-right: 21px;
 		flex-shrink: 0;
+
+		@media ($smWidth) {
+
+			margin-right: 6px;
+
+		}
 
 		svg {
 
@@ -401,9 +550,35 @@
 		font-size: 18px;
 		line-height: 24px;
 
+		br {
+
+			display: none;
+
+		}
+
+		@media ($smWidth) {
+
+			font-size: 15px;
+			line-height: 21px;
+			padding-top: 2px;
+
+			br {
+
+				display: block;
+
+			}
+
+		}
+
 		b {
 
 			font-weight: 500;
+
+			@media ($smWidth) {
+
+				display: block;
+
+			}
 
 		}
 
@@ -412,6 +587,12 @@
 	&__btns {
 
 		display: flex;
+
+		@media ($smWidth) {
+
+			margin-right: -3px;
+
+		}
 
 		.btn {
 
@@ -432,6 +613,13 @@
 		margin: 18px 0;
 		box-shadow: var(--card-shadow);
 		border-radius: 3px;
+
+		@media ($smWidth) {
+
+			padding: 18px 15px 18px 0;
+			margin: 12px 0;
+
+		}
 
 	}
 
@@ -467,6 +655,7 @@
 
 	position: relative;
 	width: 650px;
+	max-width: 100%;
 
 	&::before {
 
@@ -493,6 +682,12 @@
 	margin-top: -40px;
 	height: 36px;
 
+	@media ($smWidth) {
+
+		margin: -5px 0 15px;
+
+	}
+
 }
 
 .lk-order {
@@ -503,25 +698,54 @@
 	padding: 21px;
 	position: relative;
 
+	@media ($smWidth) {
+
+		padding: 18px;
+		margin-top: 12px;
+
+	}
+
 	&__head {
 
 		display: flex;
+		align-items: flex-start;
 		justify-content: space-between;
 		padding: 12px 0;
 		border-bottom: 1px solid #f7f7f9;
 
+		@media ($smWidth) {
+
+			padding: 0 0 8px;
+			align-items: stretch;
+
+		}
+
 	}
 
-	&__row {
+	&__main {
 
-		display: flex;
+		display: grid;
+		gap: 12px 24px;
 		align-items: center;
-		white-space: nowrap;
-		margin: 3px 0 12px;
+		margin: 3px 0;
+		grid-template-areas: "name date"
+							 "status status";
+
+		@media ($smWidth) {
+
+			gap: 6px;
+			margin: 0;
+			grid-template-areas: "name"
+								 "status"
+								 "date";
+
+		}
 
 	}
 
 	&__name {
+
+		grid-area: name;
 
 	}
 
@@ -529,13 +753,20 @@
 
 		font-size: 12px;
 		color: var(--grey);
-		margin-left: 24px;
+		grid-area: date;
+
+		@media ($smWidth) {
+
+			margin-top: 10px;
+
+		}
 
 	}
 
 	&__status {
 
 		display: flex;
+		grid-area: status;
 
 	}
 
@@ -546,6 +777,13 @@
 		align-items: flex-end;
 		justify-content: flex-end;
 
+		@media ($smWidth) {
+
+			flex-direction: column-reverse;
+			justify-content: space-between;
+
+		}
+
 		&-number {
 
 			font-size: 12px;
@@ -553,12 +791,25 @@
 			margin: 7px 0 11px;
 			line-height: 18px;
 			color: var(--grey);
+			text-align: right;
+
+			@media ($smWidth) {
+
+				margin-bottom: 0;
+
+			}
 
 		}
 
 		.btn {
 
 			min-width: 142px;
+
+			@media ($smWidth) {
+
+				min-width: 0;
+
+			}
 
 		}
 
@@ -569,10 +820,22 @@
 		padding: 27px 0 9px;
 		position: relative;
 
+		@media ($smWidth) {
+
+			padding: 30px 0 0;
+
+		}
+
 		&-inner {
 
 			display: flex;
 			overflow: hidden;
+
+			@media ($smWidth) {
+
+				display: block;
+
+			}
 
 		}
 
@@ -582,6 +845,13 @@
 			margin-right: calc( var(--gap) * 2);
 			display: flex;
 			flex-direction: column;
+
+			@media ($smWidth) {
+
+				width: auto;
+				margin: 0 0 8px;
+
+			}
 
 		}
 
@@ -613,6 +883,12 @@
 
 			display: flex;
 			margin-bottom: 26px;
+
+			@media ($smWidth) {
+
+				margin-bottom: 15px;
+
+			}
 
 		}
 
@@ -660,6 +936,19 @@
 			margin-right: 6px;
 			flex-shrink: 0;
 
+			@media ($smWidth) {
+
+				margin-right: 3px;
+
+				img {
+
+					width: 45px;
+					height: auto;
+
+				}
+
+			}
+
 		}
 
 		&-name {
@@ -668,6 +957,14 @@
 			margin-bottom: 3px;
 			font-size: 15px;
 			line-height: 21px;
+
+			@media ($smWidth) {
+
+				font-size: 12px;
+				line-height: 18px;
+				margin: 0;
+
+			}
 
 		}
 
@@ -679,6 +976,13 @@
 			display: block;
 			white-space: nowrap;
 
+			@media ($smWidth) {
+
+				font-size: 15px;
+				line-height: 21px;
+
+			}
+
 		}
 
 	}
@@ -686,6 +990,13 @@
 	&__table {
 
 		max-width: 350px;
+		width: 100%;
+
+		@media ($smWidth) {
+
+			max-width: 100%;
+
+		}
 
 		th {
 
@@ -701,6 +1012,12 @@
 
 			padding-top: 21px;
 
+			@media ($smWidth) {
+
+				padding-top: 24px;
+
+			}
+
 		}
 
 		td {
@@ -711,6 +1028,16 @@
 			text-align: left;
 			padding: 6px 0;
 			vertical-align: top;
+
+			@media ($smWidth) {
+
+				& + td {
+
+					text-align: right;
+
+				}
+
+			}
 
 			&:first-child {
 

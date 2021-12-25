@@ -523,6 +523,16 @@ legend {
 
 	}
 
+	@media ($smWidth) {
+
+		.input {
+
+			padding-left: 20px;
+
+		}
+
+	}
+
 }
 
 .search {
