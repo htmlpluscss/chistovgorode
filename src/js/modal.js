@@ -76,7 +76,7 @@
 
 		let target = event.target;
 
-		while (target !== document) {
+		while (target !== document && target !== null) {
 
 			if (target.hasAttribute('data-modal')) {
 

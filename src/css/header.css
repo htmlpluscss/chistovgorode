@@ -94,6 +94,20 @@
 		width: 154px;
 		padding-top: 4px;
 
+		@media ($mdWidth) {
+
+			width: 110px;
+			padding: 0;
+
+			svg {
+
+				width: 100px;
+				height: auto;
+
+			}
+
+		}
+
 		@media ($smWidth) {
 
 			padding: 15px 0;
@@ -127,10 +141,17 @@
 	&__account {
 
 		display: grid;
-		grid-template-columns: repeat(3, 60px);
+		grid-auto-flow: column;
 		grid-gap: 24px;
 		justify-content: flex-end;
 		margin-left: var(--gap);
+
+		@media ($mdWidth) {
+
+			margin-left: 24px;
+			grid-gap: 12px;
+
+		}
 
 		&-sub {
 

@@ -544,7 +544,7 @@ legend {
 		border-color: var(--yellow);
 		padding-right: 88px;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			padding-right: 36px;
 
@@ -558,7 +558,7 @@ legend {
 		top: 6px;
 		right: 6px;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			top: 9px;
 			right: 9px;
