@@ -164,6 +164,21 @@
 			transform: translateY(33px);
 			transition: opacity var(--transitionDefault) 0s, transform 0s var(--transitionDefault);
 
+			@media ($mdWidth) {
+
+				&::after {
+
+					position: absolute;
+					width: 60px;
+					height: 44px;
+					right: 6px;
+					bottom: 100%;
+					content: '';
+
+				}
+
+			}
+
 		}
 
 		&-item {

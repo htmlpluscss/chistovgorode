@@ -50,7 +50,7 @@
 
 				</div>
 
-				<div class="contacts__common-item">
+				<div class="contacts__common-item hidden-md">
 
 					<dt>
 						Отдел по работе с юридическими лицами
@@ -70,6 +70,106 @@
 			</dl>
 
 			<div class="contacts__flex">
+
+				<div class="contacts__map" id="map">
+
+					<script>
+
+						( script => {
+
+							script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+
+							script.onload = () => {
+
+								ymaps.ready( () => {
+
+									const myMap = new ymaps.Map('map', {
+											center: [56.129057, 40.406635],
+											zoom: 7,
+											controls: []
+										});
+
+									const zoomControl = new ymaps.control.ZoomControl({
+										options: {
+											visible: true,
+											position: {
+												top: 20,
+												right: 20
+											}
+										}
+									});
+
+									myMap.controls.add(zoomControl);
+
+									const objectManager = new ymaps.ObjectManager();
+
+
+									objectManager.objects.options.set('iconLayout', 'default#image');
+									objectManager.objects.options.set('iconImageSize', [22, 32]);
+									objectManager.objects.options.set('iconImageHref', "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='32' viewBox='0 0 22 32'%3E%3Cpath fill='%230F0B38' d='M11 31.75c-3.99 0-10.5-15.2-10.5-21a10.5 10.5 0 0 1 21 0c0 5.8-6.51 21-10.5 21ZM11 16a5.1 5.1 0 1 0 0-10.2A5.1 5.1 0 0 0 11 16Z'/%3E%3C/svg%3E");
+
+									myMap.geoObjects.add(objectManager);
+
+									const data =
+									{
+										"type": "FeatureCollection",
+										"features": [
+											{
+												"id": 0,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [56.129057, 40.406635]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Владимир</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Тракторная д. 48</span>"
+												}
+											},
+											{
+												"id": 1,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [55.579174, 42.052411]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Муром</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Ленина д. 34</span>"
+												}
+											},
+											{
+												"id": 2,
+												"type": "Feature",
+												"geometry": {
+													"type": "Point",
+													"coordinates": [56.315311, 38.135972]
+												},
+												"properties": {
+													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Сергиев Посад</span>",
+													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Железнодорожная д. 46</span>"
+												}
+											}
+										]
+									};
+
+									objectManager.add(data);
+
+								});
+
+							};
+
+							window.addEventListener("load", () => {
+
+								setTimeout( () => document.head.appendChild(script), Cookies.get('fastLoadScript') ? 0 : 10000);
+
+							});
+
+						})(document.createElement('script'));
+
+					</script>
+
+				</div>
 
 				<div class="contacts__list">
 
@@ -238,106 +338,6 @@
 						</div>
 
 					</section>
-
-				</div>
-
-				<div class="contacts__map" id="map">
-
-					<script>
-
-						( script => {
-
-							script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-
-							script.onload = () => {
-
-								ymaps.ready( () => {
-
-									const myMap = new ymaps.Map('map', {
-											center: [56.129057, 40.406635],
-											zoom: 7,
-											controls: []
-										});
-
-									const zoomControl = new ymaps.control.ZoomControl({
-										options: {
-											visible: true,
-											position: {
-												top: 20,
-												right: 20
-											}
-										}
-									});
-
-									myMap.controls.add(zoomControl);
-
-									const objectManager = new ymaps.ObjectManager();
-
-
-									objectManager.objects.options.set('iconLayout', 'default#image');
-									objectManager.objects.options.set('iconImageSize', [22, 32]);
-									objectManager.objects.options.set('iconImageHref', "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='32' viewBox='0 0 22 32'%3E%3Cpath fill='%230F0B38' d='M11 31.75c-3.99 0-10.5-15.2-10.5-21a10.5 10.5 0 0 1 21 0c0 5.8-6.51 21-10.5 21ZM11 16a5.1 5.1 0 1 0 0-10.2A5.1 5.1 0 0 0 11 16Z'/%3E%3C/svg%3E");
-
-									myMap.geoObjects.add(objectManager);
-
-									const data =
-									{
-										"type": "FeatureCollection",
-										"features": [
-											{
-												"id": 0,
-												"type": "Feature",
-												"geometry": {
-													"type": "Point",
-													"coordinates": [56.129057, 40.406635]
-												},
-												"properties": {
-													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Владимир</span>",
-													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Тракторная д. 48</span>"
-												}
-											},
-											{
-												"id": 1,
-												"type": "Feature",
-												"geometry": {
-													"type": "Point",
-													"coordinates": [55.579174, 42.052411]
-												},
-												"properties": {
-													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Муром</span>",
-													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Ленина д. 34</span>"
-												}
-											},
-											{
-												"id": 2,
-												"type": "Feature",
-												"geometry": {
-													"type": "Point",
-													"coordinates": [56.315311, 38.135972]
-												},
-												"properties": {
-													"balloonContentHeader": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #828090;\">г. Сергиев Посад</span>",
-													"balloonContentBody": "<span style=\"font-family: Roboto; font-style: normal; font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.024em; color: #0f0b38;\">ул. Железнодорожная д. 46</span>"
-												}
-											}
-										]
-									};
-
-									objectManager.add(data);
-
-								});
-
-							};
-
-							window.addEventListener("load", () => {
-
-								setTimeout( () => document.head.appendChild(script), Cookies.get('fastLoadScript') ? 0 : 10000);
-
-							});
-
-						})(document.createElement('script'));
-
-					</script>
 
 				</div>
 
