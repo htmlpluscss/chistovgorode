@@ -49,6 +49,7 @@
 			width: 240px !important;
 			margin-right: var(--indent);
 			scroll-snap-align: start;
+			scroll-snap-stop: always;
 
 		}
 

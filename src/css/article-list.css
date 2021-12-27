@@ -38,6 +38,7 @@
 			flex-shrink: 0;
 			margin-right: var(--indent);
 			scroll-snap-align: start;
+			scroll-snap-stop: always;
 
 		}
 

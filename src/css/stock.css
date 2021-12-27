@@ -37,6 +37,7 @@
 			flex-shrink: 0;
 			margin-right: var(--indent);
 			scroll-snap-align: start;
+			scroll-snap-stop: always;
 
 		}
 
@@ -84,6 +85,12 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 21px 24px;
+
+		@media ($mdWidth) {
+
+			grid-template-columns: 1fr 1fr;
+
+		}
 
 	}
 
