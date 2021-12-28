@@ -13,6 +13,12 @@
 		padding: 0;
 		margin: 0;
 
+		@media ($mdWidth) {
+
+			overflow: visible;
+
+		}
+
 	}
 
 	&__title {
@@ -25,13 +31,13 @@
 
 		display: flex;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
 			scroll-padding-left: var(--indent);
-			margin: 0 calc( var(--indent) * -1 );
-			padding-left: var(--indent);
+			margin: calc( var(--indent) * -1 );
+			padding: var(--indent);
 
 		}
 
@@ -44,12 +50,19 @@
 		position: relative;
 		margin-right: var(--gap);
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			width: 240px !important;
-			margin-right: var(--indent);
+			margin-right: 0;
+			margin-left: var(--gap);
 			scroll-snap-align: start;
 			scroll-snap-stop: always;
+
+			&:first-child {
+
+				margin-left: 0;
+
+			}
 
 		}
 
@@ -75,10 +88,9 @@
 		margin-bottom: 30px;
 		display: block;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			height: 170px;
-			margin-bottom: 9px;
 
 			img {
 
@@ -87,6 +99,12 @@
 				object-fit: cover;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			margin-bottom: 9px;
 
 		}
 

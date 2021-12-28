@@ -44,6 +44,7 @@
 	}
 
 	.main,
+	.header__bottom,
 	.header__flex + .header__flex {
 
 		display: none;

@@ -52,15 +52,16 @@
 
 					} else {
 
-						if( document.body.classList.contains('menu-show') === null ) {
+						if( document.body.classList.contains('menu-show') === false ) {
 
 							windowScroll = window.pageYOffset;
 
 						}
 
-						document.body.classList.add('menu-catalog-show');
 						document.documentElement.classList.add('scroll-behavior-off');
-						window.scrollTo(0,0);
+						document.body.classList.add('menu-catalog-show');
+
+						setTimeout( () => window.scrollTo(0,0));
 
 					}
 

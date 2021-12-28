@@ -6,20 +6,27 @@
 
 	}
 
+	@media ($mdWidth) {
+
+		&--home &__list {
+
+			grid-template-columns: 1fr 1fr 1fr;
+
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-padding-left: var(--indent);
+			margin: calc( var(--indent) * -1 );
+			padding: var(--indent);
+
+		}
+
+	}
+
 	@media ($smWidth) {
 
 		&--home {
 
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
 			margin: var(--space) 0;
-			scroll-padding-left: var(--indent);
-
-			.center {
-
-				display: flex;
-
-			}
 
 		}
 
@@ -27,7 +34,6 @@
 
 			display: flex;
 			gap: 0;
-			flex-shrink: 0;
 
 		}
 
@@ -35,9 +41,15 @@
 
 			width: 297px;
 			flex-shrink: 0;
-			margin-right: var(--indent);
+			margin-left: var(--gap);
 			scroll-snap-align: start;
 			scroll-snap-stop: always;
+
+			&:first-child {
+
+				margin-left: 0;
+
+			}
 
 		}
 

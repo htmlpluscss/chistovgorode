@@ -21,7 +21,7 @@
 
 			window.requestAnimationFrame( () => {
 
-				if (window.innerWidth < 768) {
+				if (window.innerWidth < 1250) {
 
 					if ( window.pageYOffset > document.documentElement.clientHeight ) {
 

@@ -20,6 +20,11 @@
 
 }
 
+@media ($mdWidth) and (min-width: 768px) {
+
+
+}
+
 @media ($mdWidth) {
 
 	.hidden-md {

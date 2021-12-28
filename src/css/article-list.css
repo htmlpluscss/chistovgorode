@@ -21,8 +21,8 @@
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
 			scroll-padding-left: var(--indent);
-			margin: 0 calc( var(--indent) * -1 );
-			padding-left: var(--indent);
+			margin: calc( var(--indent) * -1 );
+			padding: var(--indent);
 
 		}
 
@@ -36,9 +36,15 @@
 
 			width: 240px;
 			flex-shrink: 0;
-			margin-right: var(--indent);
+			margin-left: var(--gap);
 			scroll-snap-align: start;
 			scroll-snap-stop: always;
+
+			&:first-child {
+
+				margin-left: 0;
+
+			}
 
 		}
 
@@ -60,16 +66,21 @@
 		margin-bottom: 27px;
 		display: block;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			height: 170px;
-			margin-bottom: 12px;
 
 			img {
 
 				height: 170px;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			margin-bottom: 12px;
 
 		}
 

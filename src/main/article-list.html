@@ -21,7 +21,7 @@
 
 		<div class="center">
 
-			<h2 class="article-list__title h2">
+			<h2 class="article-list__title h2 h2--sm-18">
 				Поможет с выбором
 			</h2>
 
@@ -35,6 +35,9 @@
 
 						<picture>
 
+							<source srcset="/img/article/preview/{{ loop.index }}--480x340.webp" type="image/webp" media="(max-width: 767px)">
+							<source srcset="/img/article/preview/{{ loop.index }}--480x340.png" media="(max-width: 767px)">
+
 							<source srcset="/img/article/preview/{{ loop.index }}--414x256.webp 1x, /img/article/preview/{{ loop.index }}--828x512.webp 2x" type="image/webp">
 							<source srcset="/img/article/preview/{{ loop.index }}--414x256.jpg 1x, /img/article/preview/{{ loop.index }}--828x512.jpg 2x">
 
@@ -44,7 +47,7 @@
 
 					</a>
 
-					<div class="article-list__name h5">
+					<div class="article-list__name h5 h5--sm-15">
 
 						<a href="/">
 							{{ item.name }}

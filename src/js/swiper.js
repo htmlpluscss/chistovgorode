@@ -106,7 +106,7 @@
 
 				resetSwipe();
 
-				if (window.innerWidth >= 768) {
+				if (window.innerWidth >= 1250) {
 
 					swipe.parentNode.parentNode.appendChild(swipeControls);
 

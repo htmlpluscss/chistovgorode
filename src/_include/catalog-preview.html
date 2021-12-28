@@ -4,6 +4,9 @@
 
 						<picture>
 
+							<source srcset="/img/preview/catalog/{{ item.photo }}--224x300.webp 2x" type="image/webp" media="(max-width: 767px)">
+							<source srcset="/img/preview/catalog/{{ item.photo }}--224x300.png 2x" media="(max-width: 767px)">
+
 							<source srcset="/img/preview/catalog/{{ item.photo }}--{{ settings[0] }}x{{ settings[1] }}.webp 1x, /img/preview/catalog/{{ item.photo }}--{{ settings[0] * 2 }}x{{ settings[1] * 2 }}.webp 2x" type="image/webp">
 							<source srcset="/img/preview/catalog/{{ item.photo }}--{{ settings[0] }}x{{ settings[1] }}.png 1x, /img/preview/catalog/{{ item.photo }}--{{ settings[0] * 2 }}x{{ settings[1] * 2 }}.png 2x">
 
