@@ -17,13 +17,17 @@
 
 	.swiper-inner {
 
-		padding: 12px;
-		margin: -12px;
-		overflow: hidden;
+		@media ($desktop) {
 
-		.swiper-container {
+			padding: 12px;
+			margin: -12px;
+			overflow: hidden;
 
-			overflow: visible;
+			.swiper-container {
+
+				overflow: visible;
+
+			}
 
 		}
 

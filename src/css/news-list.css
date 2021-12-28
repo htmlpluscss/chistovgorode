@@ -13,12 +13,6 @@
 		padding: 0;
 		margin: 0;
 
-		@media ($mdWidth) {
-
-			overflow: visible;
-
-		}
-
 	}
 
 	&__title {
