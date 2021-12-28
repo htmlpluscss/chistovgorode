@@ -124,8 +124,12 @@
 
 	&--col-4 &__item {
 
-		width: 306px !important;
-		margin-right: 22px;
+		@media ($desktop) {
+
+			width: 306px !important;
+			margin-right: 22px;
+
+		}
 
 	}
 

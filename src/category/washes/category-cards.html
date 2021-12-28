@@ -24,6 +24,9 @@
 
 					<picture>
 
+						<source srcset="/img/category-cards/{{ loop.index }}--182x200.webp" type="image/webp" media="(max-width: 767px)">
+						<source srcset="/img/category-cards/{{ loop.index }}--182x200.png" media="(max-width: 767px)">
+
 						<source srcset="/img/category-cards/{{ loop.index }}--130x142.webp 1x, /img/category-cards/{{ loop.index }}--260x284.webp 2x" type="image/webp">
 						<source srcset="/img/category-cards/{{ loop.index }}--130x142.png 1x, /img/category-cards/{{ loop.index }}--260x284.png 2x">
 

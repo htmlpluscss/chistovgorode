@@ -64,16 +64,19 @@
 			swipeBtns.classList.add('hide');
 			swipeControls.classList.add('hide');
 
-			swipe.parentNode.classList.remove('swiper-container-style');
+			if ( swipe.closest('.swiper-container-style') ) {
+
+				swipe.closest('.swiper-container-style').classList.remove('swiper-container-style');
+
+			}
 
 		}
 
 		if (billboard) {
 
-			resetSwipe();
-
 			swipeControls.classList.add('center');
 			swipeNav.classList.remove('hide');
+			swipeBtns.classList.add('hide');
 			swipeControls.classList.remove('hide');
 
 			toggleSwipe = () => {
@@ -100,7 +103,7 @@
 
 		if (cardAuto) {
 
-			swipeNav.classList.add('hide');
+			resetSwipe();
 
 			toggleSwipe = () => {
 
@@ -108,13 +111,16 @@
 
 				if (window.innerWidth >= 1250) {
 
+					swipeBtns.classList.remove('hide');
+					swipeControls.classList.remove('hide');
+
 					swipe.parentNode.parentNode.appendChild(swipeControls);
 
 					swipePrev.classList.add('swiper-button-disabled');
 
-					swipe.parentNode.classList.add('swiper-container-style');
+					swipe.parentNode.parentNode.classList.add('swiper-container-style');
 
-					new Swiper(swipe, {
+					mySwipe = new Swiper(swipe, {
 
 						slidesPerView: "auto",
 						navigation: {

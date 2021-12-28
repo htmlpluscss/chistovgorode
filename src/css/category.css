@@ -31,6 +31,12 @@
 
 		}
 
+		@media ($xsWidth) {
+
+			font-size: 20px;
+
+		}
+
 	}
 
 	&__head {
