@@ -1,8 +1,6 @@
 	<form action="/" class="filter" id="filter-service">
 
-		<input type="hidden" name="sort" value="price">
-		<input type="hidden" name="direction" value="decrease">
-
+{% include "catalog/filter__head.html" %}
 
 {% set fieldset = {
 
@@ -93,5 +91,6 @@
 
 {% include "_include/filter__checkbox.html" %}
 
+{% include "catalog/filter__foot.html" %}
 
 	</form>
