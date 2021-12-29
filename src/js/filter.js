@@ -52,7 +52,9 @@
 			history.pushState(undefined, '', '?' + queryString);
 
 			loadingLayer.classList.remove('hide');
-/*
+
+			document.body.classList.remove('filter-open');
+
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
 				body: formData
@@ -64,7 +66,7 @@
 
 			});
 
-*/		});
+		});
 
 		// submit
 
@@ -246,25 +248,35 @@
 
 		window.addEventListener("click", event => {
 
-			const isBtn = event.target.closest('.catalog__sort-btn-mobile');
+			// sort
 
-			if ( isBtn ) {
+			const isSort = event.target.closest('.catalog__sort-btn-mobile--sort');
 
-				const target = isBtn.getAttribute('data-target');
+			if ( isSort ) {
 
-				if( target === 'sort' ) {
-
-					form.classList.toggle('is-open');
-
-				}
+				form.classList.toggle('is-open');
 
 			} else {
 
 				if ( event.target.closest('.filter-sort-trigger-mobile') === null ) {
 
-					form.classList.toggle('is-open');
+					form.classList.remove('is-open');
 
 				}
+
+			}
+
+			// filter
+
+			if ( event.target.closest('.catalog__sort-btn-mobile--filter') ) {
+
+				document.body.classList.add('filter-open');
+
+			}
+
+			if ( event.target.closest('.filter__btn-close') ) {
+
+				document.body.classList.remove('filter-open');
 
 			}
 

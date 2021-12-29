@@ -1,3 +1,21 @@
+@media ($mdWidth) {
+
+	.filter-open {
+
+		.header,
+		.breadcrumbs,
+		.footer,
+		.page-up,
+		h1.h2 {
+
+			display: none;
+
+		}
+
+	}
+
+}
+
 .catalog {
 
 	display: flex;
@@ -17,6 +35,14 @@
 		@media ($mdWidth) {
 
 			display: none;
+			width: 100%;
+			padding: 0;
+
+			.filter-open & {
+
+				display: block;
+
+			}
 
 		}
 
@@ -29,6 +55,12 @@
 		@media ($mdWidth) {
 
 			width: auto;
+
+			.filter-open & {
+
+				display: none;
+
+			}
 
 		}
 
@@ -126,6 +158,15 @@
 
 		margin-bottom: 30px;
 
+		@media ($smWidth) {
+
+			overflow-x: auto;
+			padding: calc(var(--indent) - 3px) var(--indent) var(--indent);
+			margin: calc( var(--indent) * -1 ) calc( var(--indent) * -1 ) calc( var(--indent) * -1 + 6px);
+			display: flex;
+
+		}
+
 	}
 
 	&__list {
@@ -195,9 +236,28 @@
 	flex-wrap: wrap;
 	margin: -8px -3px;
 
+	@media ($smWidth) {
+
+		flex-wrap: nowrap;
+		margin: 0;
+
+	}
+
 	&__item {
 
 		margin: 8px 3px;
+
+		@media ($smWidth) {
+
+			margin: 0;
+
+			& + & {
+
+				margin-left: 12px;
+
+			}
+
+		}
 
 	}
 

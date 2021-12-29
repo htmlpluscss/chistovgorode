@@ -1,7 +1,6 @@
 	<form action="/" class="filter" id="filter-catalog">
 
-		<input type="hidden" name="sort" value="popular">
-		<input type="hidden" name="direction" value="decrease">
+{% include "catalog/filter__head.html" %}
 
 {% set fieldset = {
 
@@ -107,5 +106,6 @@
 
 {% include "_include/filter__radio.html" %}
 
+{% include "catalog/filter__foot.html" %}
 
 	</form>
