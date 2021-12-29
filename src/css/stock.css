@@ -56,12 +56,29 @@
 			margin: calc( var(--indent) * -1 );
 			padding: var(--indent);
 
+			.aktsii & {
+
+				overflow-x: visible;
+				margin: 0;
+				padding: 0;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+			}
+
 		}
 
 		@media ($smWidth) {
 
 			display: flex;
 			gap: 0;
+
+			.aktsii & {
+
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				gap: var(--gap);
+
+			}
 
 		}
 
@@ -174,6 +191,13 @@
 			&:first-child {
 
 				margin-left: 0;
+
+			}
+
+			.aktsii & {
+
+				width: 100%;
+				margin: 0;
 
 			}
 
