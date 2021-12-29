@@ -2,11 +2,23 @@
 
 	display: flex;
 
+	@media ($mdWidth) {
+
+		display: block;
+
+	}
+
 	&__filter {
 
 		width: 370px;
 		flex-shrink: 0;
 		padding-right: 105px;
+
+		@media ($mdWidth) {
+
+			display: none;
+
+		}
 
 	}
 
@@ -14,11 +26,93 @@
 
 		width: calc( 100% - 370px );
 
+		@media ($mdWidth) {
+
+			width: auto;
+
+		}
+
 	}
 
 	&__sort {
 
 		margin-bottom: 20px;
+
+		@media ($mdWidth) {
+
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 21px;
+			position: relative;
+
+		}
+
+		&-btn-mobile {
+
+			display: none;
+			margin-left: 24px;
+
+			svg {
+
+				fill: var(--BnW);
+
+			}
+
+			@media ($mdWidth) {
+
+				display: block;
+
+			}
+
+		}
+
+		&-form-desktop {
+
+			@media ($mdWidth) {
+
+				display: none;
+
+			}
+
+		}
+
+		&-form-mobile {
+
+			position: absolute;
+			min-width: 240px;
+			top: 100%;
+			right: 0;
+			z-index: 1;
+			padding: 18px 12px;
+			background-color: #fff;
+			box-shadow: var(--box-shadow);
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(21px);
+			transition: opacity var(--transitionDefault) 0s, transform 0s var(--transitionDefault);
+
+			&.is-open {
+
+				opacity: 1;
+				transform: translateY(15px);
+				pointer-events: auto;
+				transition: opacity var(--transitionDefault) 0s, transform var(--transitionDefault) 0s;
+
+			}
+
+			.checkbox + .checkbox {
+
+				margin-top: 21px;
+
+			}
+
+			@media ($desktop) {
+
+				display: none;
+
+			}
+
+		}
 
 		.service & {
 
@@ -41,6 +135,19 @@
 		display: grid;
 		margin-bottom: 48px;
 		position: relative;
+
+		@media ($mdWidth) {
+
+			grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+
+		}
+
+		@media ($smWidth) {
+
+			display: block;
+			margin-bottom: var(--space);
+
+		}
 
 	}
 

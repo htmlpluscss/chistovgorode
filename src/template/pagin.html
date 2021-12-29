@@ -22,7 +22,7 @@
 
 {% for i in [2,3,4,5,6,7,8,9,10,11] %}
 
-				<li class="pagin__item">
+				<li class="pagin__item{% if i > 3 %} hidden-sm{% endif %}">
 
 					<a href="/" class="pagin__link">
 						{{ i }}

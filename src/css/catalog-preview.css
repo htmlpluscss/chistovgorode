@@ -12,6 +12,25 @@
 
 		padding: 12px 20px 18px;
 
+		@media ($smWidth) {
+
+			margin: var(--gap) 0;
+			padding: 24px 140px 24px 12px;
+			min-height: 190px;
+
+			&__photo {
+
+				position: absolute;
+				width: 112px;
+				height: 150px;
+				top: 20px;
+				right: 20px;
+				outline:1px solid red;
+
+			}
+
+		}
+
 	}
 
 	.catalog-swiper-group & {
@@ -52,6 +71,14 @@
 
 			mix-blend-mode: multiply;
 
+			@media ($smWidth) {
+
+				width: 112px;
+				height: 150px;
+				object-fit: contain;
+
+			}
+
 		}
 
 	}
@@ -80,6 +107,19 @@
 
 			margin: 9px 0 12px;
 
+			@media ($smWidth) {
+
+				margin: 0 0 9px;
+
+				.price__old {
+
+					margin-left: 12px;
+					font-size: 15px;
+
+				}
+
+			}
+
 		}
 
 		.catalog-swiper-group & {
@@ -106,6 +146,13 @@
 			font-weight: 400;
 			margin-bottom: 14px;
 
+			@media ($smWidth) {
+
+				margin-bottom: 24px;
+				font-weight: 500;
+
+			}
+
 		}
 
 	}
@@ -113,6 +160,18 @@
 	&__form {
 
 		margin-top: auto;
+
+		@media ($smWidth) {
+
+			.btn {
+
+				min-width: 116px;
+				height: 36px;
+				line-height: 36px;
+
+			}
+
+		}
 
 	}
 

@@ -4,6 +4,12 @@
 	display: flex;
 	justify-content: flex-end;
 
+	@media ($smWidth) {
+
+		margin: var(--space) 0;
+
+	}
+
 	&__item {
 
 		&--sep {

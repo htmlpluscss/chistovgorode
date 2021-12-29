@@ -2,6 +2,12 @@
 
 	margin: 30px 0;
 
+	@media ($smWidth) {
+
+		margin: 21px 0;
+
+	}
+
 	&__list {
 
 		display: flex;

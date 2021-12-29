@@ -94,7 +94,7 @@
 
 
 
-// filter-sort-trigger
+// filter-sort-trigger desktop
 
 ( form => {
 
@@ -134,9 +134,9 @@
 
 						});
 
-						filter.elements.sort.value = btn.getAttribute('data-value');
-
 					}
+
+					filter.elements.sort.value = btn.getAttribute('data-value');
 
 					filter.dispatchEvent(new CustomEvent("change"));
 
@@ -221,3 +221,55 @@
 	}
 
 })(document.querySelectorAll('.filter-tags-trigger'));
+
+
+// filter-sort-trigger mobile
+
+( form => {
+
+	if(form) {
+
+		const filter = document.querySelector('#' + form.getAttribute('data-id'));
+
+		form.addEventListener("change", event => {
+
+			filter.elements.direction.value = event.target.getAttribute('data-direction');
+			filter.elements.sort.value = form.elements.sort.value;
+
+			filter.dispatchEvent(new CustomEvent("change"));
+
+			form.classList.remove('is-open');
+
+		});
+
+		// catalog__sort-btn-mobile
+
+		window.addEventListener("click", event => {
+
+			const isBtn = event.target.closest('.catalog__sort-btn-mobile');
+
+			if ( isBtn ) {
+
+				const target = isBtn.getAttribute('data-target');
+
+				if( target === 'sort' ) {
+
+					form.classList.toggle('is-open');
+
+				}
+
+			} else {
+
+				if ( event.target.closest('.filter-sort-trigger-mobile') === null ) {
+
+					form.classList.toggle('is-open');
+
+				}
+
+			}
+
+		});
+
+	}
+
+})(document.querySelector('.filter-sort-trigger-mobile'));
