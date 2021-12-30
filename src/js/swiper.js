@@ -140,74 +140,117 @@
 
 			toggleSwipe = () => {
 
-				if ( count <= 5 ) {
+				resetSwipe();
 
-//					return;
+				swipeControls.classList.remove('hide');
 
-				}
+				if (window.innerWidth < 768) {
 
-				let initialSlide = 0,
-					slidesPerView = 5,
-					spaceBetween = 15;
+					if ( count === 1 ) {
 
-				swipe.parentNode.appendChild(swipeControls);
-
-				Array.from(items, (el,index) => {
-
-					if(el.classList.contains('is-current')) {
-
-						initialSlide = index;
+						return;
 
 					}
 
-				});
+					swipeNav.classList.remove('hide');
+					swipeBtns.classList.add('hide');
 
-				toggleSwipe = false;
-				swipe.parentNode.classList.add('swiper-container-style');
+					swipe.parentNode.classList.add('swiper-container-style');
 
-				const box = swipe.closest('.swiper-gallery-preview'),
-					  big = box.querySelectorAll('.swiper-gallery-preview__big-item');
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						pagination: {
+							el: swipeNav,
+							clickable: true,
+							bulletClass: 'button',
+							bulletActiveClass: 'is-active'
+						},
+						on: {
+							slideChange : () => {
 
-				new Swiper(swipe, {
-					loop: true,
-					slideActiveClass: 'is-current',
-					direction: 'vertical',
-					slidesPerView : slidesPerView,
-					spaceBetween: spaceBetween,
-					slideToClickedSlide: true,
-					initialSlide: initialSlide,
-					navigation: {
-						nextEl: swipeNext,
-						prevEl: swipePrev
-					},
-					on: {
-						slideChange : () => {
+								if ( swipe.querySelectorAll('video') ) {
 
-							Array.from(big, (item,index) => {
+									Array.from(swipe.querySelectorAll('video'), video => {
 
-								item.classList.toggle('hide', swipe.swiper.realIndex !== index);
+										video.parentNode.classList.add('is-video');
+										video.pause();
 
-								if(item.querySelector('video')){
-
-									item.querySelector('video').pause();
+									});
 
 								}
 
-							});
+							}
+						}
+					});
+
+				} else if ( count > 5 ) {
+
+					swipeNav.classList.add('hide');
+					swipeBtns.classList.remove('hide');
+
+					let initialSlide = 0,
+						slidesPerView = 5,
+						spaceBetween = 15;
+
+					swipe.parentNode.appendChild(swipeControls);
+
+					Array.from(items, (el,index) => {
+
+						if(el.classList.contains('is-current')) {
+
+							initialSlide = index;
 
 						}
-					},
-					breakpoints: {
-						320: {
-							slidesPerView: 3,
-							spaceBetween: 8
+
+					});
+
+					swipe.parentNode.classList.add('swiper-container-style');
+
+					const box = swipe.closest('.swiper-gallery-preview'),
+						  big = box.querySelectorAll('.swiper-gallery-preview__big-item');
+
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						slideActiveClass: 'is-current',
+						direction: 'vertical',
+						slidesPerView : slidesPerView,
+						spaceBetween: spaceBetween,
+						slideToClickedSlide: true,
+						initialSlide: initialSlide,
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
 						},
-						768: {
-							slidesPerView: slidesPerView,
-							spaceBetween: spaceBetween
+						on: {
+							slideChange : () => {
+
+								Array.from(big, (item,index) => {
+
+									item.classList.toggle('is-hide', swipe.swiper.realIndex !== index);
+
+									if(item.querySelector('video')){
+
+										item.querySelector('video').pause();
+
+									}
+
+								});
+
+							}
+						},
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 8
+							},
+							768: {
+								slidesPerView: slidesPerView,
+								spaceBetween: spaceBetween
+							}
 						}
-					}
-				});
+					});
+
+				}
 
 			}
 

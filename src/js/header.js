@@ -11,6 +11,8 @@
 		const productScroll = document.querySelector('.product-scroll'),
 			  productForm = document.querySelector('.product__form-buy');
 
+		const footer = document.querySelector('.footer');
+
 		if ( productScroll ) {
 
 			header.insertAdjacentElement('afterend', productScroll);
@@ -36,6 +38,22 @@
 					}
 
 					document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
+
+					// product scroll
+
+					if ( productScroll ) {
+
+						if ( window.innerWidth < 768 ) {
+
+							productScroll.classList.toggle('is-show', footer.getBoundingClientRect().top > document.documentElement.clientHeight);
+
+						} else {
+
+							productScroll.classList.toggle('is-show', footer.getBoundingClientRect().top > document.documentElement.clientHeight && window.pageYOffset > 0 );
+
+						}
+
+					}
 
 				} else {
 

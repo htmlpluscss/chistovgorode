@@ -4,11 +4,11 @@
 	if(form) {
 
 		const resultBox = document.querySelector('.catalog__result'),
+			  count = form.querySelector('.filter__count'),
 			  fieldsets = form.querySelectorAll('.filter__fieldset'),
 			  loadingLayer = document.createElement('div');
 
-		loadingLayer.className = 'catalog__loading hide';
-		resultBox.insertAdjacentElement('afterbegin', loadingLayer)
+		loadingLayer.className = 'catalog__loading';
 
 		// change
 
@@ -45,15 +45,20 @@
 
 			console.log(form, 'change');
 
+			resultBox.insertAdjacentElement('afterbegin', loadingLayer);
+
 			const formData = new FormData(form);
 
 			const queryString = new URLSearchParams(formData).toString();
 
 			history.pushState(undefined, '', '?' + queryString);
 
-			loadingLayer.classList.remove('hide');
+			// источник форма может быть только при клике по кнопке
+			if ( target !== form ) {
 
-			document.body.classList.remove('filter-open');
+				formData.append('count', 'on');
+
+			}
 
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
@@ -62,7 +67,8 @@
 			.then(response => response.text())
 			.then(html => {
 
-				loadingLayer.classList.add('hide');
+				loadingLayer.remove();
+				resultBox.innerHTML = html;
 
 			});
 
@@ -71,6 +77,8 @@
 		// submit
 
 		form.addEventListener('submit', event => {
+
+			document.body.classList.remove('filter-open');
 
 			event.preventDefault();
 

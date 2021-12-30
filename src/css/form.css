@@ -77,6 +77,12 @@ legend {
 	gap: 6px;
 	background-color: var(--yellow);
 
+	svg {
+
+		display: initial; /* fallback Grid not working in Safari */
+
+	}
+
 	&:disabled,
 	&--disabled {
 

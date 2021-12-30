@@ -31,7 +31,7 @@
 
 				<div class="product__body">
 
-{% include "catalog/product/gallery.html" %}
+{% include "catalog/product/gallery/1/gallery.html" %}
 {% include "catalog/product/details.html" %}
 {% include "catalog/product/form-buy.html" %}
 {% include "catalog/product/delivery.html" %}
@@ -41,52 +41,6 @@
 			</div>
 
 		</div>
-
-		<div class="product-page__accessories">
-
-			<aside class="product__accessories">
-
-{% set swiperTitle = "Дополнительные аксессуары" %}
-
-{% include "_include/catalog-swiper.html" %}
-
-			</aside>
-
-		</div>
-
-		<div class="product-page__description">
-
-			<div class="product__description" id="description">
-
-{% include "catalog/product/description.html" %}
-
-			</div>
-
-		</div>
-
-		<div class="product-page__param">
-
-			<div class="product__param">
-
-{% include "catalog/product/param.html" %}
-
-			</div>
-
-		</div>
-
-		<div class="product-page__related">
-
-			<aside class="product__related">
-
-{% set swiperTitle = "Аналоги товара" %}
-
-{% include "_include/catalog-swiper.html" %}
-
-			</aside>
-
-		</div>
-
-{% include "catalog/product/scroll.html" %}
 
 	</article>
 
