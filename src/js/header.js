@@ -5,6 +5,12 @@
 		document.documentElement.style.setProperty('--heightHeader', header.clientHeight + 'px');
 		document.documentElement.style.setProperty('--heightHeaderFixed', document.documentElement.style.getPropertyValue('--heightHeader'));
 
+		if (window.innerWidth >= 1250) {
+
+			document.body.classList.add('header-fixed');
+
+		}
+
 		const headerBottom = header.querySelector('.header__bottom'),
 			  headerBottomInner = headerBottom.querySelector('.header__flex');
 

@@ -3,22 +3,18 @@
 	flex-shrink: 0;
 	position: sticky;
 	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 9;
 	background-color: var(--bg);
 	box-shadow: var(--box-shadow);
 	padding: 24px 0;
 
-	@media ($smWidth) {
+	&-fixed & {
 
-		padding: 0;
-		position: relative;
+		position: fixed;
 
-		&-fixed & {
-
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
+		@media ($smWidth) {
 
 			&__logo,
 			&__mobile-location {
@@ -35,6 +31,13 @@
 			}
 
 		}
+
+	}
+
+	@media ($smWidth) {
+
+		padding: 0;
+		position: relative;
 
 	}
 
