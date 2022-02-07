@@ -1299,7 +1299,7 @@ https://github.com/htmlpluscss/
 	}
 
 	const script = document.createElement('script');
-	script.src = '/bitrix/templates/chistovgorode/js/inputmask.min.js';
+	script.src = '/local/templates/chistovgorode/js/inputmask.min.js';
 	script.onload = () => {
 
 		Array.from(elems, el => {
@@ -1816,7 +1816,7 @@ https://github.com/htmlpluscss/
 
 	// load
 	const script = document.createElement('script');
-	script.src = '/bitrix/templates/chistovgorode/js/nouislider.min.js';
+	script.src = '/local/templates/chistovgorode/js/nouislider.min.js';
 	script.onload = () => noUiSliderInit();
 	setTimeout( () => document.head.appendChild(script), Cookies.get('fastLoadScript') ? 0 : 10000);
 
@@ -2331,7 +2331,7 @@ window.selects = select => {
 
 	const script = document.createElement('script');
 
-	script.src = '/bitrix/templates/chistovgorode/js/swiper.min.js';
+	script.src = '/local/templates/chistovgorode/js/swiper.min.js';
 
 	script.onload = () => PubSub.publish('swiperJsLoad');
 

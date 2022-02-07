@@ -254,7 +254,7 @@
 
 	}
 
-	&__list {
+	&__level-2 {
 
 		-webkit-column-break-inside: avoid;
 		page-break-inside: avoid;
@@ -265,15 +265,15 @@
 
 	}
 
+	&__level-2 > &__item {
+
+		font-weight: 500;
+
+	}
+
 	&__item {
 
 		padding-bottom: 9px;
-
-		&:first-child {
-
-			font-weight: 500;
-
-		}
 
 		a {
 
@@ -306,7 +306,7 @@
 
 	}
 
-	&__list {
+	&__level-2 {
 
 		overflow: hidden;
 
@@ -319,21 +319,21 @@
 
 	}
 
+	&__level-2 > &__item {
+
+		font-weight: 500;
+		--text: var(--text);
+		font-size: 18px;
+		line-height: 24px;
+
+	}
+
 	&__item {
 
 		margin-bottom: 12px;
 		--text: var(--grey);
 		font-size: 15px;
 		line-height: 21px;
-
-		&:first-child {
-
-			font-weight: 500;
-			--text: var(--text);
-			font-size: 18px;
-			line-height: 24px;
-
-		}
 
 	}
 
@@ -385,7 +385,7 @@
 
 	}
 
-	&__section:not(.is-open) &__item:nth-child(n+8) {
+	&__level-3:not(.is-open) &__item:nth-child(n+7) {
 
 		display: none;
 

@@ -219,8 +219,8 @@ gulp.task('bitrix', () => {
 		'build/css/styles.css',
 		'build/css/styles.min.css'
 		])
-		.pipe(replace("/fonts/", "/bitrix/templates/chistovgorode/fonts/"))
-		.pipe(replace("/js/", "/bitrix/templates/chistovgorode/js/"))
+		.pipe(replace("/fonts/", "/local/templates/chistovgorode/fonts/"))
+		.pipe(replace("/js/", "/local/templates/chistovgorode/js/"))
 		.pipe(gulp.dest('min'))
 
 });
