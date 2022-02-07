@@ -136,21 +136,49 @@
 
 			{% for list in cat.list %}
 
-						<ul class="menu-catalog__list">
+						<div class="menu-catalog__level-2">
 
 					{% for item in list %}
 
-							<li class="menu-catalog__item">
+							{% if loop.first %}
 
-								<a href="/">
-									{{ item }}
-								</a>
+								<p class="menu-catalog__item">
 
-							</li>
+									<a href="/">
+										{{ item }}
+									</a>
+
+								</p>
+
+							{% endif %}
+
+							{% if loop.index === 2 %}
+
+								<ul class="menu-catalog__level-3">
+
+							{% endif %}
+
+									{% if not loop.first %}
+
+										<li class="menu-catalog__item">
+
+											<a href="/">
+												{{ item }}
+											</a>
+
+										</li>
+
+									{% endif %}
+
+							{% if loop.last and not loop.first %}
+
+								</ul>
+
+							{% endif %}
 
 					{% endfor %}
 
-						</ul>
+						</div>
 
 			{% endfor %}
 

@@ -24,21 +24,49 @@
 
 			<div class="menu-category__wrap">
 
-				<ul class="menu-category__list">
+				<div class="menu-category__level-2">
 
-	{% for item in list %}
+		{% for item in list %}
 
-					<li class="menu-category__item">
+				{% if loop.first %}
+
+					<p class="menu-category__item">
 
 						<a class="menu-category__link" href="/">
 							{{ item }}
 						</a>
 
-					</li>
+					</p>
 
-	{% endfor %}
+				{% endif %}
 
-				</ul>
+				{% if loop.index === 2 %}
+
+					<ul class="menu-category__level-3">
+
+				{% endif %}
+
+						{% if not loop.first %}
+
+							<li class="menu-category__item">
+
+								<a class="menu-category__link" href="/">
+									{{ item }}
+								</a>
+
+							</li>
+
+						{% endif %}
+
+				{% if loop.last and not loop.first %}
+
+					</ul>
+
+				{% endif %}
+
+		{% endfor %}
+
+				</div>
 
 			</div>
 
