@@ -1,12 +1,10 @@
 .category {
 
 	margin: calc( var(--space) / 2) 0 0;
-	display: flex;
 
 	@media ($mdWidth) {
 
 		margin: calc( var(--space) / 2) auto var(--space);
-		display: block;
 
 	}
 
@@ -18,22 +16,15 @@
 
 	&__title {
 
-		font-weight: 500;
-		font-size: 36px;
-		line-height: 42px;
-		margin-bottom: 30px;
+		margin-bottom: var(--gap);
 
-		@media ($smWidth) {
+	}
 
-			font-size: 24px;
-			line-height: 30px;
-			margin-bottom: var(--space);
+	&__flex {
 
-		}
+		@media ($desktop) {
 
-		@media ($xsWidth) {
-
-			font-size: 20px;
+			display: flex;
 
 		}
 
@@ -62,13 +53,10 @@
 
 	&__body {
 
-		width: calc( 100% - 370px );
-		margin-top: 56px;
+		@media ($desktop) {
 
-		@media ($mdWidth) {
-
-			margin: 0;
-			width: auto;
+			width: calc( 100% - 370px );
+			margin-top: -16px;
 
 		}
 
