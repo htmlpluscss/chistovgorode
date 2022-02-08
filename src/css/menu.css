@@ -385,7 +385,7 @@
 
 	}
 
-	&__level-3:not(.is-open) &__item:nth-child(n+7) {
+	&__section:not(.is-open) &__level-3 &__item:nth-child(n+7) {
 
 		display: none;
 

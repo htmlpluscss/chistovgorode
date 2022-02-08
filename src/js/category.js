@@ -8,7 +8,7 @@
 
 			const btn = block.querySelector('.menu-category__toggle'),
 				  wrap = block.querySelector('.menu-category__wrap'),
-				  list = block.querySelector('.menu-category__list');
+				  list = block.querySelector('.menu-category__level-2');
 
 			if ( btn ) {
 
