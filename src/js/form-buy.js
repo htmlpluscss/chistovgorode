@@ -35,7 +35,7 @@
 
 				btnSubmit.disabled = false;
 
-				modalCart.innerHTML = Mustache.render(modalCartTemplate.content.cloneNode(true), result);
+				modalCart.innerHTML = Mustache.render(modalCartTemplate.innerHTML, result);
 
 				// показать модалку
 
@@ -46,6 +46,10 @@
 				});
 
 				window.modal.dispatchEvent(eventModalShow);
+
+				// в шапке
+
+				[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', result.totalCart) );
 
 			});
 

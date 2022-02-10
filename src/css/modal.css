@@ -348,6 +348,66 @@
 		width: 117px;
 		flex-shrink: 0;
 
+		.quantity {
+
+			position: relative;
+			display: block;
+			user-select: none;
+
+			&__count {
+
+				text-align: center;
+				line-height: 39px;
+				height: 39px;
+				font-weight: 700;
+				padding: 0;
+
+				@media ($desktop) {
+
+					font-size: 18px;
+
+				}
+
+			}
+
+			&__btn {
+
+				position: absolute;
+				width: 21px;
+				height: 21px;
+				top: 0;
+				bottom: 0;
+				right: 14px;
+				margin: auto;
+				z-index: 1;
+				font-size: 27px;
+				line-height: 21px;
+				color: var(--grey);
+				text-align: center;
+
+				&--down {
+
+					left: 15px;
+					right: auto;
+					color: #d9d8df;
+					font-weight: 500;
+
+				}
+
+			}
+
+			&__input {
+
+				text-align: center;
+				line-height: 39px;
+				height: 39px;
+				font-weight: 700;
+				padding: 0;
+
+			}
+
+		}
+
 	}
 
 	&__foot {
