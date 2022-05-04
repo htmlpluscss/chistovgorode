@@ -288,6 +288,12 @@
 		display: flex;
 		align-items: center;
 
+		@media ($smWidth) {
+
+			flex-wrap: wrap;
+
+		}
+
 	}
 
 	&__img {
@@ -325,6 +331,12 @@
 
 		flex-shrink: 0;
 		margin: 0 27px;
+
+		@media ($smWidth) {
+
+			margin: 12px 12px 12px 0;
+
+		}
 
 		.price {
 
@@ -419,6 +431,12 @@
 		border-top: 1px solid #f7f7f9;
 		margin-top: 24px;
 
+		@media ($smWidth) {
+
+			margin-top: 12px;
+
+		}
+
 	}
 
 	&__total-text {
@@ -432,10 +450,18 @@
 	&__btns {
 
 		display: flex;
+		gap: 6px;
 
-		.btn {
+		@media ($smWidth) {
 
-			margin-left: 6px;
+			flex-grow: 1;
+
+			.btn {
+
+				flex-grow: 1;
+				text-transform: capitalize;
+
+			}
 
 		}
 
