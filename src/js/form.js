@@ -55,6 +55,12 @@
 
 						}
 
+						if (result.url !== 'forgot') {
+
+							setTimeout( () => location.href = result.url, 4000);
+
+						}
+
 					} else {
 
 						okText.classList.add('hide');

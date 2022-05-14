@@ -29,6 +29,8 @@
 			.then(response => response.json())
 			.then(result => {
 
+				BX.onCustomEvent('OnBasketChange');
+
 				console.log(result);
 
 				form.classList.remove('is-loading');
