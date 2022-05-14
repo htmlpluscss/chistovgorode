@@ -8,11 +8,14 @@
 
 				<div class="nouislider" data-min="{{ fieldset.min }}" data-max="{{ fieldset.max }}" data-step="1" data-suf="₽">
 
+					<input class="nouislider__min-name" type="hidden" value="{{ fieldset.min }}" name="price-min">
+					<input class="nouislider__max-name" type="hidden" value="{{ fieldset.max }}" name="price-max">
+
 					<div class="nouislider__inputbox">
 
-						<input type="tel" class="input nouislider__min is-side" name="price-min" value="{{ fieldset.minThousands }} ₽">
+						<input type="tel" class="input nouislider__min is-side" value="{{ fieldset.minThousands }} ₽">
 
-						<input type="tel" class="input nouislider__max is-side" name="price-max" value="{{ fieldset.maxThousands }} ₽">
+						<input type="tel" class="input nouislider__max is-side" value="{{ fieldset.maxThousands }} ₽">
 
 					</div>
 

@@ -14,6 +14,8 @@
 				  form = slider.closest('form'),
 				  minInput = slider.querySelector('.nouislider__min'),
 				  maxInput = slider.querySelector('.nouislider__max'),
+				  minInputName = slider.querySelector('.nouislider__min-name'),
+				  maxInputName = slider.querySelector('.nouislider__max-name'),
 				  min   = parseInt(slider.getAttribute('data-min')),
 				  max   = parseInt(slider.getAttribute('data-max')),
 				  step  = parseInt(slider.getAttribute('data-step')),
@@ -56,12 +58,18 @@
 
 				form.dispatchEvent(new CustomEvent("change"));
 
+				minInputName.value = values[0];
+				maxInputName.value = values[1];
+
 			});
 
 			track.noUiSlider.on('update', values => {
 
 				minInput.classList.toggle('is-side', min === values[0]);
 				maxInput.classList.toggle('is-side', max === values[1]);
+
+				minInputName.value = values[0];
+				maxInputName.value = values[1];
 
 			});
 
@@ -85,6 +93,9 @@
 						parseInt(window.strToNumber(minInput.value)),
 						parseInt(window.strToNumber(maxInput.value))
 					]);
+
+					minInputName.value = values[0];
+					maxInputName.value = values[1];
 
 				}
 
