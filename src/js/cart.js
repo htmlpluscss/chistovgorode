@@ -23,17 +23,7 @@
 
 				const counter = form.querySelectorAll('.cart__item');
 
-				if ( counter.length === 0 ) {
-
-					document.querySelector('.cart__title').removeAttribute('data-counter');
-					document.querySelector('.header__account-link').removeAttribute('data-counter');
-
-				} else {
-
-					document.querySelector('.cart__title').setAttribute('data-counter', counter.length);
-					document.querySelector('.header__account-link').setAttribute('data-counter', counter.length);
-
-				}
+				[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', counter.length) );
 
 			});
 
