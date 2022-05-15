@@ -134,7 +134,7 @@
 
 			html.insertAdjacentHTML('beforeend', `<li class="menu-catalog__mobile-item"><a href="${prevLevel1.href}">${mobileBody.getAttribute('data-all-item')}</a></li>`);
 
-			Array.from(body[indexBody].querySelectorAll('.menu-catalog__list'), (list,index) => {
+			Array.from(body[indexBody].querySelectorAll('.menu-catalog__level-2'), (list,index) => {
 
 				const item = list.querySelectorAll('.menu-catalog__item'),
 					  itemClone = item[0].cloneNode(true);
@@ -163,7 +163,7 @@
 
 			const html = document.createElement('ul');
 
-			Array.from(body[indexBody].querySelectorAll('.menu-catalog__list')[indexLevel1].querySelectorAll('.menu-catalog__item'), item => {
+			Array.from(body[indexBody].querySelectorAll('.menu-catalog__level-2')[indexLevel1].querySelectorAll('.menu-catalog__item'), item => {
 
 				const itemClone = item.cloneNode(true);
 				itemClone.className = 'menu-catalog__mobile-item';
