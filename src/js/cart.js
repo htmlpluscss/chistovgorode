@@ -2,6 +2,8 @@
 
 	if( form ) {
 
+		const total = document.querySelector('.cart__result-sticke');
+
 		form.addEventListener('change', event => {
 
 			form.classList.add('is-loading');
@@ -10,12 +12,28 @@
 				method: 'POST',
 				body: new FormData(form)
 			})
-			.then(response => response.json())
+			.then(response => response.text())
 			.then(result => {
 
 				console.log(result);
 
 				form.classList.remove('is-loading');
+
+				total.innerHTML = result;
+
+				const counter = form.querySelectorAll('.cart__item');
+
+				if ( counter.length === 0 ) {
+
+					document.querySelector('.cart__title').removeAttribute('data-counter');
+					document.querySelector('.header__account-link').removeAttribute('data-counter');
+
+				} else {
+
+					document.querySelector('.cart__title').setAttribute('data-counter', counter.length);
+					document.querySelector('.header__account-link').setAttribute('data-counter', counter.length);
+
+				}
 
 			});
 
