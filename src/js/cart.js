@@ -1,3 +1,37 @@
+( form => {
+
+	if( form ) {
+
+		form.addEventListener('change', event => {
+
+			form.classList.add('is-loading');
+
+			fetch(form.getAttribute('action'), {
+				method: 'POST',
+				body: new FormData(form)
+			})
+			.then(response => response.json())
+			.then(result => {
+
+				console.log(result);
+
+				form.classList.remove('is-loading');
+
+			});
+
+		});
+
+		form.addEventListener('submit', event => {
+
+			event.preventDefault();
+
+			form.dispatchEvent(new CustomEvent('change'));
+
+		});
+
+	};
+
+})(document.querySelector('.cart__list'));
 
 // remove
 
@@ -15,13 +49,13 @@
 
 				item.style.height = item.clientHeight + "px";
 
-				item.addEventListener(window.cssAnimation('transition'), () => {
+				item.addEventListener(window.cssAnimation('transition'), event => {
 
-					if ( item.clientHeight === 0) {
+					if ( event.propertyName === 'height' && item.clientHeight === 0 ) {
 
 						item.remove();
 
-						setTimeout( ()=> form.dispatchEvent(new CustomEvent('submit')));
+						setTimeout( ()=> form.dispatchEvent(new CustomEvent('change')),100);
 
 					}
 
@@ -37,16 +71,18 @@
 
 })(document.querySelectorAll('.cart__item-remove'));
 
+// + | -
 
-( form => {
+( cart => {
 
-	if(!form) {
+	if(!cart) {
 
 		return;
 
 	}
 
-	const quantity = form.querySelectorAll('.cart-quantity');
+	const form = cart.querySelector('.cart__list'),
+		  quantity = form.querySelectorAll('.cart-quantity');
 
 	if(quantity.length) {
 
@@ -61,9 +97,9 @@
 
 			up.addEventListener('click', () => {
 
-				value = parseInt(count.value) + 1;
+				value = parseInt(count.value);
 
-				count.value = value;
+				count.value = isNaN(value) ? 1 : value + 1;
 
 				form.dispatchEvent(new CustomEvent('change'));
 
@@ -71,15 +107,15 @@
 
 			down.addEventListener('click', () => {
 
-				value = parseInt(count.value) - 1;
+				value = parseInt(count.value);
 
-				if(value < 1) {
+				if( isNaN(value) || value < 2 ) {
 
-					value = 1;
+					value = 2;
 
 				}
 
-				count.value = value;
+				count.value = value - 1;
 
 				form.dispatchEvent(new CustomEvent('change'));
 
@@ -99,9 +135,15 @@
 
 			count.addEventListener('keyup', () => {
 
-				const val = this.value.replace(/[\D]/g, '');
+				const val = count.value.replace(/[\D]/g, '');
 
-				this.value = val;
+				if ( isNaN(val) ) {
+
+					val = 1;
+
+				}
+
+				count.value = val;
 
 				form.dispatchEvent(new CustomEvent('change'));
 
