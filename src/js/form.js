@@ -46,7 +46,7 @@
 
 					if(result.type === 'form-ok') {
 
-						okText.textContent = result.text;
+						okText.innerHTML = result.text;
 						okText.classList.remove('hide');
 
 						if(!window.isInViewport(okText)){
@@ -75,7 +75,7 @@
 
 					if(result.type === 'form-error') {
 
-						errorText.textContent = result.text;
+						errorText.innerHTML = result.text;
 						errorText.classList.remove('hide');
 
 						if(!window.isInViewport(errorText)){

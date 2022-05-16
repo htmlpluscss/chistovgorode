@@ -25,18 +25,6 @@ window.selects = select => {
 
 	let selected = control.querySelector('[value="' + control.value + '"]');
 
-	// не предусматриваем в мобиле системный контрол
-/*
-	control.addEventListener("change", () => {
-
-		selected = control.querySelector('[value="' + control.value + '"]');
-
-		valueText.textContent = selected.textContent;
-
-		select.classList.remove('select--default');
-
-	});
-*/
 	const valueDefault = selected.textContent;
 
 	if( control.disabled || control.value === 'none' || control.value === '' ){
@@ -83,69 +71,6 @@ window.selects = select => {
 		list.appendChild(btn);
 
 	});
-
-	// без быстрого поиска
-/*
-	if(filter){
-
-		const inputFilter = document.createElement('input');
-
-		inputFilter.className = 'select__filter input';
-
-		value.appendChild(inputFilter);
-
-		inputFilter.addEventListener('input', () => {
-
-			const value = inputFilter.value.toLowerCase();
-
-			if(value.length > 1) {
-
-				Array.from(list.children, o => {
-
-					const text = o.textContent.trim().toLowerCase();
-
-					o.classList.toggle('hide', text.indexOf(value) === -1);
-
-				});
-
-				if(list.querySelectorAll('.select__list-item').length === list.querySelectorAll('.select__list-item.hide').length) {
-
-					select.classList.add('select--filter-empty');
-
-				} else {
-
-					select.classList.remove('select--filter-empty');
-
-				}
-
-			} else {
-
-				Array.from(list.children, o => o.classList.remove('hide'));
-
-			}
-
-		});
-	}
-
-	select.addEventListener("click", event => {
-
-		if(event.target.classList.contains('select__list-item')){
-
-			control.value = event.target.getAttribute('value');
-
-			control.dispatchEvent(new CustomEvent("change"));
-
-			if(form) {
-
-				form.dispatchEvent(new CustomEvent("change"));
-
-			}
-
-		}
-
-	});
-
-*/
 
 	select.appendChild(list);
 

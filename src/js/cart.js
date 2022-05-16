@@ -8,9 +8,19 @@
 
 			form.classList.add('is-loading');
 
+			const counter = form.querySelectorAll('.cart__item').length;
+
+			const formData = new FormData(form);
+
+			if ( counter === 0 ) {
+
+				formData.append('clearBasket', true);
+
+			}
+
 			fetch(form.getAttribute('action'), {
 				method: 'POST',
-				body: new FormData(form)
+				body: formData
 			})
 			.then(response => response.text())
 			.then(result => {
@@ -19,11 +29,17 @@
 
 				form.classList.remove('is-loading');
 
-				total.innerHTML = result;
+				if ( counter === 0 ) {
 
-				const counter = form.querySelectorAll('.cart__item');
+					form.closest('.cart').innerHTML = result;
 
-				[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', counter.length) );
+				} else {
+
+					total.innerHTML = result;
+
+				}
+
+				[...document.querySelectorAll('.js-set-cart-counter')].forEach( el => el.setAttribute('data-counter', counter) );
 
 			});
 
@@ -80,85 +96,80 @@
 })(document.querySelectorAll('.cart__item-remove'));
 
 // + | -
+// quantity
 
-( cart => {
+( form => {
 
-	if(!cart) {
+	if(!form) {
 
 		return;
 
 	}
 
-	const form = cart.querySelector('.cart__list'),
-		  quantity = form.querySelectorAll('.cart-quantity');
+	const quantity = form.querySelectorAll('.cart-quantity');
 
-	if(quantity.length) {
+	Array.from(quantity, el => {
 
-// quantity
-		Array.from(quantity, el => {
+		let value = null;
 
-			let value = null;
+		const up = el.querySelector('.cart-quantity__btn--up'),
+			down = el.querySelector('.cart-quantity__btn--down'),
+			count = el.querySelector('.cart-quantity__count');
 
-			const up = el.querySelector('.cart-quantity__btn--up'),
-				down = el.querySelector('.cart-quantity__btn--down'),
-				count = el.querySelector('.cart-quantity__count');
+		up.addEventListener('click', () => {
 
-			up.addEventListener('click', () => {
+			value = parseInt(count.value);
 
-				value = parseInt(count.value);
+			count.value = isNaN(value) ? 1 : value + 1;
 
-				count.value = isNaN(value) ? 1 : value + 1;
-
-				form.dispatchEvent(new CustomEvent('change'));
-
-			});
-
-			down.addEventListener('click', () => {
-
-				value = parseInt(count.value);
-
-				if( isNaN(value) || value < 2 ) {
-
-					value = 2;
-
-				}
-
-				count.value = value - 1;
-
-				form.dispatchEvent(new CustomEvent('change'));
-
-			});
-
-			count.addEventListener('blur', () => {
-
-				form.dispatchEvent(new CustomEvent('change'));
-
-			});
-
-			count.addEventListener('focus', () => {
-
-				setTimeout( () => count.setSelectionRange(0,9),100)
-
-			});
-
-			count.addEventListener('keyup', () => {
-
-				const val = count.value.replace(/[\D]/g, '');
-
-				if ( isNaN(val) ) {
-
-					val = 1;
-
-				}
-
-				count.value = val;
-
-				form.dispatchEvent(new CustomEvent('change'));
-
-			});
+			form.dispatchEvent(new CustomEvent('change'));
 
 		});
 
-	}
+		down.addEventListener('click', () => {
 
-})(document.querySelector('.cart'));
+			value = parseInt(count.value);
+
+			if( isNaN(value) || value < 2 ) {
+
+				value = 2;
+
+			}
+
+			count.value = value - 1;
+
+			form.dispatchEvent(new CustomEvent('change'));
+
+		});
+
+		count.addEventListener('blur', () => {
+
+			form.dispatchEvent(new CustomEvent('change'));
+
+		});
+
+		count.addEventListener('focus', () => {
+
+			setTimeout( () => count.setSelectionRange(0,9),100)
+
+		});
+
+		count.addEventListener('keyup', () => {
+
+			const val = count.value.replace(/[\D]/g, '');
+
+			if ( isNaN(val) ) {
+
+				val = 1;
+
+			}
+
+			count.value = val;
+
+			form.dispatchEvent(new CustomEvent('change'));
+
+		});
+
+	});
+
+})(document.querySelector('.cart__list'));

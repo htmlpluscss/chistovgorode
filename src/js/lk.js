@@ -50,11 +50,7 @@
 
 	if ( form ) {
 
-		form.addEventListener('change', () => {
-
-			form.dispatchEvent(new CustomEvent("submit"));
-
-		});
+		form.addEventListener('change', form.submit);
 
 	}
 
