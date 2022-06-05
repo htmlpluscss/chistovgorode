@@ -226,3 +226,45 @@ gulp.task('bitrix', () => {
 });
 
 gulp.task('min', gulp.series(gulp.parallel('css','js'),'bitrix'));
+
+
+
+gulp.task('proxy', ()=> {
+
+	gulp.src([
+		'src/js/min/swiper.min.js',
+		'src/js/min/inputmask.min.js',
+		'src/js/min/nouislider.min.js'
+	]).pipe(gulp.dest('build/js'));
+
+	server.init({
+		proxy: "https://new.xn--b1acdel0bcarfl1d.xn--p1ai/",
+		https: true,
+		serveStatic: ['.'],
+		rewriteRules: [
+			{
+				match: new RegExp('/local/templates/chistovgorode/js/scripts.min.js','g'),
+				fn: () => '/build/js/scripts.js'
+			},
+			{
+				match: new RegExp('/local/templates/chistovgorode/css/styles.min.css','g'),
+				fn: () => '/build/css/styles.css'
+			}
+		],
+		files: [
+			{
+				match: ['**/*'],
+				fn: server.reload()
+			},
+			{
+				match: ['src/js/*.js'],
+				fn: gulp.series('js')
+			},
+			{
+				match: ['src/css/*.css'],
+				fn: gulp.series('css')
+			}
+		]
+	});
+
+});
