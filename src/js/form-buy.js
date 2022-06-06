@@ -119,7 +119,7 @@
 
 		event.preventDefault();
 
-		modalCart.dispatchEvent(new CustomEvent("change"));
+		modalCart.dispatchEvent(new Event("change"));
 
 	});
 
@@ -131,7 +131,7 @@
 
 			event.target.value = event.target.value.replace(/[\D]/g, '');
 
-			modalCart.dispatchEvent(new CustomEvent("change"));
+			modalCart.dispatchEvent(new Event("change"));
 
 		}
 
@@ -151,7 +151,7 @@
 
 			input.value = parseInt(input.value) + 1;
 
-			modalCart.dispatchEvent(new CustomEvent("change"));
+			modalCart.dispatchEvent(new Event("change"));
 
 		}
 
@@ -159,7 +159,7 @@
 
 			input.value = parseInt(input.value) <= 1 ? 1 : parseInt(input.value) - 1;
 
-			modalCart.dispatchEvent(new CustomEvent("change"));
+			modalCart.dispatchEvent(new Event("change"));
 
 		}
 

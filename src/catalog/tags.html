@@ -1,28 +1,10 @@
 		<div class="catalog__tags">
 
-			<form action="/" class="catalog-tags filter-tags-trigger" data-id="filter-catalog">
-
-				<script type="text/html" id="catalog-tags-item-template">
-
-					<div class="catalog-tags__item">
-
-						<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="<%& name %>" data-value="<%& value %>">
-
-							<%& text %>
-
-							<svg width="24" height="24" viewBox="0 0 24 24">
-								<use xlink:href="#svg-reset"/>
-							</svg>
-
-						</button>
-
-					</div>
-
-				</script>
+			<div class="catalog-tags filter-tags-trigger" data-id="filter-catalog">
 
 				<div class="catalog-tags__item">
 
-					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="param-1[]" data-value="1">
+					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="type[]" data-value="1">
 
 						Тип: Пылесосы с аквафильтром
 
@@ -36,7 +18,7 @@
 
 				<div class="catalog-tags__item">
 
-					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag"  data-name="param-1[]" data-value="4">
+					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag"  data-name="type[]" data-value="4">
 
 						Тип: Хозяйственные пылесосы
 
@@ -64,7 +46,7 @@
 
 				<div class="catalog-tags__item">
 
-					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="param-5" data-value="yes">
+					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="tank" data-value="yes">
 
 						Забор воды из емкости: Есть
 
@@ -78,7 +60,7 @@
 
 				<div class="catalog-tags__item">
 
-					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="param-4[]" data-value="2">
+					<button type="button" class="catalog-tags__btn btn btn--reset filter-tags-trigger__tag" data-name="pump[]" data-value="2">
 
 						Материал помпы: Силлумин
 
@@ -106,6 +88,6 @@
 
 				</div>
 
-			</form>
+			</div>
 
 		</div>

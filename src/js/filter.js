@@ -1,18 +1,18 @@
 
-( form => {
+( filter => {
 
-	if(form) {
+	if(filter) {
 
 		const resultBox = document.querySelector('.catalog__result'),
-			  count = form.querySelector('.filter__count'),
-			  fieldsets = form.querySelectorAll('.filter__fieldset'),
+			  count = filter.querySelector('.filter__count'),
+			  fieldsets = filter.querySelectorAll('.filter__fieldset'),
 			  loadingLayer = document.createElement('div');
 
 		loadingLayer.className = 'catalog__loading';
 
 		// change
 
-		form.addEventListener('change', event => {
+		filter.addEventListener('change', event => {
 
 			const target = event.target;
 
@@ -21,11 +21,11 @@
 			if( target.type === 'checkbox' ) {
 
 				const name = target.getAttribute('name'),
-					  btnAll = form.querySelector('.filter__checkbox-all[name="' + name + '"]');
+					  btnAll = filter.querySelector('.filter__checkbox-all[name="' + name + '"]');
 
 				if ( btnAll ) {
 
-					const list = Array.from(form.querySelectorAll('input[name="' + name + '"]')).filter(input => input !== btnAll);
+					const list = Array.from(filter.querySelectorAll('input[name="' + name + '"]')).filter(input => input !== btnAll);
 
 					if ( target === btnAll ) {
 
@@ -43,58 +43,122 @@
 
 			// submit
 
-			console.log(form, 'change');
+			console.log(filter, 'change');
 
-			resultBox.insertAdjacentElement('afterbegin', loadingLayer);
+			const formData = new FormData(filter);
 
-			const formData = new FormData(form);
-
-			const queryString = new URLSearchParams(formData).toString();
-
-			history.pushState(undefined, '', '?' + queryString);
-
-			// источник форма может быть только при клике по кнопке
-			if ( target !== form ) {
+			// вернуть кол-во
+			if ( resultBox.offsetParent === null ) {
 
 				formData.append('count', 'on');
 
+				fetch(filter.getAttribute('action'), {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.text())
+				.then(html => {
+
+					count.textContent = '(' + html + ')';
+
+				});
+
+			} else {
+
+				// удалить цену, если она по дефолту
+				// это костыль, т.к. разработчик на сервере это не может сделать.
+				if ( filter.elements['price-min'].value === filter.elements['price-min'].parentNode.getAttribute('data-min') ) {
+
+					formData.delete('price-min');
+
+				}
+				if ( filter.elements['price-max'].value === filter.elements['price-max'].parentNode.getAttribute('data-max') ) {
+
+					formData.delete('price-max');
+
+				}
+
+				resultBox.insertAdjacentElement('afterbegin', loadingLayer);
+
+				const queryString = new URLSearchParams(formData).toString();
+
+				history.pushState(undefined, '', '?' + queryString);
+
+				fetch(filter.getAttribute('action'), {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.text())
+				.then(html => {
+
+					loadingLayer.remove();
+					resultBox.innerHTML = html;
+
+				});
+
 			}
-
-			fetch(form.getAttribute('action'), {
-				method: 'POST',
-				body: formData
-			})
-			.then(response => response.text())
-			.then(html => {
-
-				loadingLayer.remove();
-				resultBox.innerHTML = html;
-
-			});
 
 		});
 
 		// submit
 
-		form.addEventListener('submit', event => {
+		filter.addEventListener('submit', event => {
 
 			document.body.classList.remove('filter-open');
 
 			event.preventDefault();
 
-			form.dispatchEvent(new CustomEvent("change"));
+			filter.dispatchEvent(new Event("change"));
 
 		});
 
 		// default reset
 
-		form.addEventListener('default', () => {
+		filter.addEventListener('default', () => {
 
-			Array.from(form.querySelectorAll('.checkbox__input:checked:not(:disabled)'), checkbox => checkbox.checked = false);
+			Array.from(filter.querySelectorAll('.checkbox__input:checked:not(:disabled)'), checkbox => checkbox.checked = false);
 
-			Array.from(form.querySelectorAll('.nouislider'), nouislider => nouislider.dispatchEvent(new CustomEvent("reset")));
+			Array.from(filter.querySelectorAll('.nouislider'), nouislider => nouislider.dispatchEvent(new Event("reset")));
 
-			form.dispatchEvent(new CustomEvent("change"));
+			filter.dispatchEvent(new Event("change"));
+
+		});
+
+
+		// filter-tags-trigger
+
+		resultBox.addEventListener('click', event => {
+
+			const tag = event.target.closest('.filter-tags-trigger__tag');
+
+			if ( tag ) {
+
+				if( tag.classList.contains('filter-tags-trigger__tag--reset') ) {
+
+					filter.dispatchEvent(new Event("default"));
+
+				} else {
+
+					const name = tag.getAttribute('data-name'),
+						  value = tag.getAttribute('data-value');
+
+					console.log(name,value);
+
+					if ( name === "nouislider" ) {
+
+						filter.querySelector('.nouislider--' + value).dispatchEvent(new Event("reset"));
+
+					} else {
+
+						filter.querySelector(`[name="${name}"][value="${value}"]`).checked = false;
+
+					}
+
+					filter.dispatchEvent(new Event("change"));
+
+				}
+
+			}
 
 		});
 
@@ -148,7 +212,7 @@
 
 					filter.elements.sort.value = btn.getAttribute('data-value');
 
-					filter.dispatchEvent(new CustomEvent("change"));
+					filter.dispatchEvent(new Event("change"));
 
 				});
 
@@ -159,78 +223,6 @@
 	}
 
 })(document.querySelectorAll('.filter-sort-trigger'));
-
-
-// filter-tags-trigger
-
-( form => {
-
-	if(form.length) {
-
-		Array.from(form, form => {
-
-			const filter = document.querySelector('#' + form.getAttribute('data-id')),
-				  btns = form.querySelectorAll('.filter-tags-trigger__tag');
-
-			Array.from( btns, btn => {
-
-				btn.addEventListener("click", () => {
-
-					if( btn.classList.contains('filter-tags-trigger__tag--reset') ) {
-
-						form.classList.add('is-remove');
-
-						setTimeout( ()=> {
-
-							Array.from( btns, _btn => {
-
-								if ( btn !== _btn ) {
-
-									_btn.remove();
-									form.classList.add('hide');
-
-								}
-
-							});
-
-						}, 500);
-
-						filter.dispatchEvent(new CustomEvent("default"));
-
-					} else {
-
-						const name = btn.getAttribute('data-name'),
-							  value = btn.getAttribute('data-value');
-
-						console.log(name,value);
-
-						if ( name === "nouislider" ) {
-
-							filter.querySelector('.nouislider--' + value).dispatchEvent(new CustomEvent("reset"));
-
-						} else {
-
-							filter.querySelector(`[name="${name}"][value="${value}"]`).checked = false;
-
-						}
-
-						btn.classList.add('is-remove');
-
-						setTimeout( ()=> btn.remove(), 500);
-
-						filter.dispatchEvent(new CustomEvent("change"));
-
-					}
-
-				});
-
-			});
-
-		})
-
-	}
-
-})(document.querySelectorAll('.filter-tags-trigger'));
 
 
 // filter-sort-trigger mobile
@@ -246,7 +238,7 @@
 			filter.elements.direction.value = event.target.getAttribute('data-direction');
 			filter.elements.sort.value = form.elements.sort.value;
 
-			filter.dispatchEvent(new CustomEvent("change"));
+			filter.dispatchEvent(new Event("change"));
 
 			form.classList.remove('is-open');
 

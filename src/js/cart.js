@@ -49,7 +49,7 @@
 
 			event.preventDefault();
 
-			form.dispatchEvent(new CustomEvent('change'));
+			form.dispatchEvent(new Event('change'));
 
 		});
 
@@ -79,7 +79,7 @@
 
 						item.remove();
 
-						setTimeout( ()=> form.dispatchEvent(new CustomEvent('change')),100);
+						setTimeout( ()=> form.dispatchEvent(new Event('change')),100);
 
 					}
 
@@ -122,7 +122,7 @@
 
 			count.value = isNaN(value) ? 1 : value + 1;
 
-			form.dispatchEvent(new CustomEvent('change'));
+			form.dispatchEvent(new Event('change'));
 
 		});
 
@@ -138,13 +138,13 @@
 
 			count.value = value - 1;
 
-			form.dispatchEvent(new CustomEvent('change'));
+			form.dispatchEvent(new Event('change'));
 
 		});
 
 		count.addEventListener('blur', () => {
 
-			form.dispatchEvent(new CustomEvent('change'));
+			form.dispatchEvent(new Event('change'));
 
 		});
 
@@ -166,7 +166,7 @@
 
 			count.value = val;
 
-			form.dispatchEvent(new CustomEvent('change'));
+			form.dispatchEvent(new Event('change'));
 
 		});
 

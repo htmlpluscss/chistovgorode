@@ -56,7 +56,7 @@
 				minInput.classList.toggle('is-side', min === values[0]);
 				maxInput.classList.toggle('is-side', max === values[1]);
 
-				form.dispatchEvent(new CustomEvent("change"));
+				form.dispatchEvent(new Event("change"));
 
 				minInputName.value = values[0];
 				maxInputName.value = values[1];

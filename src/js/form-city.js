@@ -27,7 +27,7 @@
 
 				Array.from(document.querySelectorAll('.js-change-city'), el => el.textContent = result.setCity);
 
-				modal.dispatchEvent(new CustomEvent("hide"));
+				modal.dispatchEvent(new Event("hide"));
 
 			}
 
