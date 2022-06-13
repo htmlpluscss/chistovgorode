@@ -50,7 +50,7 @@
 
 	if ( form ) {
 
-		form.addEventListener('change', form.elements.status.value === 'all' ? location.assign(form.action) : form.submit);
+		form.addEventListener('change', form.submit);
 
 	}
 
